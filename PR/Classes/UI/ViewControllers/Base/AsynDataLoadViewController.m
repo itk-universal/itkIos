@@ -79,18 +79,35 @@
             NSTimeInterval timeEscaped = [[TimeStampMananger shareManager] timeStamp] - self.timeStampDisappear;
             if (timeEscaped >= [self queryIntervalForBackView]) {
                 AsynRefreshInfo *refreshInfo = [AsynRefreshInfo infoWithOption:DataRefreshOption_ReturnView];
-            
+                [self innerLoadModelWithInfo:refreshInfo];
             }
         }
+    }
+    
+    if ([self queryRefreshOption] & DataRefreshOption_Enter && self.timeStampDisappear == 0) {
+        AsynRefreshInfo *refreshInfo = [AsynRefreshInfo infoWithOption:DataRefreshOption_Enter];
+        [self performSelectorOnMainThread:@selector(innerLoadModelWithInfo:) withObject:refreshInfo waitUntilDone:0];
     }
 }
 
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    self.timeStampDisappear = [[TimeStampMananger shareManager] timeStamp];
+}
 #pragma mark -async request
 //开始实际的数据请求获取
 -(void)doActualReqData:(NSNumber *)refreshOption
 {
-    [self.view viewWithTag:kerr]
+//    [self.view viewWithTag:kerr]
+}
+
+-(void)innerLoadModelWithInfo:(AsynRefreshInfo *)info
+{
+    self.currentRefreshInfo = info;
+    [self loadModelDataWithRefreshLoading:info.needLoading refreshType:info.refreshOption];
+
 }
 #pragma mark - refresh control
 
@@ -148,6 +165,14 @@
         //第一次，显示蒙层
         return LoadingUIType_None;
     }
+}
+
+
+- (void)loadModelDataWithRefreshLoading:(BOOL)needLoading
+                            refreshType:(DataRefreshOption)option
+{
+    [self setWaittingStatus:needLoading];
+    [self performSelectorOnMainThread:@selector(doActualReqData:) withObject:[NSNumber numberWithInteger:option] waitUntilDone:NO];
 }
 #pragma mark - Loading type
 

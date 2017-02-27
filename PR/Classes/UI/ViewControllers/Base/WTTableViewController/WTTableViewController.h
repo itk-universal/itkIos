@@ -9,7 +9,9 @@
 #import "AsynDataLoadViewController.h"
 #import "WTTableViewAdaptor.h"
 
-@interface WTTableViewController : AsynDataLoadViewController<WTTableViewAdaptorDelegate,WTTableViewCellConfig>
+#import "BaseViewController.h"
+
+@interface WTTableViewController : BaseViewController<WTTableViewAdaptorDelegate,WTTableViewCellConfig>
 
 @property (nonatomic, strong) UITableView        * tableView;
 @property (nonatomic, strong) WTTableViewAdaptor * tableViewAdaptor;

@@ -14,8 +14,8 @@
 -(instancetype)initWithSelectedImgDic:(NSDictionary *)imgDic;
 -(void)setSelectedIndex:(NSInteger)index;
 
-//修改tabbar的显示名字
-- (void)alterTabBarName:(NSString *)name
-                  index:(NSInteger)index;
+////修改tabbar的显示名字
+//- (void)alterTabBarName:(NSString *)name
+//                  index:(NSInteger)index;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "IGNetwork.h"
-#import "nso"
+//#import "nso"
 
 @interface WTNetworkErrorView : UIView
 

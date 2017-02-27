@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MSignal.h"
 
 @protocol MSignalInterface <NSObject>
 @optional
--(void)handleSignal:(ns)
-
+-(void)handleSignal:(MSignal *)signal;
 @end
+
 @interface NSObject (MSignal)
+
+-(void)registerHandler:(id<MSignalInterface>)handler signal:(MSignalType)signalName;
+-(void)triggerSignal:(MSignalType)signal withObj:(id)param;
 
 @end

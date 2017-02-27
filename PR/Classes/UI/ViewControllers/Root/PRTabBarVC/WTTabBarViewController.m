@@ -59,7 +59,7 @@
 
 //修改tabbar的显示名字
 -(void)alterTabBarName:(NSString *)name index:(NSInteger)index{
-    [self.tabbarView alterTabBarName:name index:index];
+//    [self.tabbarView alterTabBarName:name index:index];
 }
 
 

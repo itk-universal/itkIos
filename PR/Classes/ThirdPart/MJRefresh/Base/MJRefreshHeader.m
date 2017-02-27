@@ -10,7 +10,7 @@
 #import "MJRefreshHeader.h"
 
 @interface MJRefreshHeader()
-
+@property (assign, nonatomic) CGFloat insetTDelta;
 @end
 
 @implementation MJRefreshHeader
@@ -54,12 +54,19 @@
     
     // 在刷新的refreshing状态
     if (self.state == MJRefreshStateRefreshing) {
+        if (self.window == nil) return;
+        
         // sectionheader停留解决
+        CGFloat insetT = - self.scrollView.mj_offsetY > _scrollViewOriginalInset.top ? - self.scrollView.mj_offsetY : _scrollViewOriginalInset.top;
+        insetT = insetT > self.mj_h + _scrollViewOriginalInset.top ? self.mj_h + _scrollViewOriginalInset.top : insetT;
+        self.scrollView.mj_insetT = insetT;
+        
+        self.insetTDelta = _scrollViewOriginalInset.top - insetT;
         return;
     }
     
     // 跳转到下一个控制器时，contentInset可能会变
-    _scrollViewOriginalInset = self.scrollView.contentInset;
+     _scrollViewOriginalInset = self.scrollView.contentInset;
     
     // 当前的contentOffset
     CGFloat offsetY = self.scrollView.mj_offsetY;
@@ -97,8 +104,7 @@
     
     // 根据状态做事情
     if (state == MJRefreshStateIdle) {
-        // 不论之前will 还是 已经 refreshing ，都需要重置，否则congtent inset 恢复不了。
-        if (oldState != MJRefreshStateRefreshing && oldState != MJRefreshStateWillRefresh) return;
+        if (oldState != MJRefreshStateRefreshing) return;
         
         // 保存刷新时间
         [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:self.lastUpdatedTimeKey];
@@ -106,42 +112,38 @@
         
         // 恢复inset和offset
         [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
-            self.scrollView.mj_insetT -= self.mj_h;
+            self.scrollView.mj_insetT += self.insetTDelta;
             
             // 自动调整透明度
             if (self.isAutomaticallyChangeAlpha) self.alpha = 0.0;
         } completion:^(BOOL finished) {
             self.pullingPercent = 0.0;
-            [self didResetOffset];
+            
+            if (self.endRefreshingCompletionBlock) {
+                self.endRefreshingCompletionBlock();
+            }
         }];
     } else if (state == MJRefreshStateRefreshing) {
-        [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
-            // 增加滚动区域
-            CGFloat top = self.scrollViewOriginalInset.top + self.mj_h;
-            self.scrollView.mj_insetT = top;
-            // 设置滚动位置
-            self.scrollView.mj_offsetY = - top;
-        } completion:^(BOOL finished) {
-            [self executeRefreshingCallback];
-        }];
+         dispatch_async(dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
+                CGFloat top = self.scrollViewOriginalInset.top + self.mj_h;
+                // 增加滚动区域top
+                self.scrollView.mj_insetT = top;
+                // 设置滚动位置
+                [self.scrollView setContentOffset:CGPointMake(0, -top) animated:NO];
+            } completion:^(BOOL finished) {
+                [self executeRefreshingCallback];
+            }];
+         });
     }
-}
-
-- (void)didResetOffset
-{
-    
 }
 
 #pragma mark - 公共方法
 - (void)endRefreshing
 {
-    if ([self.scrollView isKindOfClass:[UICollectionView class]]) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [super endRefreshing];
-        });
-    } else {
-        [super endRefreshing];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.state = MJRefreshStateIdle;
+    });
 }
 
 - (NSDate *)lastUpdatedTime
