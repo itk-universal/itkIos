@@ -7,15 +7,17 @@
 //
 
 #import "SectionHeaderView.h"
+#import "CouponsSelectView.h"
 
 @interface SectionHeaderView()
 
-@property (strong,nonatomic) UIButton *seleteBtn;
-@property (strong,nonatomic) UILabel *shopIconLabel;
-@property (strong,nonatomic) UILabel *shopNameLabel;
-@property (strong,nonatomic) UILabel *arrowLabel;
-@property (strong,nonatomic) UIButton *eidtBtn;
-@property (strong,nonatomic) UIButton *couponBtn;
+@property (strong,nonatomic) UIButton          *seleteBtn;
+@property (strong,nonatomic) UILabel           *shopIconLabel;
+@property (strong,nonatomic) UILabel           *shopNameLabel;
+@property (strong,nonatomic) UILabel           *arrowLabel;
+@property (strong,nonatomic) UIButton          *eidtBtn;
+@property (strong,nonatomic) UIButton          *couponBtn;
+
 
 @end
 @implementation SectionHeaderView
@@ -91,13 +93,15 @@
 
 -(void)couponeBtnOnClicked:(UIButton *)sender
 {
-   
+
 }
 
 -(void)eidtBtnOnClicked:(UIButton *)sender
 {
     sender.selected = !sender.selected;
 }
+
+
 -(void)seleteBtnOnClicked
 {
     

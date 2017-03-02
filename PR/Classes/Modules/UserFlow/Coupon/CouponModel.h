@@ -9,8 +9,8 @@
 #import "YHDataModel.h"
 
 @interface CouponModel : YHDataModel
-@property (readonly,nonatomic) NSString *title;
-@property (readonly,nonatomic) NSString *desc;
-@property (readonly,nonatomic) NSString *dateString;
-@property (readonly,nonatomic) NSString *cid;
+@property (copy,nonatomic) NSString *title;
+@property (copy,nonatomic) NSString *desc;
+@property (copy,nonatomic) NSString *dateString;
+@property (copy,nonatomic) NSString *cid;
 @end

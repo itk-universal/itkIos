@@ -59,14 +59,21 @@
     self.chooseBtn.frame     = CGRectMake(self.width - chooseBtnW - leftMarign, (self.height - chooseBtnH)/2.0, chooseBtnW, chooseBtnH);
 
     CGFloat labelW           = self.chooseBtn.left - 2*leftMarign;
-    self.titleLabel.frame    = CGRectMake(leftMarign, 10, labelW, 15);
-    self.subTitleLabel.frame = CGRectMake(leftMarign, self.titleLabel.bottom + 5, labelW, 15);
-    self.dateLabel.frame     = CGRectMake(leftMarign, self.subTitleLabel.bottom, labelW, 15);
+    CGFloat topMaring        = 5;
+    CGFloat labelH           = (self.height - 2* topMaring)/3.0;
+    self.titleLabel.frame    = CGRectMake(leftMarign, topMaring, labelW, labelH);
+    self.subTitleLabel.frame = CGRectMake(leftMarign, self.titleLabel.bottom, labelW, labelH);
+    self.dateLabel.frame     = CGRectMake(leftMarign, self.subTitleLabel.bottom, labelW,labelH);
 
 }
 
 -(void)setObject:(id)object
 {
     
+}
+
++(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object
+{
+    return 60;
 }
 @end

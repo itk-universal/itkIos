@@ -7,6 +7,7 @@
 //
 
 #import "CartShopInfoViewCell.h"
+#import "CouponsSelectView.h"
 
 @interface CartShopInfoViewCell()
 
@@ -16,6 +17,7 @@
 @property (strong,nonatomic) UILabel *arrowLabel;
 @property (strong,nonatomic) UIButton *eidtBtn;
 @property (strong,nonatomic) UIButton *couponBtn;
+@property (strong,nonatomic) CouponsSelectView *couponsView;
 
 @end
 
@@ -89,7 +91,11 @@
 
 -(void)couponeBtnOnClicked:(UIButton *)sender
 {
-    
+    if(self.couponsView == nil){
+        self.couponsView = [CouponsSelectView defaultCouponsSelectView];
+    }
+    [self.couponsView setCouponsList:nil];
+    [self.couponsView show];
 }
 
 -(void)eidtBtnOnClicked:(UIButton *)sender

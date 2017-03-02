@@ -18,7 +18,14 @@
  */
 @property (readonly,nonatomic) NSString *spec;
 @property (readonly,nonatomic) NSString *price;
+/**
+ *  商品数量
+ */
 @property (readonly,nonatomic) NSInteger num;
+/**
+ *  库存数量
+ */
+@property (readonly,nonatomic) NSInteger stockNum;
 /**
  *  是否库存不足
  */

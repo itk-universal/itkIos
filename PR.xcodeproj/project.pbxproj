@@ -135,7 +135,6 @@
 		B4B52B841E4CA48900CC2A72 /* TextFiledView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B52B831E4CA48900CC2A72 /* TextFiledView.m */; };
 		B4B52B881E4CADBF00CC2A72 /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B52B871E4CADBF00CC2A72 /* ThemeButton.m */; };
 		B4B89E2B1E5C8576004B40BA /* CartShopInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B89E2A1E5C8576004B40BA /* CartShopInfoModel.m */; };
-		B4B89E311E5C88F3004B40BA /* ChooseCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B89E301E5C88F3004B40BA /* ChooseCouponCell.m */; };
 		B4B89E351E5C8C4F004B40BA /* CouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B89E341E5C8C4F004B40BA /* CouponModel.m */; };
 		B4D6D1B21E5C3DF500C73572 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D6D1B11E5C3DF500C73572 /* SectionHeaderView.m */; };
 		B4D6D1B81E5C46FB00C73572 /* CartShopInfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D6D1B71E5C46FB00C73572 /* CartShopInfoViewCell.m */; };
@@ -186,6 +185,13 @@
 		B4F2B00C1E63D54300468E01 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2AFF81E63D54300468E01 /* UIView+MJExtension.m */; };
 		B4F2B00F1E63DA1E00468E01 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F2B00D1E63DA1E00468E01 /* libsqlite3.0.tbd */; };
 		B4F2B0101E63DA1E00468E01 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F2B00E1E63DA1E00468E01 /* libsqlite3.tbd */; };
+		B4F2B0191E63FDD100468E01 /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B0181E63FDD100468E01 /* DataBaseManager.m */; };
+		B4F2B01F1E641DF700468E01 /* CartShopDataBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B01E1E641DF700468E01 /* CartShopDataBaseModel.m */; };
+		B4F2B0251E65192B00468E01 /* ChooseCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B0241E65192B00468E01 /* ChooseCouponCell.m */; };
+		B4F2B0281E6519A900468E01 /* TableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B0271E6519A900468E01 /* TableViewHeaderView.m */; };
+		B4F2B02B1E651D2D00468E01 /* CouponsSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B02A1E651D2D00468E01 /* CouponsSelectView.m */; };
+		B4F2B02F1E654DD000468E01 /* NoMenueTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B02E1E654DD000468E01 /* NoMenueTextField.m */; };
+		B4F2B0321E654E9C00468E01 /* GoodNumController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B0311E654E9C00468E01 /* GoodNumController.m */; };
 		B4F588071E4B16DA003226FF /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F588061E4B16DA003226FF /* UserManager.m */; };
 		B4F5880B1E4B1BC7003226FF /* UserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F5880A1E4B1BC7003226FF /* UserInfoData.m */; };
 		B4F5880E1E4B20B4003226FF /* UserDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F5880D1E4B20B4003226FF /* UserDetailInfo.m */; };
@@ -491,8 +497,6 @@
 		B4B52B871E4CADBF00CC2A72 /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
 		B4B89E291E5C8576004B40BA /* CartShopInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartShopInfoModel.h; sourceTree = "<group>"; };
 		B4B89E2A1E5C8576004B40BA /* CartShopInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartShopInfoModel.m; sourceTree = "<group>"; };
-		B4B89E2F1E5C88F3004B40BA /* ChooseCouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseCouponCell.h; sourceTree = "<group>"; };
-		B4B89E301E5C88F3004B40BA /* ChooseCouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCouponCell.m; sourceTree = "<group>"; };
 		B4B89E331E5C8C4F004B40BA /* CouponModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponModel.h; sourceTree = "<group>"; };
 		B4B89E341E5C8C4F004B40BA /* CouponModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponModel.m; sourceTree = "<group>"; };
 		B4D6D1B01E5C3DF500C73572 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
@@ -593,6 +597,20 @@
 		B4F2AFF81E63D54300468E01 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		B4F2B00D1E63DA1E00468E01 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		B4F2B00E1E63DA1E00468E01 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B4F2B0171E63FDD100468E01 /* DataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
+		B4F2B0181E63FDD100468E01 /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
+		B4F2B01D1E641DF700468E01 /* CartShopDataBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartShopDataBaseModel.h; sourceTree = "<group>"; };
+		B4F2B01E1E641DF700468E01 /* CartShopDataBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartShopDataBaseModel.m; sourceTree = "<group>"; };
+		B4F2B0231E65192B00468E01 /* ChooseCouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseCouponCell.h; sourceTree = "<group>"; };
+		B4F2B0241E65192B00468E01 /* ChooseCouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCouponCell.m; sourceTree = "<group>"; };
+		B4F2B0261E6519A900468E01 /* TableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeaderView.h; sourceTree = "<group>"; };
+		B4F2B0271E6519A900468E01 /* TableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeaderView.m; sourceTree = "<group>"; };
+		B4F2B0291E651D2D00468E01 /* CouponsSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponsSelectView.h; sourceTree = "<group>"; };
+		B4F2B02A1E651D2D00468E01 /* CouponsSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponsSelectView.m; sourceTree = "<group>"; };
+		B4F2B02D1E654DD000468E01 /* NoMenueTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoMenueTextField.h; sourceTree = "<group>"; };
+		B4F2B02E1E654DD000468E01 /* NoMenueTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoMenueTextField.m; sourceTree = "<group>"; };
+		B4F2B0301E654E9C00468E01 /* GoodNumController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodNumController.h; sourceTree = "<group>"; };
+		B4F2B0311E654E9C00468E01 /* GoodNumController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodNumController.m; sourceTree = "<group>"; };
 		B4F588051E4B16DA003226FF /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		B4F588061E4B16DA003226FF /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		B4F588091E4B1BC7003226FF /* UserInfoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoData.h; sourceTree = "<group>"; };
@@ -1017,6 +1035,8 @@
 		B45A1A141E239BA100D50F16 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				B4F2B02C1E654DBB00468E01 /* NoMenueTextField */,
+				B4F2B0201E65192B00468E01 /* Coupon */,
 				B4925C8C1E60424300E84762 /* WTNetworkErrorView */,
 				B4E7319E1E5B3DCA0088F85E /* GoodNumController */,
 				B4E7318F1E5AF4790088F85E /* SeparateCell */,
@@ -1227,6 +1247,7 @@
 		B4A7123E1E1FD3D000368849 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B4F2B0161E63FDD100468E01 /* DataBaseManager  */,
 				B42E3CA11E55D6DE007B7A55 /* ThirdPart */,
 				B4A7123F1E1FD3D000368849 /* AppShared */,
 				B4A712411E1FD3D000368849 /* Modules */,
@@ -1413,7 +1434,6 @@
 		B4A712661E1FD3D000368849 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B4B89E2C1E5C8836004B40BA /* Coupon */,
 				B42E3C661E557316007B7A55 /* Browse */,
 				B43E36391E53135100697AC6 /* SellerPage */,
 				B4B52B7D1E4CA31100CC2A72 /* Login */,
@@ -1560,31 +1580,6 @@
 				B4B52B871E4CADBF00CC2A72 /* ThemeButton.m */,
 			);
 			path = PRButton;
-			sourceTree = "<group>";
-		};
-		B4B89E2C1E5C8836004B40BA /* Coupon */ = {
-			isa = PBXGroup;
-			children = (
-				B4B89E2D1E5C88A4004B40BA /* View */,
-			);
-			path = Coupon;
-			sourceTree = "<group>";
-		};
-		B4B89E2D1E5C88A4004B40BA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B4B89E2E1E5C88A4004B40BA /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B4B89E2E1E5C88A4004B40BA /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				B4B89E2F1E5C88F3004B40BA /* ChooseCouponCell.h */,
-				B4B89E301E5C88F3004B40BA /* ChooseCouponCell.m */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		B4B89E321E5C8C3A004B40BA /* Coupon */ = {
@@ -1737,6 +1732,8 @@
 		B4E7319E1E5B3DCA0088F85E /* GoodNumController */ = {
 			isa = PBXGroup;
 			children = (
+				B4F2B0301E654E9C00468E01 /* GoodNumController.h */,
+				B4F2B0311E654E9C00468E01 /* GoodNumController.m */,
 			);
 			path = GoodNumController;
 			sourceTree = "<group>";
@@ -1881,6 +1878,55 @@
 				B4F2B00E1E63DA1E00468E01 /* libsqlite3.tbd */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		B4F2B0161E63FDD100468E01 /* DataBaseManager  */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2B0171E63FDD100468E01 /* DataBaseManager.h */,
+				B4F2B0181E63FDD100468E01 /* DataBaseManager.m */,
+				B4F2B01D1E641DF700468E01 /* CartShopDataBaseModel.h */,
+				B4F2B01E1E641DF700468E01 /* CartShopDataBaseModel.m */,
+			);
+			path = "DataBaseManager ";
+			sourceTree = "<group>";
+		};
+		B4F2B0201E65192B00468E01 /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2B0211E65192B00468E01 /* View */,
+				B4F2B0291E651D2D00468E01 /* CouponsSelectView.h */,
+				B4F2B02A1E651D2D00468E01 /* CouponsSelectView.m */,
+			);
+			path = Coupon;
+			sourceTree = "<group>";
+		};
+		B4F2B0211E65192B00468E01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2B0221E65192B00468E01 /* Cell */,
+				B4F2B0261E6519A900468E01 /* TableViewHeaderView.h */,
+				B4F2B0271E6519A900468E01 /* TableViewHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4F2B0221E65192B00468E01 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2B0231E65192B00468E01 /* ChooseCouponCell.h */,
+				B4F2B0241E65192B00468E01 /* ChooseCouponCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B4F2B02C1E654DBB00468E01 /* NoMenueTextField */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2B02D1E654DD000468E01 /* NoMenueTextField.h */,
+				B4F2B02E1E654DD000468E01 /* NoMenueTextField.m */,
+			);
+			path = NoMenueTextField;
 			sourceTree = "<group>";
 		};
 		B4F588041E4B16DA003226FF /* UserManager */ = {
@@ -2039,6 +2085,7 @@
 			files = (
 				B4A712951E1FD6B700368849 /* PRTabBarViewController.m in Sources */,
 				B4F2AFFC1E63D54300468E01 /* MJRefreshFooter.m in Sources */,
+				B4F2B0251E65192B00468E01 /* ChooseCouponCell.m in Sources */,
 				B45A1A181E239BA100D50F16 /* PRTabbarView.m in Sources */,
 				B4A712821E1FD3D000368849 /* ServiceCenter.m in Sources */,
 				B4A712861E1FD3D000368849 /* ErrorProtectCateGory.m in Sources */,
@@ -2076,6 +2123,7 @@
 				B45A1A1C1E239C0900D50F16 /* PRLoadingAnimation.m in Sources */,
 				B4A712901E1FD3D000368849 /* PRTabbarItem.m in Sources */,
 				B4F2AEC31E63D15900468E01 /* FMDatabaseQueue.m in Sources */,
+				B4F2B0191E63FDD100468E01 /* DataBaseManager.m in Sources */,
 				B42E3C961E55CF63007B7A55 /* CycleScrollCell.m in Sources */,
 				B4F588071E4B16DA003226FF /* UserManager.m in Sources */,
 				B4A712811E1FD3D000368849 /* PRShowToastUtil.m in Sources */,
@@ -2096,6 +2144,7 @@
 				B4925C9B1E6138C900E84762 /* MSStrongResponder.m in Sources */,
 				B4F2B0061E63D54300468E01 /* MJRefreshStateHeader.m in Sources */,
 				B43E366D1E53158400697AC6 /* SellerMainPageViewController.m in Sources */,
+				B4F2B0321E654E9C00468E01 /* GoodNumController.m in Sources */,
 				B4A712841E1FD3D000368849 /* NSObject+Category.m in Sources */,
 				B43E362A1E52F5DA00697AC6 /* PRMBPageIDCard.m in Sources */,
 				B4925C8F1E60425100E84762 /* WTNetworkErrorView.m in Sources */,
@@ -2160,7 +2209,10 @@
 				B43E36261E52EC4600697AC6 /* PRMBOperationGroup.m in Sources */,
 				B4F2B00A1E63D54300468E01 /* UIScrollView+MJExtension.m in Sources */,
 				B43E36481E53141B00697AC6 /* NHPSNCaOPage.m in Sources */,
+				B4F2B01F1E641DF700468E01 /* CartShopDataBaseModel.m in Sources */,
+				B4F2B0281E6519A900468E01 /* TableViewHeaderView.m in Sources */,
 				B42E3CD41E55D701007B7A55 /* MKAnnotationView+WebCache.m in Sources */,
+				B4F2B02B1E651D2D00468E01 /* CouponsSelectView.m in Sources */,
 				B42E3C8A1E55A5BB007B7A55 /* PRCAppConfig.m in Sources */,
 				B4E731A61E5B40730088F85E /* CartProductInfo.m in Sources */,
 				B42E3CDA1E55D701007B7A55 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -2178,7 +2230,6 @@
 				B4F2AFFA1E63D54300468E01 /* MJRefreshBackFooter.m in Sources */,
 				B42E3CD71E55D701007B7A55 /* SDWebImageCompat.m in Sources */,
 				B4F2AFFD1E63D54300468E01 /* MJRefreshHeader.m in Sources */,
-				B4B89E311E5C88F3004B40BA /* ChooseCouponCell.m in Sources */,
 				B42E3C691E557333007B7A55 /* WTBrowseViewController.m in Sources */,
 				B4F2B0001E63D54300468E01 /* MJRefreshAutoStateFooter.m in Sources */,
 				B4E731851E5AD04D0088F85E /* UserCenterDataConstructor.m in Sources */,
@@ -2201,6 +2252,7 @@
 				B4B52B881E4CADBF00CC2A72 /* ThemeButton.m in Sources */,
 				B42E3CDF1E55D701007B7A55 /* UIImage+MultiFormat.m in Sources */,
 				B4A7120D1E1FD38700368849 /* main.m in Sources */,
+				B4F2B02F1E654DD000468E01 /* NoMenueTextField.m in Sources */,
 				B43E36631E53145700697AC6 /* NHPShowWeb.m in Sources */,
 				B4F2B0031E63D54300468E01 /* MJRefreshBackStateFooter.m in Sources */,
 				B4A7129D1E1FDDBE00368849 /* UIImage+Category.m in Sources */,
