@@ -19,6 +19,13 @@ typedef NS_ENUM(NSInteger,CustomBtnType)
 };
 
 
+typedef NS_ENUM(NSInteger,CustomBtnTag)
+{
+    CustomBtnTagToPay  = 1,      //立即支付
+    CustomBtnTagToComment,       //追加评论
+    CustomBtnTagToBuyAgain,      //再次购买
+};
+
 typedef NS_ENUM(NSInteger,OrderStatus)
 {
     OrderStatusToDelivery  = 1,   //待配送

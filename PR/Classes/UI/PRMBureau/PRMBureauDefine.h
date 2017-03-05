@@ -24,8 +24,8 @@
 #define APPURL_VIEW_IDENTIFIER_SELLER_INNER_SEARCH                      @"mersearch"
 
 
-// 订单详情页
-#define APPURL_VIEW_IDENTIFIER_ORDERDETAIL                              @"orderdetail"
+//// 订单详情页
+//#define APPURL_VIEW_IDENTIFIER_ORDERDETAIL                              @"orderdetail"
 // 商品详情
 #define APPURL_VIEW_IDENTIFIER_GOODS_DETAIL                             @"prddetail"
 
@@ -39,5 +39,12 @@
 #define APPURL_VIEW_IDENTIFIER_USERINFO                                 @"member"
 
 
+#pragma mark ------订单模块-------
+#define APPURL_VIEW_IDENTIFIER_ORDERLIST    @"orderlist"
+//订单详情
+#define APPURL_VIEW_IDENTIFIER_ORDERDETAIL  @"orderDetail"
+
+//商品详情
+#define APPURL_VIEW_IDENTIFIER_GOODDETAIL   @"goodDetail"
 
 #endif /* PRMBureauDefine_h */

@@ -9,6 +9,7 @@
 #import "OrderCell.h"
 #import "CustomInfoType.h"
 #import "ItemView.h"
+#import "PRMBWantedOffice.h"
 
 
 @interface SingleOrderViewModel : NSObject
@@ -147,6 +148,8 @@
         }
         
         _orderHeaderView = [ItemView itemViewWithIconName:nil title:@"我的订单" subTitle:@"查看全部订单" modelData:nil];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOrderView)];
+        [_orderHeaderView addGestureRecognizer:tap];
         [self.contentView addSubview:_orderHeaderView];
     }
     return self;
@@ -168,6 +171,10 @@
     }
 }
 
+-(void)tapOrderView
+{
+    [PRMBWantedOffice nativeArrestWarrant:APPURL_VIEW_IDENTIFIER_ORDERLIST param:nil];
+}
 +(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object
 {
     return 46+ 80;

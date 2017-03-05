@@ -42,5 +42,29 @@
 		<key>identifier</key>
 		<string>category</string>
 	</dict>
+	<dict>
+		<key>className</key>
+		<string>OrderListViewController</string>
+		<key>description</key>
+		<string>订单列表</string>
+		<key>identifier</key>
+		<string>orderlist</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>OrderDetailViewContoller</string>
+		<key>description</key>
+		<string>订单详情</string>
+		<key>identifier</key>
+		<string>orderDetail</string>
+	</dict>
+	<dict>
+		<key>className</key>
+		<string>GoodDetailViewController</string>
+		<key>description</key>
+		<string>商品详情</string>
+		<key>identifier</key>
+		<string>goodDetail</string>
+	</dict>
 </array>
 </plist>

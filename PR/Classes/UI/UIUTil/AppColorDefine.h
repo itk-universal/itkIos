@@ -33,7 +33,7 @@ alpha:0.5]
 
 #define kColorLightBlue          UIColorFromRGB(0x0099ff)
 
-#define kColorReferenceTawnyColor       kColorYHOrange
+#define kColorReferenceTawnyColor       kColorTheme
 #define kColorMall                      UIColorFromRGB(0xff5400)
 #define kColorHYD                       kColorReferenceTawnyColor
 #define kColorBRAVO                     UIColorFromRGB(0x4e6012)
@@ -42,7 +42,7 @@ alpha:0.5]
 
 #define kVCViewBGColor                  UIColorFromRGB(0xf3f4f6)
 #define kColorEmptyTitle                UIColorFromRGB(0x929394)
-#define kColorGray                      UIColorFromRGB(0x999999)
+#define kColorGray                      UIColorFromRGB(0x959595)
 
 #define kColorNavigationBarBg           UIColorFromRGB(0xf9f9f9)
 #define kColorNavigationTitle           UIColorFromRGB(0x111111)

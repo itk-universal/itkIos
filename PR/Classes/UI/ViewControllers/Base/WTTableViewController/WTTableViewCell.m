@@ -15,6 +15,8 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doTarget)];
+    [self.contentView addGestureRecognizer:tap];
     return self;
 }
 - (void)setObject:(id)object
@@ -27,4 +29,8 @@
     return 45.0;
 }
 
+-(void)doTarget
+{
+    
+}
 @end
