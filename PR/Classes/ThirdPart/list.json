@@ -1,0 +1,392 @@
+{
+    "code": 0,
+    "data": {
+        "count": 322,
+        "groupbuy": {
+            "ordercount": 0
+        },
+        "orders": [{
+                   "balanceamount": 0,
+                   "balancepay": 1,
+                   "canbuyagain": 0,
+                   "canrate": 0,
+                   "deliverymode": 1,
+                   "desc": "美国柠檬4个装",
+                   "detailaction": "myyh://yhlife.com/show/web?url=http%3A%2F%2Fhyd.yonghui.cn%2Fapptest%2Fapi%2Fh5%2Forderdetail_ziti.html%3Forderid%3D1497217030391014",
+                   "id": "1497217030391014",
+                   "ispickself": 1,
+                   "paychoose": [{
+                                 "promodesc": "满30随机减jian",
+                                 "prompt": "京东支付",
+                                 "value": "pay.jd.pay"
+                                 }, {
+                                 "prompt": "支付宝",
+                                 "value": "pay.alipay.app"
+                                 }, {
+                                 "prompt": "微信支付",
+                                 "value": "pay.weixin.app"
+                                 }, {
+                                 "prompt": "余额支付",
+                                 "value": "pay.yonghui.balance"
+                                 }, {
+                                 "prompt": "Apple Pay",
+                                 "value": "unionpay.apple.pay"
+                                 }],
+                   "paytype": "pay.weixin.app",
+                   "pickself": {
+                   "code": "52631198",
+                   "shopaddr": "上海市杨浦区国顺东路224号",
+                   "shopname": "国顺东路店",
+                   "shoptel": "4008005050",
+                   "storeid": "9D01"
+                   },
+                   "products": [{
+                                "action": "myyh://yhlife.com/show/native?name=prddetail&id=839423&merid=2",
+                                "id": "839423",
+                                "imgurl": "http://image.yonghuivip.com//product/839423/1466149771512dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/100x100",
+                                "num": 100,
+                                "price": {
+                                "market": 1390,
+                                "total": 1,
+                                "value": 1
+                                },
+                                "sellerid": "2",
+                                "subtitle": "美国柠檬4个装",
+                                "title": "美国柠檬4个装"
+                                }],
+                   "refundable": 1,
+                   "seller": {
+                   "icon": "http://image.yonghuivip.com/hydlogo.png",
+                   "id": "2",
+                   "title": "永辉会员店-国顺东路店"
+                   },
+                   "status": 4,
+                   "subtitle": "美国柠檬4个装",
+                   "texpecttime": {
+                   "date": 1488470400000,
+                   "timeslots": [{
+                                 "from": "18:30",
+                                 "immediatedescription": "60分钟极速达",
+                                 "slottype": "immediate",
+                                 "to": "19:30"
+                                 }]
+                   },
+                   "timeinfo": {
+                   "generate": 1488536581000,
+                   "pay": 1488536594000,
+                   "payend": 1488538381000,
+                   "refunded": 1488536594000,
+                   "refunding": 1488536594000
+                   },
+                   "title": "美国柠檬4个装",
+                   "totalamount": 1,
+                   "totalbalance": 90894,
+                   "totalpayment": 1
+                   }, {
+                   "balanceamount": 0,
+                   "balancepay": 1,
+                   "canbuyagain": 0,
+                   "canrate": 0,
+                   "deliverymode": 1,
+                   "desc": "美国柠檬4个装",
+                   "detailaction": "myyh://yhlife.com/show/web?url=http%3A%2F%2Fhyd.yonghui.cn%2Fapptest%2Fapi%2Fh5%2Forderdetail_ziti.html%3Forderid%3D1497217030391013",
+                   "id": "1497217030391013",
+                   "ispickself": 1,
+                   "paychoose": [{
+                                 "promodesc": "满30随机减jian",
+                                 "prompt": "京东支付",
+                                 "value": "pay.jd.pay"
+                                 }, {
+                                 "prompt": "支付宝",
+                                 "value": "pay.alipay.app"
+                                 }, {
+                                 "prompt": "微信支付",
+                                 "value": "pay.weixin.app"
+                                 }, {
+                                 "prompt": "余额支付",
+                                 "value": "pay.yonghui.balance"
+                                 }, {
+                                 "prompt": "Apple Pay",
+                                 "value": "unionpay.apple.pay"
+                                 }],
+                   "paytype": "pay.weixin.app",
+                   "pickself": {
+                   "code": "53711998",
+                   "shopaddr": "上海市杨浦区国顺东路224号",
+                   "shopname": "国顺东路店",
+                   "shoptel": "4008005050",
+                   "storeid": "9D01"
+                   },
+                   "products": [{
+                                "action": "myyh://yhlife.com/show/native?name=prddetail&id=839423&merid=2",
+                                "id": "839423",
+                                "imgurl": "http://image.yonghuivip.com//product/839423/1466149771512dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/100x100",
+                                "num": 100,
+                                "price": {
+                                "market": 1390,
+                                "total": 1,
+                                "value": 1
+                                },
+                                "sellerid": "2",
+                                "subtitle": "美国柠檬4个装",
+                                "title": "美国柠檬4个装"
+                                }],
+                   "refundable": 0,
+                   "seller": {
+                   "icon": "http://image.yonghuivip.com/hydlogo.png",
+                   "id": "2",
+                   "title": "永辉会员店-国顺东路店"
+                   },
+                   "status": 7,
+                   "subtitle": "美国柠檬4个装",
+                   "texpecttime": {
+                   "date": 1488470400000,
+                   "timeslots": [{
+                                 "from": "18:30",
+                                 "immediatedescription": "60分钟极速达",
+                                 "slottype": "immediate",
+                                 "to": "19:30"
+                                 }]
+                   },
+                   "timeinfo": {
+                   "generate": 1488536577000,
+                   "pay": 1488536619000,
+                   "payend": 1488538377000,
+                   "refunded": 1488536787000,
+                   "refunding": 1488536787000
+                   },
+                   "title": "美国柠檬4个装",
+                   "totalamount": 1,
+                   "totalbalance": 90894,
+                   "totalpayment": 1
+                   }, {
+                   "balanceamount": 0,
+                   "balancepay": 1,
+                   "canbuyagain": 0,
+                   "canrate": 0,
+                   "deliverymode": 1,
+                   "desc": "美国柠檬4个装",
+                   "detailaction": "myyh://yhlife.com/show/web?url=http%3A%2F%2Fhyd.yonghui.cn%2Fapptest%2Fapi%2Fh5%2Forderdetail_ziti.html%3Forderid%3D1497217030391012",
+                   "id": "1497217030391012",
+                   "ispickself": 1,
+                   "paychoose": [{
+                                 "promodesc": "满30随机减jian",
+                                 "prompt": "京东支付",
+                                 "value": "pay.jd.pay"
+                                 }, {
+                                 "prompt": "支付宝",
+                                 "value": "pay.alipay.app"
+                                 }, {
+                                 "prompt": "微信支付",
+                                 "value": "pay.weixin.app"
+                                 }, {
+                                 "prompt": "余额支付",
+                                 "value": "pay.yonghui.balance"
+                                 }, {
+                                 "prompt": "Apple Pay",
+                                 "value": "unionpay.apple.pay"
+                                 }],
+                   "pickself": {
+                   "shopaddr": "上海市杨浦区国顺东路224号",
+                   "shopname": "国顺东路店",
+                   "shoptel": "4008005050",
+                   "storeid": "9D01"
+                   },
+                   "products": [{
+                                "action": "myyh://yhlife.com/show/native?name=prddetail&id=839423&merid=2",
+                                "id": "839423",
+                                "imgurl": "http://image.yonghuivip.com//product/839423/1466149771512dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/100x100",
+                                "num": 100,
+                                "price": {
+                                "market": 1390,
+                                "total": 1,
+                                "value": 1
+                                },
+                                "sellerid": "2",
+                                "subtitle": "美国柠檬4个装",
+                                "title": "美国柠檬4个装"
+                                }],
+                   "refundable": 0,
+                   "seller": {
+                   "icon": "http://image.yonghuivip.com/hydlogo.png",
+                   "id": "2",
+                   "title": "永辉会员店-国顺东路店"
+                   },
+                   "status": 6,
+                   "subtitle": "美国柠檬4个装",
+                   "texpecttime": {
+                   "date": 1488470400000,
+                   "timeslots": [{
+                                 "from": "18:30",
+                                 "immediatedescription": "60分钟极速达",
+                                 "slottype": "immediate",
+                                 "to": "19:30"
+                                 }]
+                   },
+                   "timeinfo": {
+                   "generate": 1488536558000,
+                   "payend": 1488538358000,
+                   "refunded": 1488536558000,
+                   "refunding": 1488536558000
+                   },
+                   "title": "美国柠檬4个装",
+                   "totalamount": 1,
+                   "totalbalance": 90894,
+                   "totalpayment": 1
+                   }, {
+                   "balanceamount": 0,
+                   "balancepay": 1,
+                   "canbuyagain": 1,
+                   "canrate": 0,
+                   "deliverymode": 1,
+                   "desc": "美国柠檬4个装",
+                   "detailaction": "myyh://yhlife.com/show/web?url=http%3A%2F%2Fhyd.yonghui.cn%2Fapptest%2Fapi%2Fh5%2Forderdetail_ziti.html%3Forderid%3D1497217030391011",
+                   "id": "1497217030391011",
+                   "ispickself": 1,
+                   "paychoose": [{
+                                 "promodesc": "满30随机减jian",
+                                 "prompt": "京东支付",
+                                 "value": "pay.jd.pay"
+                                 }, {
+                                 "prompt": "支付宝",
+                                 "value": "pay.alipay.app"
+                                 }, {
+                                 "prompt": "微信支付",
+                                 "value": "pay.weixin.app"
+                                 }, {
+                                 "prompt": "余额支付",
+                                 "value": "pay.yonghui.balance"
+                                 }, {
+                                 "prompt": "Apple Pay",
+                                 "value": "unionpay.apple.pay"
+                                 }],
+                   "pickself": {
+                   "shopaddr": "上海市杨浦区国顺东路224号",
+                   "shopname": "国顺东路店",
+                   "shoptel": "4008005050",
+                   "storeid": "9D01"
+                   },
+                   "products": [{
+                                "action": "myyh://yhlife.com/show/native?name=prddetail&id=839423&merid=2",
+                                "id": "839423",
+                                "imgurl": "http://image.yonghuivip.com//product/839423/1466149771512dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/100x100",
+                                "num": 100,
+                                "price": {
+                                "market": 1390,
+                                "total": 1,
+                                "value": 1
+                                },
+                                "sellerid": "2",
+                                "subtitle": "美国柠檬4个装",
+                                "title": "美国柠檬4个装"
+                                }],
+                   "refundable": 0,
+                   "seller": {
+                   "icon": "http://image.yonghuivip.com/hydlogo.png",
+                   "id": "2",
+                   "title": "永辉会员店-国顺东路店"
+                   },
+                   "status": 6,
+                   "subtitle": "美国柠檬4个装",
+                   "texpecttime": {
+                   "date": 1488470400000,
+                   "timeslots": [{
+                                 "from": "18:30",
+                                 "immediatedescription": "60分钟极速达",
+                                 "slottype": "immediate",
+                                 "to": "19:30"
+                                 }]
+                   },
+                   "timeinfo": {
+                   "cancel": 1488536445000,
+                   "generate": 1488536438000,
+                   "payend": 1488538238000,
+                   "refunded": 1488536445000,
+                   "refunding": 1488536445000
+                   },
+                   "title": "美国柠檬4个装",
+                   "totalamount": 1,
+                   "totalbalance": 90894,
+                   "totalpayment": 1
+                   }, {
+                   "balanceamount": 0,
+                   "balancepay": 1,
+                   "canbuyagain": 1,
+                   "canrate": 0,
+                   "deliverymode": 1,
+                   "desc": "美国柠檬4个装",
+                   "detailaction": "myyh://yhlife.com/show/web?url=http%3A%2F%2Fhyd.yonghui.cn%2Fapptest%2Fapi%2Fh5%2Forderdetail_ziti.html%3Forderid%3D1497217030391010",
+                   "id": "1497217030391010",
+                   "ispickself": 1,
+                   "paychoose": [{
+                                 "promodesc": "满30随机减jian",
+                                 "prompt": "京东支付",
+                                 "value": "pay.jd.pay"
+                                 }, {
+                                 "prompt": "支付宝",
+                                 "value": "pay.alipay.app"
+                                 }, {
+                                 "prompt": "微信支付",
+                                 "value": "pay.weixin.app"
+                                 }, {
+                                 "prompt": "余额支付",
+                                 "value": "pay.yonghui.balance"
+                                 }, {
+                                 "prompt": "Apple Pay",
+                                 "value": "unionpay.apple.pay"
+                                 }],
+                   "pickself": {
+                   "shopaddr": "上海市杨浦区国顺东路224号",
+                   "shopname": "国顺东路店",
+                   "shoptel": "4008005050",
+                   "storeid": "9D01"
+                   },
+                   "products": [{
+                                "action": "myyh://yhlife.com/show/native?name=prddetail&id=839423&merid=2",
+                                "id": "839423",
+                                "imgurl": "http://image.yonghuivip.com//product/839423/1466149771512dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/100x100",
+                                "num": 100,
+                                "price": {
+                                "market": 1390,
+                                "total": 1,
+                                "value": 1
+                                },
+                                "sellerid": "2",
+                                "subtitle": "美国柠檬4个装",
+                                "title": "美国柠檬4个装"
+                                }],
+                   "refundable": 0,
+                   "seller": {
+                   "icon": "http://image.yonghuivip.com/hydlogo.png",
+                   "id": "2",
+                   "title": "永辉会员店-国顺东路店"
+                   },
+                   "status": 6,
+                   "subtitle": "美国柠檬4个装",
+                   "texpecttime": {
+                   "date": 1488470400000,
+                   "timeslots": [{
+                                 "from": "18:30",
+                                 "immediatedescription": "60分钟极速达",
+                                 "slottype": "immediate",
+                                 "to": "19:30"
+                                 }]
+                   },
+                   "timeinfo": {
+                   "cancel": 1488536447000,
+                   "generate": 1488536437000,
+                   "payend": 1488538237000,
+                   "refunded": 1488536447000,
+                   "refunding": 1488536447000
+                   },
+                   "title": "美国柠檬4个装",
+                   "totalamount": 1,c
+                   "totalbalance": 90894,
+                   "totalpayment": 1
+                   }],
+        "page": 0,
+        "pagecount": 65
+    },
+    "message": "",
+    "now": 1488710070010
+}\\\\\\\\\

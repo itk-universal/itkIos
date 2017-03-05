@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4009B8E1E6C220000BA3973 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = B4009B8D1E6C220000BA3973 /* list.json */; };
+		B4009B911E6C3DB200BA3973 /* ExhibitImageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4009B901E6C3DB200BA3973 /* ExhibitImageTextView.m */; };
+		B4009B941E6C3E8D00BA3973 /* AutoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4009B931E6C3E8D00BA3973 /* AutoImageView.m */; };
 		B40A8F9B1E6BA3F500C598D8 /* OrderListSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B40A8F9A1E6BA3F500C598D8 /* OrderListSectionFooterView.m */; };
 		B40A8F9E1E6BA45400C598D8 /* SubtotalView.m in Sources */ = {isa = PBXBuildFile; fileRef = B40A8F9D1E6BA45400C598D8 /* SubtotalView.m */; };
 		B40A8FA11E6BA6D200C598D8 /* ShopDiscountView.m in Sources */ = {isa = PBXBuildFile; fileRef = B40A8FA01E6BA6D200C598D8 /* ShopDiscountView.m */; };
@@ -236,6 +239,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B4009B8D1E6C220000BA3973 /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
+		B4009B8F1E6C3DB200BA3973 /* ExhibitImageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitImageTextView.h; sourceTree = "<group>"; };
+		B4009B901E6C3DB200BA3973 /* ExhibitImageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitImageTextView.m; sourceTree = "<group>"; };
+		B4009B921E6C3E8D00BA3973 /* AutoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoImageView.h; sourceTree = "<group>"; };
+		B4009B931E6C3E8D00BA3973 /* AutoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoImageView.m; sourceTree = "<group>"; };
 		B40A8F991E6BA3F500C598D8 /* OrderListSectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListSectionFooterView.h; sourceTree = "<group>"; };
 		B40A8F9A1E6BA3F500C598D8 /* OrderListSectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListSectionFooterView.m; sourceTree = "<group>"; };
 		B40A8F9C1E6BA45400C598D8 /* SubtotalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubtotalView.h; sourceTree = "<group>"; };
@@ -780,6 +788,8 @@
 			isa = PBXGroup;
 			children = (
 				B40A8FCD1E6C095000C598D8 /* Cell */,
+				B4009B8F1E6C3DB200BA3973 /* ExhibitImageTextView.h */,
+				B4009B901E6C3DB200BA3973 /* ExhibitImageTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -893,6 +903,7 @@
 				B4F2AEA11E63D11800468E01 /* FMDB */,
 				B42E3CEB1E55D993007B7A55 /* AFNetworking */,
 				B42E3CA21E55D701007B7A55 /* SDWebImage */,
+				B4009B8D1E6C220000BA3973 /* list.json */,
 			);
 			path = ThirdPart;
 			sourceTree = "<group>";
@@ -978,6 +989,8 @@
 			children = (
 				B42E3CE81E55D7CA007B7A55 /* AutoOptionURL.h */,
 				B42E3CE91E55D7CA007B7A55 /* AutoOptionURL.m */,
+				B4009B921E6C3E8D00BA3973 /* AutoImageView.h */,
+				B4009B931E6C3E8D00BA3973 /* AutoImageView.m */,
 			);
 			path = AutoImageView;
 			sourceTree = "<group>";
@@ -2270,6 +2283,7 @@
 				B42E3D0C1E585BB4007B7A55 /* UserInfoItem.plist in Resources */,
 				B4A712181E1FD38700368849 /* Assets.xcassets in Resources */,
 				B43E362D1E5309E800697AC6 /* ViewMap.plist in Resources */,
+				B4009B8E1E6C220000BA3973 /* list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2295,6 +2309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A712951E1FD6B700368849 /* PRTabBarViewController.m in Sources */,
+				B4009B911E6C3DB200BA3973 /* ExhibitImageTextView.m in Sources */,
 				B4EB70281E68646900B2CA89 /* ProductViewCell.m in Sources */,
 				B4F2AFFC1E63D54300468E01 /* MJRefreshFooter.m in Sources */,
 				B4F2B0251E65192B00468E01 /* ChooseCouponCell.m in Sources */,
@@ -2303,6 +2318,7 @@
 				B4A712821E1FD3D000368849 /* ServiceCenter.m in Sources */,
 				B4A712861E1FD3D000368849 /* ErrorProtectCateGory.m in Sources */,
 				B42E3CEA1E55D7CA007B7A55 /* AutoOptionURL.m in Sources */,
+				B4009B941E6C3E8D00BA3973 /* AutoImageView.m in Sources */,
 				B40A8FAD1E6BB90600C598D8 /* PromptViewCell.m in Sources */,
 				B4F2B0091E63D54300468E01 /* NSBundle+MJRefresh.m in Sources */,
 				B43E36101E50507900697AC6 /* PRMBEnquiry.m in Sources */,
