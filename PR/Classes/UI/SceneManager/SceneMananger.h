@@ -21,7 +21,8 @@ typedef NS_ENUM(NSInteger ,U_SCENE_SHOW_STYLE)
 //管理整个app的UI场景
 @interface SceneMananger : NSObject
 DEF_SINGLETON(SceneMananger)
-
+#warning ????
+@property (nonatomic,assign)   BOOL  rootVCVaild;
 /*!
  @property
  @abstract      window，默认是系统的keywindow，若没有，则创建一个，用来承载导航堆栈

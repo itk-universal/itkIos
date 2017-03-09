@@ -10,7 +10,6 @@
 #import "OnePixelSepView.h"
 #import "ActionHandler.h"
 #import "UIImage+Category.h"
-#import "ShipAddrManager.h"
 
 @interface ExhibitImageTextView()
 @property(nonatomic,strong) DMExhibitItem * item;
@@ -61,21 +60,21 @@
 - (void)updateWithExhibitItem:(DMExhibitItem *)item
 {
     self.item = item;
-    [self.imageView setImgInfo:item.imgInfo withPlaceholderImage:[UIImage imageNamed:@"default_product_img_yh"]];
-    self.titleLabel.text = item.title;
-    self.subTitleLabel.text = item.subTitle;
-    
-    if (item.tagInfo && [item.tagInfo.tagContent length] > 0) {
-        self.tagView.hidden = NO;
-        [self.tagView setTitle:item.tagInfo.tagContent forState:UIControlStateNormal];
-        if (NO == [self.showTagColor isEqual:item.tagInfo.tagBgColor]) {
-            UIImage * colorImg = [[UIImage imageNamed:@"theme-tag-bg-green"] changeImageWithColor:item.tagInfo.tagBgColor];
-            UIImage * tagImag =[colorImg resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5) resizingMode:UIImageResizingModeTile];
-            [self.tagView setBackgroundImage:tagImag forState:UIControlStateNormal];
-        }
-    }else{
-        self.tagView.hidden = YES;
-    }
+//    [self.imageView setImgInfo:item.imgInfo withPlaceholderImage:[UIImage imageNamed:@"default_product_img_yh"]];
+//    self.titleLabel.text = item.title;
+//    self.subTitleLabel.text = item.subTitle;
+//    
+//    if (item.tagInfo && [item.tagInfo.tagContent length] > 0) {
+//        self.tagView.hidden = NO;
+//        [self.tagView setTitle:item.tagInfo.tagContent forState:UIControlStateNormal];
+//        if (NO == [self.showTagColor isEqual:item.tagInfo.tagBgColor]) {
+//            UIImage * colorImg = [[UIImage imageNamed:@"theme-tag-bg-green"] changeImageWithColor:item.tagInfo.tagBgColor];
+//            UIImage * tagImag =[colorImg resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5) resizingMode:UIImageResizingModeTile];
+//            [self.tagView setBackgroundImage:tagImag forState:UIControlStateNormal];
+//        }
+//    }else{
+//        self.tagView.hidden = YES;
+//    }
     
     [self setNeedsLayout];
 }
@@ -173,9 +172,9 @@
 
 - (void)openImageURL
 {
-    if (self.item) {
-        [[ActionHandler handlerWithAction:self.item.action] run];
-    }
+//    if (self.item) {
+//        [[ActionHandler handlerWithAction:self.item.action] run];
+//    }
 }
 
 @end

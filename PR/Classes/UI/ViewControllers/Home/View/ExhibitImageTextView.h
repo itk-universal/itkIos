@@ -39,3 +39,4 @@ typedef NS_ENUM(NSInteger,ExhibitImageStyle)
 //用于埋点
 -(void)setBIPostion:(NSInteger)postion cellType:(NSString *)cellType sellerid:(NSString *)sellerid
 shopid:(NSString *)shopid  patternType:(NSString*)patternType isMainTheme:(BOOL)isMainTheme;
+@end
