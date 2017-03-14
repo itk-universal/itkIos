@@ -18,6 +18,7 @@
 #import "PRMBureauDefine.h"
 #import "DebugEnvConfig.h"
 #import <sqlite3.h>
+#import "URLPathDefine.h"
 
 #if  (defined DEBUG) || (defined ISDebugLogViewValid)
 #define PRLOG(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)

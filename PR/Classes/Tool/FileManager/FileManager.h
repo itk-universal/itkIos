@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger,FMTYPE)
     FM_TEMPFile,
 };
 
+
 // 由于模块多了以后，各个模块的文件存放会比较随意，后续难以看懂
 // 因此这里申请文件时需要制定归属的模块。
 extern NSString * const FMPart_User;
@@ -32,8 +33,7 @@ extern NSString * const FMPart_Patch;
 
 
 @interface FileManager : NSObject
-DEF_SINGLETON(FileManager)
-+(FileManager *)shareManager;
++ (FileManager *)shareManager;
 
 /**
  *  获取一个文件的存储路径
@@ -57,6 +57,4 @@ DEF_SINGLETON(FileManager)
  */
 
 +(NSString *)getCacheSize;
-
-
 @end

@@ -9,5 +9,5 @@
 #ifndef URLPathDefine_h
 #define URLPathDefine_h
 
-
+#define   DynamicData_URLPATH                   @"/api/v1/home"               // 平台首页
 #endif /* URLPathDefine_h */

@@ -114,6 +114,7 @@
 		B45A1A2F1E24D7BD00D50F16 /* IGUtilties.m in Sources */ = {isa = PBXBuildFile; fileRef = B45A1A2E1E24D7BD00D50F16 /* IGUtilties.m */; };
 		B47074AF1E6C579900ADC9E8 /* NSObject+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = B47074AE1E6C579900ADC9E8 /* NSObject+NSCoding.m */; };
 		B47074B21E6C587600ADC9E8 /* NearbyShopViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47074B11E6C587600ADC9E8 /* NearbyShopViewCell.m */; };
+		B49144E81E76E2750036E4F7 /* WTCellDataPipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B49144E71E76E2750036E4F7 /* WTCellDataPipe.m */; };
 		B4925C1D1E5EEC7000E84762 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = B4925C1B1E5EEC7000E84762 /* GTMBase64.m */; };
 		B4925C211E5EEEE900E84762 /* BaseRespond.m in Sources */ = {isa = PBXBuildFile; fileRef = B4925C201E5EEEE900E84762 /* BaseRespond.m */; };
 		B4925C271E5F05CA00E84762 /* IGHttpTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B4925C261E5F05CA00E84762 /* IGHttpTask.m */; };
@@ -133,6 +134,11 @@
 		B4925C9B1E6138C900E84762 /* MSStrongResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = B4925C9A1E6138C900E84762 /* MSStrongResponder.m */; };
 		B497E0451E6174C900769577 /* MSignalBus.m in Sources */ = {isa = PBXBuildFile; fileRef = B497E0441E6174C900769577 /* MSignalBus.m */; };
 		B49D3A4F1E6DAA6A003E00C7 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = B49D3A4E1E6DAA6A003E00C7 /* home.json */; };
+		B4A470421E7512E100397BFB /* HomeDataConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A470411E7512E100397BFB /* HomeDataConstructor.m */; };
+		B4A470451E75148500397BFB /* DynamicUIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A470441E75148500397BFB /* DynamicUIModel.m */; };
+		B4A470481E75350200397BFB /* HomeAPIInteract.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A470471E75350200397BFB /* HomeAPIInteract.m */; };
+		B4A4704B1E7572A500397BFB /* DynamicMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4704A1E7572A500397BFB /* DynamicMananger.m */; };
+		B4A4704F1E75742C00397BFB /* MTCacheCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A4704E1E75742C00397BFB /* MTCacheCenter.m */; };
 		B4A7120D1E1FD38700368849 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A7120C1E1FD38700368849 /* main.m */; };
 		B4A712101E1FD38700368849 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A7120F1E1FD38700368849 /* AppDelegate.m */; };
 		B4A712181E1FD38700368849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A712171E1FD38700368849 /* Assets.xcassets */; };
@@ -162,6 +168,9 @@
 		B4B52B881E4CADBF00CC2A72 /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B52B871E4CADBF00CC2A72 /* ThemeButton.m */; };
 		B4B89E2B1E5C8576004B40BA /* CartShopInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B89E2A1E5C8576004B40BA /* CartShopInfoModel.m */; };
 		B4B89E351E5C8C4F004B40BA /* CouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B89E341E5C8C4F004B40BA /* CouponModel.m */; };
+		B4BA7D011E72791000711B44 /* CarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BA7D001E72791000711B44 /* CarouselView.m */; };
+		B4BA7D041E72794000711B44 /* CarouselItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BA7D031E72794000711B44 /* CarouselItemView.m */; };
+		B4BA7D071E7285C900711B44 /* HomeProductScrollviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BA7D061E7285C900711B44 /* HomeProductScrollviewCell.m */; };
 		B4C93BAA1E6DA4F100E17E6D /* DiscountPromptViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C93BA91E6DA4F100E17E6D /* DiscountPromptViewCell.m */; };
 		B4C93BAD1E6DA74600E17E6D /* HomeProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C93BAC1E6DA74600E17E6D /* HomeProductCell.m */; };
 		B4C93BB01E6DA76D00E17E6D /* HomeCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C93BAF1E6DA76D00E17E6D /* HomeCouponCell.m */; };
@@ -473,6 +482,8 @@
 		B47074AE1E6C579900ADC9E8 /* NSObject+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSCoding.m"; sourceTree = "<group>"; };
 		B47074B01E6C587600ADC9E8 /* NearbyShopViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyShopViewCell.h; sourceTree = "<group>"; };
 		B47074B11E6C587600ADC9E8 /* NearbyShopViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyShopViewCell.m; sourceTree = "<group>"; };
+		B49144E61E76E2750036E4F7 /* WTCellDataPipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCellDataPipe.h; sourceTree = "<group>"; };
+		B49144E71E76E2750036E4F7 /* WTCellDataPipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCellDataPipe.m; sourceTree = "<group>"; };
 		B4925C1A1E5EEC7000E84762 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		B4925C1B1E5EEC7000E84762 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		B4925C1C1E5EEC7000E84762 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -514,6 +525,16 @@
 		B497E0431E6174C900769577 /* MSignalBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSignalBus.h; sourceTree = "<group>"; };
 		B497E0441E6174C900769577 /* MSignalBus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSignalBus.m; sourceTree = "<group>"; };
 		B49D3A4E1E6DAA6A003E00C7 /* home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
+		B4A470401E7512E100397BFB /* HomeDataConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataConstructor.h; sourceTree = "<group>"; };
+		B4A470411E7512E100397BFB /* HomeDataConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDataConstructor.m; sourceTree = "<group>"; };
+		B4A470431E75148500397BFB /* DynamicUIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicUIModel.h; sourceTree = "<group>"; };
+		B4A470441E75148500397BFB /* DynamicUIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicUIModel.m; sourceTree = "<group>"; };
+		B4A470461E75350200397BFB /* HomeAPIInteract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeAPIInteract.h; sourceTree = "<group>"; };
+		B4A470471E75350200397BFB /* HomeAPIInteract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeAPIInteract.m; sourceTree = "<group>"; };
+		B4A470491E7572A500397BFB /* DynamicMananger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicMananger.h; sourceTree = "<group>"; };
+		B4A4704A1E7572A500397BFB /* DynamicMananger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicMananger.m; sourceTree = "<group>"; };
+		B4A4704D1E75742C00397BFB /* MTCacheCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCacheCenter.h; sourceTree = "<group>"; };
+		B4A4704E1E75742C00397BFB /* MTCacheCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCacheCenter.m; sourceTree = "<group>"; };
 		B4A712081E1FD38700368849 /* PR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A7120C1E1FD38700368849 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4A7120E1E1FD38700368849 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -583,6 +604,12 @@
 		B4B89E2A1E5C8576004B40BA /* CartShopInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartShopInfoModel.m; sourceTree = "<group>"; };
 		B4B89E331E5C8C4F004B40BA /* CouponModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponModel.h; sourceTree = "<group>"; };
 		B4B89E341E5C8C4F004B40BA /* CouponModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponModel.m; sourceTree = "<group>"; };
+		B4BA7CFF1E72791000711B44 /* CarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselView.h; sourceTree = "<group>"; };
+		B4BA7D001E72791000711B44 /* CarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselView.m; sourceTree = "<group>"; };
+		B4BA7D021E72794000711B44 /* CarouselItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselItemView.h; sourceTree = "<group>"; };
+		B4BA7D031E72794000711B44 /* CarouselItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselItemView.m; sourceTree = "<group>"; };
+		B4BA7D051E7285C900711B44 /* HomeProductScrollviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductScrollviewCell.h; sourceTree = "<group>"; };
+		B4BA7D061E7285C900711B44 /* HomeProductScrollviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProductScrollviewCell.m; sourceTree = "<group>"; };
 		B4C93BA81E6DA4F100E17E6D /* DiscountPromptViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscountPromptViewCell.h; sourceTree = "<group>"; };
 		B4C93BA91E6DA4F100E17E6D /* DiscountPromptViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscountPromptViewCell.m; sourceTree = "<group>"; };
 		B4C93BAB1E6DA74600E17E6D /* HomeProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProductCell.h; sourceTree = "<group>"; };
@@ -767,6 +794,8 @@
 		B4009B9E1E6C527E00BA3973 /* APIInteractors */ = {
 			isa = PBXGroup;
 			children = (
+				B4A470461E75350200397BFB /* HomeAPIInteract.h */,
+				B4A470471E75350200397BFB /* HomeAPIInteract.m */,
 			);
 			path = APIInteractors;
 			sourceTree = "<group>";
@@ -774,6 +803,8 @@
 		B4009B9F1E6C527E00BA3973 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				B4A470491E7572A500397BFB /* DynamicMananger.h */,
+				B4A4704A1E7572A500397BFB /* DynamicMananger.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -783,6 +814,8 @@
 			children = (
 				B4009BA11E6C529D00BA3973 /* DMExhibitItem.h */,
 				B4009BA21E6C529D00BA3973 /* DMExhibitItem.m */,
+				B4A470431E75148500397BFB /* DynamicUIModel.h */,
+				B4A470441E75148500397BFB /* DynamicUIModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -879,6 +912,8 @@
 				B4C93BAC1E6DA74600E17E6D /* HomeProductCell.m */,
 				B4C93BAE1E6DA76D00E17E6D /* HomeCouponCell.h */,
 				B4C93BAF1E6DA76D00E17E6D /* HomeCouponCell.m */,
+				B4BA7D051E7285C900711B44 /* HomeProductScrollviewCell.h */,
+				B4BA7D061E7285C900711B44 /* HomeProductScrollviewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1126,6 +1161,8 @@
 				B45854011E58849600A6F8D2 /* WTNetWorkDataConstructor.m */,
 				B45854031E588A1F00A6F8D2 /* WTTableViewController.h */,
 				B45854041E588A1F00A6F8D2 /* WTTableViewController.m */,
+				B49144E61E76E2750036E4F7 /* WTCellDataPipe.h */,
+				B49144E71E76E2750036E4F7 /* WTCellDataPipe.m */,
 			);
 			path = WTTableViewController;
 			sourceTree = "<group>";
@@ -1275,6 +1312,7 @@
 		B45A1A141E239BA100D50F16 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				B4BA7CFE1E72791000711B44 /* CarouselView */,
 				B4009B951E6C41F700BA3973 /* UtilCodeTool */,
 				B4EB70181E685E8E00B2CA89 /* MutiTitleHeaderView */,
 				B4F2B02C1E654DBB00468E01 /* NoMenueTextField */,
@@ -1428,6 +1466,15 @@
 			path = MSignal;
 			sourceTree = "<group>";
 		};
+		B4A4704C1E75741500397BFB /* CacheCenter */ = {
+			isa = PBXGroup;
+			children = (
+				B4A4704D1E75742C00397BFB /* MTCacheCenter.h */,
+				B4A4704E1E75742C00397BFB /* MTCacheCenter.m */,
+			);
+			path = CacheCenter;
+			sourceTree = "<group>";
+		};
 		B4A711FF1E1FD38700368849 = {
 			isa = PBXGroup;
 			children = (
@@ -1523,6 +1570,7 @@
 		B4A712421E1FD3D000368849 /* BaseSupport */ = {
 			isa = PBXGroup;
 			children = (
+				B4A4704C1E75741500397BFB /* CacheCenter */,
 				B4925C901E60428B00E84762 /* MSignal */,
 				B4925C191E5EEC6400E84762 /* Base64 */,
 				B4D6D1BD1E5C484A00C73572 /* ActionSupport */,
@@ -1738,6 +1786,8 @@
 				B40A8FCC1E6C095000C598D8 /* View */,
 				B4A712771E1FD3D000368849 /* HomeViewController.h */,
 				B4A712781E1FD3D000368849 /* HomeViewController.m */,
+				B4A470401E7512E100397BFB /* HomeDataConstructor.h */,
+				B4A470411E7512E100397BFB /* HomeDataConstructor.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1837,6 +1887,17 @@
 				B4B89E341E5C8C4F004B40BA /* CouponModel.m */,
 			);
 			path = Coupon;
+			sourceTree = "<group>";
+		};
+		B4BA7CFE1E72791000711B44 /* CarouselView */ = {
+			isa = PBXGroup;
+			children = (
+				B4BA7CFF1E72791000711B44 /* CarouselView.h */,
+				B4BA7D001E72791000711B44 /* CarouselView.m */,
+				B4BA7D021E72794000711B44 /* CarouselItemView.h */,
+				B4BA7D031E72794000711B44 /* CarouselItemView.m */,
+			);
+			path = CarouselView;
 			sourceTree = "<group>";
 		};
 		B4D6D1B91E5C481A00C73572 /* ImageInfo */ = {
@@ -2431,6 +2492,7 @@
 				B4B89E2B1E5C8576004B40BA /* CartShopInfoModel.m in Sources */,
 				B42E3CA01E55D40C007B7A55 /* AnimatedDotView.m in Sources */,
 				B40A8FC71E6BF4CD00C598D8 /* OrderDetailProductViewCell.m in Sources */,
+				B4A470421E7512E100397BFB /* HomeDataConstructor.m in Sources */,
 				B45A1A2F1E24D7BD00D50F16 /* IGUtilties.m in Sources */,
 				B4925C961E611BB100E84762 /* MSignal.m in Sources */,
 				B43E364A1E53141B00697AC6 /* NHPSNSellerPage.m in Sources */,
@@ -2484,6 +2546,7 @@
 				B4E7318E1E5AE1C60088F85E /* AssetsCell.m in Sources */,
 				B4A712911E1FD3D000368849 /* UserCenterViewController.m in Sources */,
 				B4E7318B1E5AD7280088F85E /* UserCenterModel.m in Sources */,
+				B4BA7D041E72794000711B44 /* CarouselItemView.m in Sources */,
 				B43E364E1E53141B00697AC6 /* NSPSNEnvChecker.m in Sources */,
 				B4925C931E6042AE00E84762 /* NSObject+MSignal.m in Sources */,
 				B4925C2B1E5F088B00E84762 /* IGSecurityPolicy.m in Sources */,
@@ -2522,6 +2585,7 @@
 				B4A712871E1FD3D000368849 /* SceneMananger.m in Sources */,
 				B4F2B00C1E63D54300468E01 /* UIView+MJExtension.m in Sources */,
 				B42E3C861E55A397007B7A55 /* PublicParamCenter.m in Sources */,
+				B4A4704B1E7572A500397BFB /* DynamicMananger.m in Sources */,
 				B4925C211E5EEEE900E84762 /* BaseRespond.m in Sources */,
 				B42E3D101E586138007B7A55 /* ItemView.m in Sources */,
 				B43E36611E53145700697AC6 /* NHProcessorUserLogin.m in Sources */,
@@ -2546,6 +2610,7 @@
 				B4F2B01F1E641DF700468E01 /* CartShopDataBaseModel.m in Sources */,
 				B4F2B0281E6519A900468E01 /* TableViewHeaderView.m in Sources */,
 				B42E3CD41E55D701007B7A55 /* MKAnnotationView+WebCache.m in Sources */,
+				B4A470481E75350200397BFB /* HomeAPIInteract.m in Sources */,
 				B4F2B02B1E651D2D00468E01 /* CouponsSelectView.m in Sources */,
 				B42E3C8A1E55A5BB007B7A55 /* PRCAppConfig.m in Sources */,
 				B4E731A61E5B40730088F85E /* CartProductInfo.m in Sources */,
@@ -2561,12 +2626,15 @@
 				B4D74CED1E28E0F30063EAC5 /* TimeStampMananger.m in Sources */,
 				B4D74CE51E28DB950063EAC5 /* IGNetworkConfig.m in Sources */,
 				B43E364D1E53141B00697AC6 /* NHPSNUnsloved.m in Sources */,
+				B4A470451E75148500397BFB /* DynamicUIModel.m in Sources */,
 				B42E3C821E558F68007B7A55 /* BaseAPIInteract.m in Sources */,
 				B4F2AFFA1E63D54300468E01 /* MJRefreshBackFooter.m in Sources */,
 				B42E3CD71E55D701007B7A55 /* SDWebImageCompat.m in Sources */,
 				B4F2AFFD1E63D54300468E01 /* MJRefreshHeader.m in Sources */,
+				B49144E81E76E2750036E4F7 /* WTCellDataPipe.m in Sources */,
 				B42E3C691E557333007B7A55 /* WTBrowseViewController.m in Sources */,
 				B4F2B0001E63D54300468E01 /* MJRefreshAutoStateFooter.m in Sources */,
+				B4BA7D071E7285C900711B44 /* HomeProductScrollviewCell.m in Sources */,
 				B4E731851E5AD04D0088F85E /* UserCenterDataConstructor.m in Sources */,
 				B4A712881E1FD3D000368849 /* AppUIUtil.m in Sources */,
 				B43E36491E53141B00697AC6 /* NHPSNLEGO.m in Sources */,
@@ -2580,8 +2648,10 @@
 				B45A1A271E24D43C00D50F16 /* BaseRequest.m in Sources */,
 				B43E360A1E50486800697AC6 /* NSString+Category.m in Sources */,
 				B4F2B0041E63D54300468E01 /* MJRefreshGifHeader.m in Sources */,
+				B4A4704F1E75742C00397BFB /* MTCacheCenter.m in Sources */,
 				B42E3C9A1E55D2D2007B7A55 /* PRPageControl.m in Sources */,
 				B4009B9C1E6C446500BA3973 /* AppURLCenter.m in Sources */,
+				B4BA7D011E72791000711B44 /* CarouselView.m in Sources */,
 				B4F2B0051E63D54300468E01 /* MJRefreshNormalHeader.m in Sources */,
 				B4A712851E1FD3D000368849 /* UIView+Category.m in Sources */,
 				B4F5880E1E4B20B4003226FF /* UserDetailInfo.m in Sources */,

@@ -41,26 +41,26 @@
                    "key": "partingline",
                    "value": {}
                    }, {
-                   "key": "titleline",
+                   "key":"titleline",
                    "value": {
                    "id": "58ace80e60b29aff44c97ad3",
-                   "imgurl": "http://image.yonghuivip.com/image/1487760148340afbe63832522e8a63b998ea290b0c849d796f584",
-                   "name": "附近商家",
+                   "imgurl":"http://image.yonghuivip.com/image/1487760148340afbe63832522e8a63b998ea290b0c849d796f584",
+                   "name":"附近商家",
                    }
                    },
                    {
-                   "key": "seller",
-                   "value": {
-                   "icon": "http://image.yonghuivip.com/hydlogo.png",
+                   "key":"seller",
+                   "value":{
+                   "icon":"http://image.yonghuivip.com/hydlogo.png",
                    "inrange": 3,
-                   "inrangedesc": "配送范围内",
-                   "saleNum": 8430,
-                   "sellerid": 2,
-                   "shopid": "9D13",
-                   "title": "永辉会员店-田林路店"
+                   "inrangedesc":"配送范围内",
+                   "saleNum":8430,
+                   "sellerid":2,
+                   "shopid":"9D13",
+                   "title":"永辉会员店-田林路店"
                    }
                    },{
-                   "key": "skupos",
+                   "key":"skupos",
                    "value": [{
                              "action": "myyh://yhlife.com/show/native?name=prddetail&id=10582&merid=2",
                              "id": "10582",

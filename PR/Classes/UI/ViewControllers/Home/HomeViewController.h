@@ -6,8 +6,8 @@
 //  Copyright © 2017 黄小雪. All rights reserved.
 //  首页
 
-#import "BaseViewController.h"
+#import "WTTableViewController.h"
 
-@interface HomeViewController : BaseViewController
+@interface HomeViewController : WTTableViewController
 
 @end

@@ -7,7 +7,14 @@
 //
 
 #import "YHDataModel.h"
+#import "ImageInfo.h"
+#import "Action.h"
 
 @interface DMExhibitItem : YHDataModel
+@property (readonly,nonatomic) NSString  *cid;
+@property (readonly,nonatomic) NSString  *title;
+@property (readonly,nonatomic) NSString  *subTitle;
+@property (readonly,nonatomic) ImageInfo *imgInfo;
+@property (readonly,nonatomic) Action    *action;
 
 @end
