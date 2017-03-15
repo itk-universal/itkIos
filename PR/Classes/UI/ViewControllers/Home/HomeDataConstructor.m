@@ -18,6 +18,7 @@
 #import "HomeCouponCell.h"
 #import "HomeProductScrollviewCell.h"
 #import "WTCellDataPipe.h"
+#import "GapViewCell.h"
 
 @interface HomeDataConstructor()<DynamicManangerDelegate>
 @property (strong,nonatomic) DynamicMananger *dynamicManager;
@@ -34,6 +35,7 @@
     }
     [self.dynamicManager requestDynamicUIModel:self.responseData == nil];
 }
+
 
 -(void)constructData
 {
@@ -77,6 +79,8 @@
         return [HomeCouponCell class];
     }else if (type == DYnamicCardType_ThressProducts){
         return [HomeProductCell class];
+    }else if (type == DynamicCardType_CellGap){
+        return [GapViewCell class];
     }
     return nil;
 }
@@ -98,6 +102,8 @@
         return @"HomeCouponCell";
     }else if (type == DYnamicCardType_ThressProducts){
         return @"HomeProductCell";
+    }else if (type == DynamicCardType_CellGap){
+        return @"DynamicCardTypeCellGap";
     }
     return nil;
 }

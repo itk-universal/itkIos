@@ -7,7 +7,11 @@
 //
 
 #import "HomeIconViewCell.h"
-#import "ItemView.h"
+//#import "ItemView.h"
+#import "SingleIconView.h"
+#import "DMExhibitItem.h"
+#import "DynamicUIModel.h"
+#import "SingleIconView.h"
 
 @interface HomeIconViewCell()
 @property (strong,nonatomic) NSMutableArray *iconArray;
@@ -18,25 +22,7 @@
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _iconArray = [NSMutableArray array];
-        ItemView *itemview1 = [ItemView itemViewWithIconName:nil title:@"超市生鲜" subTitle:nil modelData:nil];
-        [_iconArray addObject:itemview1];
-    
-        ItemView *itemview2 = [ItemView itemViewWithIconName:nil title:@"新鲜水果" subTitle:nil modelData:nil];
-        [_iconArray addObject:itemview2];
-        
-        ItemView *itemview3 = [ItemView itemViewWithIconName:nil title:@"医药健康" subTitle:nil modelData:nil];
-        [_iconArray addObject:itemview3];
-        
-        ItemView *itemview4 = [ItemView itemViewWithIconName:nil title:@"充值有礼" subTitle:nil modelData:nil];
-        [_iconArray addObject:itemview4];
-        
-        ItemView *itemview5 = [ItemView itemViewWithIconName:nil title:@"邀请好友" subTitle:nil modelData:nil];
-        [_iconArray addObject:itemview5];
-        [self.contentView addSubview:itemview1];
-        [self.contentView addSubview:itemview2];
-        [self.contentView addSubview:itemview3];
-        [self.contentView addSubview:itemview4];
-        [self.contentView addSubview:itemview5];
+        [self.contentView setBackgroundColor:[UIColor orangeColor]];
     }
     return self;
 }
@@ -45,15 +31,31 @@
 {
     [super layoutSubviews];
     if ([self.iconArray count]) {
-        CGFloat kIconW  = 38;
-        CGFloat kMargin =  ((float)self.width - kIconW*[self.iconArray count])/([self.iconArray count] + 1);
+        CGFloat kMargin = 15;
+        CGFloat kIconW  = (self.width - ([self.iconArray count] + 1)*kMargin)*1.0/[self.iconArray count];
         NSInteger tempCount = 0;
-        for (ItemView *item in self.iconArray) {
+        for (SingleIconView *item in self.iconArray) {
+            item.frame = CGRectMake((tempCount+1) * kMargin + tempCount * kIconW,10,kIconW , self.height - 2*10);
             tempCount ++;
-            item.frame = CGRectMake(kMargin * tempCount,10,kIconW , self.height - 2*10);
         }
     }
-    
-    
+}
+
+-(void)setObject:(id)object{
+    CONDITION_CHECK_RETURN([object isKindOfClass:[DynamicCardItem class]]);
+    DynamicCardItem *item = (DynamicCardItem *)object;
+    NSArray *tempArray = item.data;
+    for (DMExhibitItem *info in tempArray) {
+        SingleIconView *iconView = [[SingleIconView alloc]init];
+        [iconView setItem:info];
+        [self.contentView addSubview:iconView];
+        [self.iconArray addObject:iconView];
+    }
+    [self setNeedsLayout];
+}
+
++(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object
+{
+    return 85;
 }
 @end

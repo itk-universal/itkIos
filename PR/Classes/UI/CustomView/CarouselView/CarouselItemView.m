@@ -8,6 +8,7 @@
 
 #import "CarouselItemView.h"
 #import "AutoImageView.h"
+#import "DMExhibitItem.h"
 
 @interface CarouselItemView()
 
@@ -67,6 +68,20 @@
 
 }
 
+-(void)setObject:(id)object
+{
+    CONDITION_CHECK_RETURN([object isKindOfClass:[DMExhibitItem class]]);
+    DMExhibitItem *item = object;
+    if (item.title) {
+        if (self.titleLabel == nil) {
+            [self addTitleLabel];
+        }
+        self.titleLabel.hidden = NO;
+        [self.titleLabel setText:item.title?:@""];
+    }else{
+        self.titleLabel.hidden = YES;
+    }
+}
 -(void)tapCarouselItemView
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(carouselItemViewDidSeleted:)]) {

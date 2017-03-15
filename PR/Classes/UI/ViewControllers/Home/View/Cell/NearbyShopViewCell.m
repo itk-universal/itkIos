@@ -9,6 +9,8 @@
 #import "NearbyShopViewCell.h"
 #import "AutoImageView.h"
 #import "OnePixelSepView.h"
+#import "DynamicUIModel.h"
+#import "DMExhibitItem.h"
 
 @interface NearbyShopViewCell()
 
@@ -81,6 +83,16 @@
     self.salesLabel.centerY = self.grageView.centerY;
 }
 
+-(void)setObject:(id)object
+{
+    CONDITION_CHECK_RETURN([object isKindOfClass:[DynamicCardItem class]]);
+    DynamicCardItem *cardItem = object;
+    DMExhibitItem   *item     = cardItem.data;
+    [self.shopIcon setImgInfo:item.imgInfo];
+    [self.shopNameLabel setText:item.title?:@""];
+    [self.salesLabel setText:item.subTitle?:@""];
+    
+}
 +(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object
 {
     return 72;

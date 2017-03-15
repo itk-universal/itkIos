@@ -1,14 +1,16 @@
 //
-//  AbstractDotView.m
-//  PR
+//  AbstractDotView .m
+//  YHClouds
 //
-//  Created by 黄小雪 on 16/02/2017.
-//  Copyright © 2017 黄小雪. All rights reserved.
+//  Created by YH on 15/12/7.
+//  Copyright © 2015年 YH. All rights reserved.
 //
 
 #import "AbstractDotView.h"
 
+
 @implementation AbstractDotView
+
 
 - (id)init
 {

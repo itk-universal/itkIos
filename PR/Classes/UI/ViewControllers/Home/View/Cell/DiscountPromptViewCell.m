@@ -7,6 +7,8 @@
 //
 
 #import "DiscountPromptViewCell.h"
+#import "DynamicUIModel.h"
+#import "DMExhibitItem.h"
 
 @interface DiscountPromptViewCell()
 @property (strong,nonatomic) UIImageView *iconImage;
@@ -23,7 +25,6 @@
         
         _titleLabel = [[UILabel alloc]init];
         [_titleLabel setTextAlignment:NSTextAlignmentLeft];
-        [_titleLabel setText:@"满100减20，满200减50"];
         [_titleLabel setTextColor:kColorGray];
         [_titleLabel setFont:KFontNormal(14)];
         [self.contentView addSubview:_titleLabel];
@@ -39,6 +40,15 @@
     self.iconImage.frame = CGRectMake(kLeftMargin, (self.height - kIconImageW)/2.0, kIconImageW, kIconImageW);
     self.titleLabel.frame = CGRectMake(self.iconImage.right + 10, 0, self.width - self.iconImage.right - 20, self.height);
 }
+
+-(void)setObject:(id)object
+{
+    CONDITION_CHECK_RETURN([object isKindOfClass:[DynamicCardItem class]]);
+    DynamicCardItem *cardItem = object;
+    DMExhibitItem *item       = cardItem.data;
+    [self.titleLabel setText:item.title];
+}
+
 
 +(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object
 {

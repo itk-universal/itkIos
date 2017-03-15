@@ -8,17 +8,20 @@
 
 #import "HomeProductScrollviewCell.h"
 #import "CarouselView.h"
+#import "DynamicUIModel.h"
 
 @interface HomeProductScrollviewCell()
 @property (strong,nonatomic) CarouselView *carouseView;
 @end
 
 @implementation HomeProductScrollviewCell
--(instancetype)init
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    if (self = [super init]) {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _carouseView = [[CarouselView alloc]init];
         [self.contentView addSubview:_carouseView];
+        [_carouseView setBackgroundColor:[UIColor redColor]];
     }
     return self;
 }
@@ -27,5 +30,18 @@
 {
     [super layoutSubviews];
     self.carouseView.frame = self.bounds;
+}
+
+-(void)setObject:(id)object
+{
+    CONDITION_CHECK_RETURN([object isKindOfClass:[DynamicCardItem class]]);
+    DynamicCardItem *item = (DynamicCardItem *)object;
+    [self.carouseView setUpDatalist:item.data];
+    
+}
+
++(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object
+{
+    return 105;
 }
 @end

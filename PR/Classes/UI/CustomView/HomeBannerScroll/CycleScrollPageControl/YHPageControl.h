@@ -1,22 +1,18 @@
 //
-//  PRPageControl.h
-//  PR
+//  YHPageControl.h
+//  YHClouds
 //
-//  Created by 黄小雪 on 16/02/2017.
-//  Copyright © 2017 黄小雪. All rights reserved.
+//  Created by YH on 15/12/7.
+//  Copyright © 2015年 YH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class PRPageControl;
-@protocol TAPageControlDelegate <NSObject>
+@protocol TAPageControlDelegate;
 
-@optional
-- (void)TAPageControl:(PRPageControl *)pageControl didSelectPageAtIndex:(NSInteger)index;
 
-@end
+@interface YHPageControl : UIControl
 
-@interface PRPageControl : UIControl
 
 /**
  * Dot view customization properties
@@ -97,5 +93,14 @@
  *  @return The CGSize being the minimum size required.
  */
 - (CGSize)sizeForNumberOfPages:(NSInteger)pageCount;
+
+
+@end
+
+
+@protocol TAPageControlDelegate <NSObject>
+
+@optional
+- (void)TAPageControl:(YHPageControl *)pageControl didSelectPageAtIndex:(NSInteger)index;
 
 @end

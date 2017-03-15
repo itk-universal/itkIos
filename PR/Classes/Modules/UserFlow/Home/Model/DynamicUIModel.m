@@ -9,6 +9,7 @@
 #import "DynamicUIModel.h"
 #import "DMExhibitItem.h"
 #import "UtilCodeTool.h"
+#import "DynamicDataTransformTool.h"
 
 @implementation DynamicCardItem
 FUNCTION_NSCODINGIMP_WITHCLAZZ([DynamicCardItem class])
@@ -38,17 +39,24 @@ FUNCTION_NSCODINGIMP_WITHCLAZZ([DynamicCardItem class])
 @implementation DynamicFloorItem
 static NSString * prefixKey = @"keyPrefix";
 
+- (instancetype)initWithDictionary:(NSDictionary *)dic
+{
+    if (self = [super initWithDictionary:dic]) {
+        
+        for ( NSInteger cardType = DynamicCardType_MIN; cardType < DYnamicCardType_MAX; cardType ++) {
+            [self parseCardForType:cardType inDic:dic];
+        }
+    }
+    return self;
+}
+
 -(void)parseCardForType:(DynamicCardType)cardType inDic:(NSDictionary *)dict
 {
     switch (cardType) {
         case DynamicCardType_HotBanner:
         {
             NSArray *bannerArr = [dict safeObjectForKey:@"banner" hintClass:[NSArray class]];
-            if ([bannerArr count]) {
-                for (NSDictionary *dict in bannerArr) {
-                    [self parseDataDict:dict withItemClass:[DMExhibitItem class] forType:DynamicCardType_HotBanner];
-                }
-            }
+            [self parseDataArray:bannerArr withItemClass:[DMExhibitItem class] forType:cardType];
             break;
         }
         case DynamicCardType_HotIcon:
@@ -71,7 +79,7 @@ static NSString * prefixKey = @"keyPrefix";
         }
         case DYnamicCardType_SellerInfo:
         {
-            NSDictionary *tDict = [dict safeObjectForKey:@"sellerinfo" hintClass:[NSDictionary class]];
+            NSDictionary *tDict = [dict safeObjectForKey:@"shop" hintClass:[NSDictionary class]];
             if (tDict) {
                 [self parseDataDict:tDict withItemClass:[DMExhibitItem class] forType:cardType];
             }
@@ -79,7 +87,7 @@ static NSString * prefixKey = @"keyPrefix";
         }
         case DYnamicCardType_SellerProducts:
         {
-            NSArray *array = [dict safeObjectForKey:@"productlist" hintClass:[NSArray class]];
+            NSArray *array = [dict safeObjectForKey:@"shopproducts" hintClass:[NSArray class]];
             if (array) {
                 [self parseDataArray:array withItemClass:[DMExhibitItem class] forType:cardType];
             }
@@ -87,7 +95,7 @@ static NSString * prefixKey = @"keyPrefix";
         }
         case DYnamicCardType_SellerCoupon:
         {
-            NSDictionary *tDict = [dict safeObjectForKey:@"coupons" hintClass:[NSDictionary class]];
+            NSDictionary *tDict = [dict safeObjectForKey:@"shopcoupon" hintClass:[NSDictionary class]];
             if (tDict) {
                 [self parseDataDict:tDict withItemClass:[DMExhibitItem class] forType:cardType];
             }
@@ -98,6 +106,14 @@ static NSString * prefixKey = @"keyPrefix";
             NSArray *array = [dict safeObjectForKey:@"kusuggest" hintClass:[NSArray class]];
             if (array) {
                 [self parseDataArray:array withItemClass:[DMExhibitItem class] forType:cardType];
+            }
+            break;
+        }
+        case DYnamicCardType_SellerActivity:
+        {
+            NSDictionary *tDict = [dict safeObjectForKey:@"shopinfo" hintClass:[NSDictionary class]];
+            if (tDict) {
+                [self parseDataDict:tDict withItemClass:[DMExhibitItem class] forType:cardType];
             }
             break;
         }
@@ -180,7 +196,6 @@ static NSString * prefixKey = @"keyPrefix";
     NSMutableArray *sortedItems = [NSMutableArray arrayWithCapacity:[[self.items allKeys] count]];
     NSEnumerator *enumerator    = [self defaultKeyIterator];
     NSString *key  = nil;
-//    NSString *productListKey    = [NSString stringWithFormat:@"%@_%ld",prefixKey,(long)]
     while (key = [enumerator nextObject]) {
         [sortedItems safeAddObject:[self.items safeObjectForKey:key]];
     }
@@ -199,12 +214,14 @@ FUNCTION_NSCODINGIMP_WITHCLAZZ([DynamicUIModel class])
 -(instancetype)initWithDictionary:(NSDictionary *)dic
 {
     if (self = [super initWithDictionary:dic]) {
+         dic = [DynamicDataTransformTool transformDynamicData:dic];
         NSArray *allFloors = [dic safeObjectForKey:@"floors" hintClass:[NSArray class]];
         NSMutableArray *allFloorObjs = [NSMutableArray arrayWithCapacity:[allFloors count]];
         for (NSDictionary *aFloorDic in allFloors) {
             DynamicFloorItem *aFloorObj = [DynamicFloorItem modelFromDictionary:aFloorDic];
             [allFloorObjs addObject:aFloorObj];
         }
+        [self captureFloorCards:allFloorObjs];
     }
     return self;
 }
@@ -224,7 +241,7 @@ FUNCTION_NSCODINGIMP_WITHCLAZZ([DynamicUIModel class])
     self.sortedCards = theSortedItems;
 }
 
--(NSArray *)dynamicCard
+-(NSArray *)dynamicCards
 {
     return self.sortedCards;
 }

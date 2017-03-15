@@ -16,5 +16,4 @@
 @property (readonly,nonatomic) NSString  *subTitle;
 @property (readonly,nonatomic) ImageInfo *imgInfo;
 @property (readonly,nonatomic) Action    *action;
-
 @end

@@ -22,7 +22,6 @@
 
 + (instancetype)modelFromDictionary:(NSDictionary *)dic
 {
-//    CONDITION_CHECK_RETURN_VAULE(dic, nil);
     YHDataModel * instance = [[self alloc] initWithDictionary:dic];
     if (instance) {
         // 按需实现
@@ -32,6 +31,7 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dic
 {
+    CONDITION_CHECK_RETURN_VAULE([dic isKindOfClass:[NSDictionary class]], nil);
     self = [self init];
     if (self) {
         // 按需实现

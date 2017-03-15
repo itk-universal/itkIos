@@ -8,6 +8,8 @@
 
 #import "HPTopBannerCell.h"
 #import "FPCycleScrollView.h"
+#import "DynamicUIModel.h"
+#import "DMExhibitItem.h"
 
 #define CELLHEIGHT          (200 * DDDisplayScale)
 
@@ -20,8 +22,9 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self setBackgroundColor:[UIColor magentaColor]];
         self.bannerView                        = [[FPCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, APPLICATIONWIDTH, CELLHEIGHT)];
-        self.bannerView.backgroundColor        = [UIColor whiteColor];
+//        self.bannerView.backgroundColor        = [UIColor redColor];
         self.bannerView.delegate               = self;
         self.bannerView.pageControlStyle       = SDCycleScrollViewPageContolStyleAnimated;
         self.bannerView.autoScrollTimeInterval = 4.5;
@@ -38,5 +41,23 @@
 {
     [super layoutSubviews];
     self.bannerView.frame = self.contentView.bounds;
+}
+
+-(void)setObject:(id)object
+{
+    CONDITION_CHECK_RETURN([object isKindOfClass:[DynamicCardItem class]]);
+    NSArray *array = ((DynamicCardItem *)object).data;
+    NSMutableArray * imgArr = [NSMutableArray array];
+    for (DMExhibitItem * item in array) {
+        [imgArr addObject:[item.imgInfo imgUrl]?:@""];
+    }
+    self.bannerView.imageURLStringsGroup = [NSArray arrayWithObjects:@"https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1489588845&di=64735fa10c51f9329efec22e367bd4bc&src=http://pic13.nipic.com/20110419/2457331_142656838000_2.png",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489598931857&di=36b45a6aeb1a005c84121b5f0aed58f8&imgtype=0&src=http%3A%2F%2Fpic1a.nipic.com%2F2008-10-22%2F20081022154043923_2.jpg", nil];
+    self.bannerView.dotPosition = SDCycleScrollviewDotPositionRight;
+    
+}
+
++(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object
+{
+    return 210;
 }
 @end

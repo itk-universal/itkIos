@@ -8,19 +8,24 @@
 
 #import "CarouselView.h"
 #import "CarouselItemView.h"
+//#import "MemberCenterInfo.h"
+#import "DMExhibitItem.h"
+
 
 #define KTopMargin       10
 #define kBaseTag         1000
-#define kLeftMargin      25
-@interface CarouselView()<UIScrollViewDelegate,CarouselItemViewDelegate>
+
+@interface CarouselView()<UIScrollViewDelegate>
 
 @property (strong,nonatomic) UIScrollView   *scrollView;
 @property (strong,nonatomic) NSMutableArray *inUseViews;
 @property (strong,nonatomic) NSMutableArray *unUseViews;
 @property (assign,nonatomic) NSInteger      maxVisibleIndex;
 @property (assign,nonatomic) NSInteger      minVisibleIndex;
-@property (strong,nonatomic) NSArray       *imageUrls;
-@property (strong,nonatomic) NSArray       *titles;
+@property (strong,nonatomic) NSArray        *dataList;
+@property (assign,nonatomic) CGFloat        lastOffsetX;
+
+//@property (strong,nonatomic) UIPageControl *pageControl;
 
 @end
 
@@ -31,6 +36,7 @@
         _scrollView.delegate = self;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.scrollsToTop = NO;
+        _scrollView.pagingEnabled = YES;
         [self addSubview:_scrollView];
         
         _inUseViews = [NSMutableArray array];
@@ -38,37 +44,51 @@
         
         _maxVisibleIndex = 0;
         _minVisibleIndex = 0;
+        
+        //        _pageControl = [[UIPageControl alloc]init];
+        //        [_pageControl addTarget:self action:@selector(pageControlChanged:) forControlEvents:UIControlEventValueChanged];
+        //        [_pageControl setBackgroundColor:[UIColor orangeColor]];
+        //        [self addSubview:_pageControl];
+        //        [self bringSubviewToFront:_pageControl];
     }
     return self;
 }
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    self.scrollView.contentSize = CGSizeMake([self.imageUrls count]*self.itemViewW + ([self.imageUrls count]+1)*kLeftMargin,self.height);
+    //    self.pageControl.frame = CGRectMake(0, 0, 100, 100);
+    self.scrollView.contentSize = CGSizeMake([self.dataList count]*kCarouselItemViewW+ ([self.dataList count]+1)*kLeftMargin,self.height);
     self.scrollView.frame = self.bounds;
     for (CarouselItemView *itemView in self.scrollView.subviews) {
         if ([itemView isKindOfClass:[CarouselItemView class]]) {
-            CGFloat kItemViewX = kLeftMargin*(itemView.tag - kBaseTag + 1) + self.itemViewW*(itemView.tag - kBaseTag);
-            itemView.frame = CGRectMake(kItemViewX, KTopMargin,self.itemViewW, self.scrollView.height - 2*KTopMargin);
+            CGFloat kItemViewX = kLeftMargin*(itemView.tag - kBaseTag + 1) + kCarouselItemViewW*(itemView.tag - kBaseTag);
+            itemView.frame = CGRectMake(kItemViewX, KTopMargin,kCarouselItemViewW, self.scrollView.height - 2*KTopMargin);
         }
     }
 }
 
--(void)setImageUrl:(NSArray *)imageUrls titles:(NSArray *)titles
-{
-     CONDITION_CHECK_RETURN([imageUrls isKindOfClass:[NSArray class]] && [imageUrls count]);
-    self.imageUrls = imageUrls;
-    self.titles    = titles;
-    
+
+-(void)setUpDatalist:(NSArray *)dataList{
+    CONDITION_CHECK_RETURN([dataList isKindOfClass:[NSArray class]] && [dataList count]);
+    self.dataList  = dataList;
+    //    self.pageControl.numberOfPages = [self.dataList count];
+    //    self.pageControl.currentPage   = 0;
     if ([self.inUseViews count]) {
+        for (CarouselItemView *itemView in self.inUseViews) {
+            [itemView removeFromSuperview];
+        }
         [self.unUseViews addObjectsFromArray:self.inUseViews];
         [self.inUseViews removeAllObjects];
+    }
+    for (NSInteger i = [dataList count]; i <[self.unUseViews count]; i ++) {
+        [self.unUseViews removeObjectAtIndex:i];
     }
     [self setUpScrollView];
     [self setNeedsLayout];
     [self performSelector:@selector(removeUnVisibleView) withObject:nil afterDelay:0];
+    
+    
 }
-
 
 
 
@@ -81,13 +101,13 @@
     }
     if ((self.maxVisibleIndex == [self getMaxVisibleIndex] &&
          self.minVisibleIndex == [self getMinVisibleIndex]) ||
-        [self getMaxVisibleIndex] > [self.imageUrls count] -1) {
+        [self getMaxVisibleIndex] > [self.dataList count] -1) {
         return;
     }
     [self removeUnVisibleView];
     self.minVisibleIndex = [self getMinVisibleIndex];
     self.maxVisibleIndex = [self getMaxVisibleIndex];
-    
+    //    self.pageControl.currentPage = self.minVisibleIndex;
     for (NSInteger i = self.minVisibleIndex ; i <= self.maxVisibleIndex ;i ++) {
         [self addSubViewToScrollViewWithTag:i];
     }
@@ -98,27 +118,24 @@
 {
     NSInteger kScrollViewW = ScreenWidth;
     NSInteger viewMaxNum   = 0;
-    if (self.itemViewW && (kScrollViewW%self.itemViewW)) {
-        viewMaxNum = kScrollViewW/self.itemViewW + 3;
+    if (kCarouselItemViewW && (kScrollViewW%kCarouselItemViewW)) {
+        viewMaxNum = kScrollViewW/kCarouselItemViewW + 3;
     }else{
-        viewMaxNum = kScrollViewW/self.itemViewW + 2;
+        viewMaxNum = kScrollViewW/kCarouselItemViewW + 2;
     }
-    if (viewMaxNum > [self.imageUrls count] ) {
-        viewMaxNum = [self.imageUrls count];
+    if (viewMaxNum > [self.dataList count] ) {
+        viewMaxNum = [self.dataList count];
     }
     return viewMaxNum;
 }
 
 -(void)setUpScrollView
 {
+    [self.scrollView setContentOffset:CGPointZero];
     NSInteger viewMaxNum = [self viewMaxNum];
     for (NSInteger i = 0;  i < viewMaxNum; i++) {
-        NSString *imageUrl   = [self.imageUrls safeObjectAtIndex:i];
-        NSString *title      = nil;
-        if (self.titles) {
-            title = [self.titles safeObjectAtIndex:i];
-        }
-        if (imageUrl) {
+        DMExhibitItem *model = [self.dataList safeObjectAtIndex:i hintClass:[DMExhibitItem class]];
+        if (model) {
             CarouselItemView *itemView = [self inUseViewWithTag:i + kBaseTag];
             if (itemView == nil) {
                 itemView = [self getReuseView];
@@ -126,11 +143,10 @@
                     itemView     = [[CarouselItemView alloc]init];
                 }
                 itemView.tag = kBaseTag + i;
-                itemView.delegate = self;
                 [self.scrollView addSubview:itemView];
                 [self.inUseViews addObject:itemView];
             }
-            [itemView setImageUrl:imageUrl title:title index:i];
+            [itemView setObject:model];
         }
     }
     
@@ -161,33 +177,27 @@
         CarouselItemView *itemView = [self getReuseView];
         if (itemView) {
             itemView.tag   = tag + kBaseTag;
-            CGFloat kItemViewX = kLeftMargin*(tag + 1) + self.itemViewW*tag;
-            itemView.frame = CGRectMake(kItemViewX, KTopMargin,self.itemViewW, self.scrollView.height - 2*KTopMargin);
+            CGFloat kItemViewX = kLeftMargin*(tag + 1) + kCarouselItemViewW *tag;
+            itemView.frame = CGRectMake(kItemViewX, KTopMargin,kCarouselItemViewW , self.scrollView.height - 2*KTopMargin);
             [self.scrollView addSubview:itemView];
-            [self upDateItemView:itemView index:tag];
+            DMExhibitItem  *model = [self.dataList safeObjectAtIndex:tag
+                                                           hintClass:[DMExhibitItem  class]];
+            [itemView setObject:model];
             [self.inUseViews addObject:itemView];
         }
     }
+    
 }
 
--(void)upDateItemView:(CarouselItemView *)itemView index:(NSInteger)index
-{
-    NSString *imageUrl   = [self.imageUrls safeObjectAtIndex:index];
-    NSString *title      = nil;
-    if (self.titles) {
-        title = [self.titles safeObjectAtIndex:index];
-    }
-    [itemView setImageUrl:imageUrl title:title index:index];
-}
 //当前可见view的最小的tag
 -(NSInteger)getMinVisibleIndex
 {
     NSInteger tempIndex = 0;
     NSInteger tempX = self.scrollView.bounds.origin.x - 1;
-    if (tempX%(self.itemViewW + kLeftMargin)) {
-        tempIndex = tempX/(self.itemViewW + kLeftMargin);
+    if (tempX%(kCarouselItemViewW + kLeftMargin)) {
+        tempIndex = tempX/(kCarouselItemViewW  + kLeftMargin);
     }else{
-         tempIndex = tempX/(self.itemViewW + kLeftMargin) - 1;
+        tempIndex = tempX/(kCarouselItemViewW + kLeftMargin) - 1;
     }
     if (tempIndex < 0) {
         tempIndex = 0;
@@ -202,13 +212,13 @@
     NSInteger tempIndex = 0;
     NSInteger tempX = self.scrollView.bounds.origin.x + 1 +
     self.scrollView.bounds.size.width;
-    if (tempX%(self.itemViewW + kLeftMargin)) {
-        tempIndex = tempX/(self.itemViewW + kLeftMargin);
+    if (tempX%(kCarouselItemViewW + kLeftMargin)) {
+        tempIndex = tempX/(kCarouselItemViewW  + kLeftMargin);
     }else{
-         tempIndex = tempX/(self.itemViewW + kLeftMargin) - 1;
+        tempIndex = tempX/(kCarouselItemViewW  + kLeftMargin) - 1;
     }
-    if (tempIndex > [self.imageUrls count] - 1) {
-        tempIndex = [self.imageUrls count] -1;
+    if (tempIndex > [self.dataList count] - 1) {
+        tempIndex = [self.dataList count] -1;
     }
     return tempIndex;
 }
@@ -238,10 +248,11 @@
     return nil;
 }
 
-#pragma mark CarouselItemViewDelegate
--(void)carouselItemViewDidSeleted:(CarouselItemView *)itemView
+-(void)orderItemViewLeftSwipe:(CarouselItemView *)itemView
 {
-    PRLOG(@"点击了CarouselItemView的第%zd个",itemView.index);
+    CGFloat currentOffX = self.scrollView.contentOffset.x;
+    [self.scrollView setContentOffset:CGPointMake(currentOffX + 290, self.scrollView.contentOffset.y)];
 }
+
 
 @end

@@ -86,11 +86,11 @@
 -(void)minusBtnOnClick
 {
     NSInteger changeNum = [self.textfiled.text integerValue] - 1;
-    if (self.product.stockNum &&
-        [self.textfiled.text integerValue] > self.product.stockNum) {
-        changeNum = self.product.stockNum;
+    if (self.product.stocknum &&
+        [self.textfiled.text integerValue] > self.product.stocknum) {
+        changeNum = self.product.stocknum;
     }
-    [self.delegate goodNumControllerNumChanged:self changeToNum:self.product.stockNum];
+    [self.delegate goodNumControllerNumChanged:self changeToNum:self.product.stocknum];
 }
 
 #pragma mark textfiled的代理

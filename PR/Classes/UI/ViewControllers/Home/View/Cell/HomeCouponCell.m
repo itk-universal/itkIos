@@ -7,10 +7,13 @@
 //
 
 #import "HomeCouponCell.h"
+#import "DMExhibitItem.h"
+#import "AutoImageView.h"
+#import "DynamicUIModel.h"
 
 @interface HomeCouponCell()
 
-@property (strong,nonatomic) UIImageView *iconImage;
+@property (strong,nonatomic) AutoImageView *iconImage;
 @property (strong,nonatomic) UILabel *titleLabel;
 @property (strong,nonatomic) UIImageView *arrowImage;
 
@@ -20,7 +23,7 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        _iconImage = [[UIImageView alloc]init];
+        _iconImage = [[AutoImageView alloc]init];
         [_iconImage setBackgroundColor:[UIColor grayColor]];
         [self.contentView addSubview:_iconImage];
         
@@ -29,7 +32,7 @@
         [self.contentView addSubview:_arrowImage];
         
         _titleLabel = [[UILabel alloc]init];
-        [_titleLabel setText:@"15元店铺优惠券"];
+//        [_titleLabel setText:@"15元店铺优惠券"];
         [_titleLabel setFont:KFontNormal(14)];
         [_titleLabel setTextColor:kColorGray];
         [_titleLabel setTextAlignment:NSTextAlignmentLeft];
@@ -52,5 +55,15 @@
     
     CGFloat kTitleLabelW = self.arrowImage.left - self.iconImage.right - 20;
     self.titleLabel.frame = CGRectMake(self.iconImage.right + 10, 0, kTitleLabelW, self.height);
+}
+
+-(void)setObject:(id)object
+{
+    CONDITION_CHECK_RETURN([object isKindOfClass:[DynamicCardItem class]]);
+    DynamicCardItem *cardItem = object;
+    DMExhibitItem *item = cardItem.data;
+    [_iconImage setImgInfo:item.imgInfo];
+    [_titleLabel setText:item.title];
+    
 }
 @end

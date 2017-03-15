@@ -9,5 +9,9 @@
 #ifndef URLPathDefine_h
 #define URLPathDefine_h
 
-#define   DynamicData_URLPATH                   @"/api/v1/home"               // 平台首页
+// 平台首页
+#define   DynamicData_URLPATH                   @"/api/v1/home"
+
+//购物车同步
+#define Cart_URLPATH                            @"/api/cart/place"
 #endif /* URLPathDefine_h */

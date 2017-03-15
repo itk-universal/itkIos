@@ -1,12 +1,12 @@
 //
-//  PRPageControl.m
-//  PR
+//  YHPageControl.m
+//  YHClouds
 //
-//  Created by 黄小雪 on 16/02/2017.
-//  Copyright © 2017 黄小雪. All rights reserved.
+//  Created by YH on 15/12/7.
+//  Copyright © 2015年 YH. All rights reserved.
 //
 
-#import "PRPageControl.h"
+#import "YHPageControl.h"
 #import "AbstractDotView.h"
 #import "AnimatedDotView.h"
 #import "DotView.h"
@@ -36,40 +36,68 @@ static BOOL const kDefaultShouldResizeFromCenter = YES;
  */
 static NSInteger const kDefaultSpacingBetweenDots = 6;
 
-@interface PRPageControl()
+/**
+ *  Default dot size
+ */
+//static CGSize const kDefaultDotSize = {6*ScreenWidth / 320 , 6*ScreenWidth / 320};
 
-@property (strong,nonatomic) NSMutableArray *dots;
+
+@interface YHPageControl()
+
+
+/**
+ *  Array of dot views for reusability and touch events.
+ */
+@property (strong, nonatomic) NSMutableArray *dots;
+
 
 @end
-@implementation PRPageControl
 
--(instancetype)init{
-    if (self = [super init]) {
-        [self initialization];
-    }
-    return self;
-}
-
--(instancetype)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
-        [self initialization];
-    }
-    return self;
-}
+@implementation YHPageControl
 
 
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-    if (self = [super initWithCoder:aDecoder]) {
-        [self initialization];
-    }
-    return self;
-}
+#pragma mark - Lifecycle
 
 
--(void)initialization
+- (id)init
 {
-    self.dotViewClass = [AnimatedDotView class];
-    self.spacingBetweenDots = kDefaultSpacingBetweenDots*ScreenWidth / 320;
+    self = [super init];
+    if (self) {
+        [self initialization];
+    }
+    
+    return self;
+}
+
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initialization];
+    }
+    return self;
+}
+
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initialization];
+    }
+    
+    return self;
+}
+
+
+/**
+ *  Default setup when initiating control
+ */
+- (void)initialization
+{
+    self.dotViewClass           = [AnimatedDotView class];
+    self.spacingBetweenDots     = kDefaultSpacingBetweenDots*ScreenWidth / 320;
     self.numberOfPages          = kDefaultNumberOfPages;
     self.currentPage            = kDefaultCurrentPage;
     self.hidesForSinglePage     = kDefaultHideForSinglePage;
@@ -77,7 +105,9 @@ static NSInteger const kDefaultSpacingBetweenDots = 6;
 }
 
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+#pragma mark - Touch event
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     if (touch.view != self) {
@@ -198,7 +228,7 @@ static NSInteger const kDefaultSpacingBetweenDots = 6;
         [self.dots addObject:dotView];
     }
     
-    dotView.userInteractionEnabled = YES;
+    dotView.userInteractionEnabled = YES;    
     return dotView;
 }
 
@@ -216,6 +246,7 @@ static NSInteger const kDefaultSpacingBetweenDots = 6;
         if ([abstractDotView respondsToSelector:@selector(changeActivityState:)]) {
             [abstractDotView changeActivityState:active];
         } else {
+
         }
     } else if (self.dotImage && self.currentDotImage) {
         UIImageView *dotView = (UIImageView *)[self.dots objectAtIndex:index];
@@ -323,12 +354,13 @@ static NSInteger const kDefaultSpacingBetweenDots = 6;
     if (self.dotImage && CGSizeEqualToSize(_dotSize, CGSizeZero)) {
         _dotSize = self.dotImage.size;
     } else if (self.dotViewClass && CGSizeEqualToSize(_dotSize, CGSizeZero)) {
-        
-        CGSize  kDefaultDotSize1 = {6*ScreenWidth / 320 , 6*ScreenWidth / 320};
+         
+         CGSize  kDefaultDotSize1 = {6*ScreenWidth / 320 , 6*ScreenWidth / 320};
         _dotSize = kDefaultDotSize1;
         return _dotSize;
     }
     
     return _dotSize;
 }
+
 @end

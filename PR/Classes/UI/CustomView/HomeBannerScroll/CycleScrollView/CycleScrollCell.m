@@ -1,9 +1,9 @@
 //
 //  CycleScrollCell.m
-//  PR
+//  YHClouds
 //
-//  Created by 黄小雪 on 16/02/2017.
-//  Copyright © 2017 黄小雪. All rights reserved.
+//  Created by YH on 15/12/7.
+//  Copyright © 2015年 YH. All rights reserved.
 //
 
 #import "CycleScrollCell.h"
@@ -12,13 +12,16 @@
 {
     __weak UILabel *_titleLabel;
 }
--(instancetype)initWithFrame:(CGRect)frame
+
+
+- (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
         [self setupImageView];
         [self setupTitleLabel];
         self.clipsToBounds = YES;
     }
+    
     return self;
 }
 
@@ -40,29 +43,30 @@
     _titleLabel.font = titleLabelTextFont;
 }
 
--(void)setupImageView
+- (void)setupImageView
 {
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.bounds];
-    _imageView             = imageView;
-    _imageView.contentMode = UIViewContentModeScaleToFill;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    _imageView = imageView;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:imageView];
 }
 
--(void)setupTitleLabel
+- (void)setupTitleLabel
 {
-    UILabel *titleLabel = [[UILabel alloc]init];
+    UILabel *titleLabel = [[UILabel alloc] init];
     _titleLabel = titleLabel;
     _titleLabel.hidden = YES;
     [self addSubview:titleLabel];
 }
 
--(void)setTitle:(NSString *)title
+- (void)setTitle:(NSString *)title
 {
     _title = [title copy];
-    _titleLabel.text = [NSString stringWithFormat:@"   %@",title];
+    _titleLabel.text = [NSString stringWithFormat:@"   %@", title];
 }
 
--(void)layoutSubviews
+
+- (void)layoutSubviews
 {
     [super layoutSubviews];
     
@@ -72,7 +76,8 @@
     CGFloat titleLabelH = _titleLabelHeight;
     CGFloat titleLabelX = 0;
     CGFloat titleLabelY = self.height - titleLabelH;
-    _titleLabel.frame   = CGRectMake(titleLabelX, titleLabelY, titleLabelW, titleLabelH);
-    _titleLabel.hidden  = !_titleLabel.text;
+    _titleLabel.frame = CGRectMake(titleLabelX, titleLabelY, titleLabelW, titleLabelH);
+    _titleLabel.hidden = !_titleLabel.text;
 }
+
 @end

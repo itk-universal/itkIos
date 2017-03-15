@@ -30,6 +30,7 @@
 @property (nonatomic,strong)    BaseRequest                   * request;
 @property (nonatomic,strong)    BaseRespond                   * respond;
 @property (nonatomic,readwrite) AFHTTPRequestOperationManager * requestMananger;
+@property (strong,nonatomic) id obje;
 @end
 
 @implementation IGHttpTask
@@ -42,6 +43,7 @@
     [self runTask];
     return YES;
 }
+
 
 //取消请求
 -(void)cancel
@@ -60,8 +62,12 @@
     NSString *path = [reqBaseURL.path lastPathComponent];
     NSString *jsonfile = [[NSBundle mainBundle]pathForResource:path ofType:@"json"];
     if ([jsonfile length]) {
-        __block NSString *content = [NSString stringWithContentsOfFile:jsonfile encoding:NSUTF8StringEncoding error:nil];
+        __block NSString * content = [NSString stringWithContentsOfFile:jsonfile
+                                                               encoding:NSUTF8StringEncoding
+                                                                  error:nil];
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //            [self disposeFailedResp:nil error:nil respond:[content JSONValue]];
             [self disposeSuccessResp:nil respond:[content JSONValue]];
         });
         return;

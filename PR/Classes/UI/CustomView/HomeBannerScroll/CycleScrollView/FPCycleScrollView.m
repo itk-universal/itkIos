@@ -1,38 +1,42 @@
 //
 //  FPCycleScrollView.m
-//  PR
+//  YHClouds
 //
-//  Created by 黄小雪 on 16/02/2017.
-//  Copyright © 2017 黄小雪. All rights reserved.
+//  Created by YH on 15/12/7.
+//  Copyright © 2015年 YH. All rights reserved.
 //
 
 #import "FPCycleScrollView.h"
+
 #import "CycleScrollCell.h"
-#import "PRPageControl.h"
+#import "YHPageControl.h"
 #import "SDImageCache.h"
 #import "SDWebImageManager.h"
 #import "AppUIUtil.h"
 #import "AutoOptionURL.h"
 
-NSString * const ID = @"cycleCell";
-@interface FPCycleScrollView()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (weak,nonatomic   ) UICollectionView           *mainView;//显示图片的collectionView
-@property (weak,nonatomic   ) UICollectionViewFlowLayout *flowLayout;
-@property (strong,nonatomic ) NSMutableArray             *imagesGroup;
-@property (weak,nonatomic   ) NSTimer                    *timer;
-@property (assign,nonatomic ) NSInteger                  totalItemsCount;
-@property (weak,nonatomic   ) UIControl                  *pageControl;
-@property (weak,nonatomic   ) UIImageView                *backgroundImageView;//当前ImageURLs为空时的背景图
-@property (assign,nonatomic ) NSInteger                  networkFailedRetryCount;
-@property (strong,nonatomic ) UIView                     *numberCountView;
-@property (strong,nonatomic ) UILabel                    *numberLabel;
-@property (nonatomic, assign) BOOL                       leftView;
-@property (nonatomic, assign) NSInteger                  showPageIndex;
-@property (nonatomic, assign) BOOL                       isInfiniteLoopValid;
-@property (nonatomic, assign) BOOL                       isPosIniting;
+NSString * const ID = @"cycleCell";
+
+@interface FPCycleScrollView() <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic, weak)     UICollectionView            *mainView; // 显示图片的collectionView
+@property (nonatomic, weak)     UICollectionViewFlowLayout  *flowLayout;
+@property (nonatomic, strong)   NSMutableArray              *imagesGroup;
+@property (nonatomic, weak)     NSTimer                     *timer;
+@property (nonatomic, assign)   NSInteger                   totalItemsCount;
+@property (nonatomic, weak)     UIControl                   *pageControl;
+@property (nonatomic, weak)     UIImageView                 *backgroundImageView; // 当imageURLs为空时的背景图
+
+@property (nonatomic, assign)   NSInteger                   networkFailedRetryCount;
+@property (nonatomic, strong)   UIView                      *numberCountView;
+@property (nonatomic, strong)   UILabel                     *numberLabel;
+@property (nonatomic, assign)   BOOL                        leftView;
+@property (nonatomic, assign)   NSInteger                   showPageIndex;
+@property (nonatomic, assign)   BOOL                        isInfiniteLoopValid;
+@property (nonatomic, assign)   BOOL                        isPosIniting;
 
 @end
+
 @implementation FPCycleScrollView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -53,8 +57,7 @@ NSString * const ID = @"cycleCell";
     return self;
 }
 
-
--(void)initialization
+- (void)initialization
 {
     _pageControlAliment         = SDCycleScrollViewPageContolAlimentCenter;
     _autoScrollTimeInterval     = 2.0;
@@ -75,88 +78,91 @@ NSString * const ID = @"cycleCell";
     
 }
 
-+(instancetype)cycleScrollViewWithFrame:(CGRect)frame imagesGroup:(NSArray *)imagesGroup
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame imagesGroup:(NSArray *)imagesGroup
 {
-    FPCycleScrollView *cycleScrollView = [[self alloc]initWithFrame:frame];
-    cycleScrollView.imagesGroup        = [NSMutableArray arrayWithArray:imagesGroup];
+    FPCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
+    cycleScrollView.imagesGroup = [NSMutableArray arrayWithArray:imagesGroup];
     return cycleScrollView;
 }
 
-+(instancetype)cycleScrollViewWithFrame:(CGRect)frame imageURLStringsGroup:(NSArray *)imageURLStringsGroup
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame imageURLStringsGroup:(NSArray *)imageURLsGroup
 {
-    FPCycleScrollView *cycleScrollView = [[self alloc]initWithFrame:frame];
-    cycleScrollView.imageURLStringsGroup = [NSMutableArray arrayWithArray:imageURLStringsGroup];
+    FPCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
+    cycleScrollView.imageURLStringsGroup = [NSMutableArray arrayWithArray:imageURLsGroup];
     return cycleScrollView;
 }
 
-//设置显示图片的collectionView
--(void)setupMainView
+// 设置显示图片的collectionView
+- (void)setupMainView
 {
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize    = self.frame.size;
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.itemSize = self.frame.size;
     flowLayout.minimumLineSpacing = 0;
-    flowLayout.scrollDirection =  UICollectionViewScrollDirectionHorizontal;
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     _flowLayout = flowLayout;
     
-    UICollectionView *mainView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:flowLayout];
-    mainView.backgroundColor   = [UIColor clearColor];
-    mainView.pagingEnabled     = YES;
+    UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
+    mainView.backgroundColor = [UIColor clearColor];
+    mainView.pagingEnabled = YES;
     mainView.showsHorizontalScrollIndicator = NO;
-    mainView.showsVerticalScrollIndicator   = NO;
+    mainView.showsVerticalScrollIndicator = NO;
     [mainView registerClass:[CycleScrollCell class] forCellWithReuseIdentifier:ID];
     mainView.dataSource = self;
-    mainView.delegate   = self;
+    mainView.delegate = self;
     mainView.scrollsToTop = NO;
     [self addSubview:mainView];
     _mainView = mainView;
     [self addNumberCountView];
-    
 }
 
--(void)addNumberCountView
+- (void)addNumberCountView
 {
-    CGFloat viewWidth              = 35*DDDisplayScale;
-    UIView *containView            = [[UIView alloc]initWithFrame:CGRectMake(self.width - viewWidth - 10, self.height - viewWidth - 10, viewWidth, viewWidth)];
-    containView.backgroundColor    = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:0.3];
-    containView.layer.cornerRadius = viewWidth / 2.0;
-    containView.clipsToBounds      = YES;
-    self.numberCountView           = containView;
-    [self addSubview:self.numberCountView];
-
-    UILabel *textLabel             = [[UILabel alloc]initWithFrame:containView.frame];
-    textLabel.backgroundColor      = [UIColor clearColor];
-    textLabel.textAlignment        = NSTextAlignmentCenter;
-    textLabel.font                 = KFontNormal(15);
-    textLabel.textColor            = UIColorFromRGB(0xf4f5f6);
-    self.numberLabel               = textLabel;
-    [self.numberCountView addSubview:self.numberLabel];
+     CGFloat viewWidth              = 35 * DDDisplayScale;
+     UIView * containView           = [[UIView alloc] initWithFrame:CGRectMake(self.width - viewWidth - 10, self.height - viewWidth - 10, viewWidth, viewWidth)];
+     containView.backgroundColor    = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:0.3];
+     containView.layer.cornerRadius = viewWidth / 2.0;
+     containView.clipsToBounds      = YES;
+     self.numberCountView           = containView;
+     [self addSubview:self.numberCountView];
+     
+     UILabel * textLabel          = [[UILabel alloc] initWithFrame:containView.bounds];
+     textLabel.backgroundColor    = [UIColor clearColor];
+     textLabel.textAlignment      = NSTextAlignmentCenter;
+     textLabel.font               = KFontNormal(15);
+     textLabel.textColor          = UIColorFromRGB(0xf4f5f6);
+     self.numberLabel             = textLabel;
+     [self.numberCountView addSubview:self.numberLabel];
 }
+
 
 #pragma mark - properties
--(void)setFrame:(CGRect)frame
+- (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
     _flowLayout.itemSize = self.frame.size;
 }
 
--(void)setPlaceholderImage:(UIImage *)placeholderImage
+- (void)setPlaceholderImage:(UIImage *)placeholderImage
 {
     _placeholderImage = placeholderImage;
-    if (nil == self.backgroundImageView) {
-        UIImageView *bgImageView = [[UIImageView alloc]init];
+
+    if (!self.backgroundImageView) {
+        UIImageView *bgImageView = [UIImageView new];
         [self insertSubview:bgImageView belowSubview:self.mainView];
         bgImageView.contentMode = UIViewContentModeScaleAspectFit;
         self.backgroundImageView = bgImageView;
     }
-     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
+//    self.backgroundImageView.image = placeholderImage;
+    
 }
 
 - (void)setPageControlDotSize:(CGSize)pageControlDotSize
 {
     _pageControlDotSize = pageControlDotSize;
     [self setupPageControl];
-    if ([self.pageControl isKindOfClass:[PRPageControl class]]) {
-        PRPageControl *pageContol = (PRPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YHPageControl class]]) {
+        YHPageControl *pageContol = (YHPageControl *)_pageControl;
         pageContol.dotSize = pageControlDotSize;
     }
 }
@@ -170,8 +176,8 @@ NSString * const ID = @"cycleCell";
 - (void)setDotColor:(UIColor *)dotColor
 {
     _dotColor = dotColor;
-    if ([self.pageControl isKindOfClass:[PRPageControl class]]) {
-        PRPageControl *pageControl = (PRPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YHPageControl class]]) {
+        YHPageControl *pageControl = (YHPageControl *)_pageControl;
         pageControl.dotColor = dotColor;
     } else {
         UIPageControl *pageControl = (UIPageControl *)_pageControl;
@@ -198,12 +204,12 @@ NSString * const ID = @"cycleCell";
 - (void)setPageControlStyle:(SDCycleScrollViewPageContolStyle)pageControlStyle
 {
     _pageControlStyle = pageControlStyle;
-    if (self.pageControlStyle == SDCycleScrollViewPageContolStyleNumber) {
-        self.numberCountView.hidden = NO;
-    }else
-    {
-        self.numberCountView.hidden = YES;
-    }
+     if (self.pageControlStyle == SDCycleScrollViewPageContolStyleNumber) {
+          self.numberCountView.hidden = NO;
+     }else
+     {
+          self.numberCountView.hidden = YES;
+     }
     [self setupPageControl];
 }
 
@@ -216,12 +222,12 @@ NSString * const ID = @"cycleCell";
 {
     if (self.isInfiniteLoopValid) {
         self.isPosIniting = YES;
-        [self.mainView setContentOffset:CGPointMake(1 * self.flowLayout.itemSize.width, 0) animated:NO];
+         [self.mainView setContentOffset:CGPointMake(1 * self.flowLayout.itemSize.width, 0) animated:NO];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            // [self.mainView setContentOffset:CGPointMake(1 * self.flowLayout.itemSize.width, 0) animated:NO];
+           // [self.mainView setContentOffset:CGPointMake(1 * self.flowLayout.itemSize.width, 0) animated:NO];
             [self syncIndicatorIndex];
             self.isPosIniting = NO;
-            
+           
         });
     }else{
         self.isPosIniting = NO;
@@ -234,7 +240,7 @@ NSString * const ID = @"cycleCell";
     if (_imagesGroup && imagesGroup && [_imagesGroup isEqual:imagesGroup]) {
         return;
     }
-    _imagesGroup = imagesGroup;
+     _imagesGroup = imagesGroup;
     
     if (self.infiniteLoop == NO || self.imagesGroup.count < 2) {
         self.isInfiniteLoopValid = NO;
@@ -295,8 +301,6 @@ NSString * const ID = @"cycleCell";
     }else{
         return (cellIndex - 1) % self.imagesGroup.count;
     }
-    
-    return 0;
 }
 
 #pragma mark - actions
@@ -310,7 +314,7 @@ NSString * const ID = @"cycleCell";
 
 - (void)loadImageAtIndex:(NSInteger)index
 {
-#warning 出现过数组下标越界的crash，暂时做一层保护
+    #warning 出现过数组下标越界的crash，暂时做一层保护
     if (index >= self.imageURLStringsGroup.count) {
         return;
     }
@@ -350,8 +354,6 @@ NSString * const ID = @"cycleCell";
     }
 }
 
-
-
 - (void)setupPageControl
 {
     if (_pageControl) [_pageControl removeFromSuperview]; // 重新加载数据时调整
@@ -366,10 +368,11 @@ NSString * const ID = @"cycleCell";
     switch (self.pageControlStyle) {
         case SDCycleScrollViewPageContolStyleAnimated:
         {
-            PRPageControl *pageControl  = [[PRPageControl alloc] init];
+            YHPageControl *pageControl  = [[YHPageControl alloc] init];
             pageControl.numberOfPages   = self.imagesGroup.count;
             pageControl.dotImage        = [UIImage imageNamed:@"dot_selected"];
             pageControl.currentDotImage = [UIImage imageNamed:@"dot_unselected"];
+//            pageControl.dotColor = self.dotColor;
             [self addSubview:pageControl];
             _pageControl = pageControl;
         }
@@ -425,7 +428,6 @@ NSString * const ID = @"cycleCell";
     [_timer invalidate];
     _timer = nil;
 }
-
 #pragma mark - life circles
 
 - (void)layoutSubviews
@@ -435,8 +437,8 @@ NSString * const ID = @"cycleCell";
     _mainView.frame = self.bounds;
     
     CGSize size = CGSizeZero;
-    if ([self.pageControl isKindOfClass:[PRPageControl class]]) {
-        PRPageControl *pageControl = (PRPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YHPageControl class]]) {
+        YHPageControl *pageControl = (YHPageControl *)_pageControl;
         size = [pageControl sizeForNumberOfPages:self.imagesGroup.count];
     } else {
         size = CGSizeMake(self.imagesGroup.count * self.pageControlDotSize.width * 1.2, self.pageControlDotSize.height);
@@ -448,8 +450,8 @@ NSString * const ID = @"cycleCell";
     }
     
     CGFloat y = self.mainView.height - size.height - 13*DDDisplayScale;
-    if ([self.pageControl isKindOfClass:[PRPageControl class]]) {
-        PRPageControl *pageControl = (PRPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YHPageControl class]]) {
+        YHPageControl *pageControl = (YHPageControl *)_pageControl;
         [pageControl sizeToFit];
     }
     
@@ -483,11 +485,11 @@ NSString * const ID = @"cycleCell";
         if (self.isPosIniting) {
             return;
         }
-        //        CGFloat xOffset = self.showPageIndex * _flowLayout.itemSize.width;
-        //        if (xOffset >= _mainView.contentSize.width) {
-        //            xOffset = 0;
-        //        }
-        //        [self.mainView setContentOffset:CGPointMake(xOffset,0) animated:NO];
+//        CGFloat xOffset = self.showPageIndex * _flowLayout.itemSize.width;
+//        if (xOffset >= _mainView.contentSize.width) {
+//            xOffset = 0;
+//        }
+//        [self.mainView setContentOffset:CGPointMake(xOffset,0) animated:NO];
         [self checkoutInfiniteLoop];
         [self setupTimer];
     }else{
@@ -524,8 +526,8 @@ NSString * const ID = @"cycleCell";
 -(void)setDotImageName:(NSString *)dotImageName currentDotImageName:(NSString *)currentDotImageName
 {
     if (self.pageControlStyle == SDCycleScrollViewPageContolStyleAnimated) {
-        ((PRPageControl *)self.pageControl).dotImage        =  [UIImage imageNamed:dotImageName];
-        ((PRPageControl *)self.pageControl).currentDotImage =  [UIImage imageNamed:currentDotImageName];
+        ((YHPageControl *)self.pageControl).dotImage        =  [UIImage imageNamed:dotImageName];
+        ((YHPageControl *)self.pageControl).currentDotImage =  [UIImage imageNamed:currentDotImageName];
     }
 }
 
@@ -603,8 +605,8 @@ NSString * const ID = @"cycleCell";
     if (!self.imagesGroup.count) return; // 解决清除timer时偶尔会出现的问题
     int indexOnPageControl =(int) [self covertImageIndexWithCellIndex:itemIndex];
     
-    if ([self.pageControl isKindOfClass:[PRPageControl class]]) {
-        PRPageControl *pageControl = (PRPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YHPageControl class]]) {
+        YHPageControl *pageControl = (YHPageControl *)_pageControl;
         pageControl.currentPage = indexOnPageControl;
     } else {
         UIPageControl *pageControl = (UIPageControl *)_pageControl;
@@ -618,7 +620,7 @@ NSString * const ID = @"cycleCell";
         [attrStr appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%lu", (unsigned long)self.imagesGroup.count] attributes:ATTR_DICTIONARY(UIColorFromRGB(0xf4f5f6), KFontNormal(14))]];
         self.numberLabel.attributedText = attrStr;
     }
-    
+
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -653,5 +655,6 @@ NSString * const ID = @"cycleCell";
 {
     [self checkoutInfiniteLoop];
 }
+
 
 @end

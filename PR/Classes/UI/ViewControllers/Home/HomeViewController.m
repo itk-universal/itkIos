@@ -8,9 +8,11 @@
 
 #import "HomeViewController.h"
 #import "HomeDataConstructor.h"
+#import "HomeAPIInteract.h"
 
 @interface HomeViewController ()<WTNetWorkDataConstructorDelegate>
 @property (nonatomic, strong) HomeDataConstructor       * dataConstructor;
+@property (strong,nonatomic) HomeAPIInteract *interact ;
 
 @end
 
@@ -19,7 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navTitle = @"首页";
-     [self.dataConstructor loadData];
+    
+    self.interact = [[HomeAPIInteract alloc]init];
+//    OSStatus status = [self.interact interactScuess:^(BaseAPIInteract *interact, id modelData) {
+//        //        [MTCacheCenter saveElement:modelData
+//        //                       elementName:MTCacheElementHomeData
+//        //                           subName:homeModelSubName completion:^{
+//        //
+//        //                           }];
+//        //        self.serverDataArrived = YES;
+////        [self.delegate requestDynamicUIModelSuccess:modelData isCache:NO];
+//    } failed:^(BaseAPIInteract *interact, NSError *error, id modelData) {
+////        [self.delegate requestDynamicUIModelFailed:error];
+//    }];
+    [self.dataConstructor loadData];
 }
 
 - (void)constructData

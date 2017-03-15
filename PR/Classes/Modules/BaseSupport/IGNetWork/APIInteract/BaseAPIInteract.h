@@ -47,9 +47,9 @@ typedef NS_ENUM(char,APIInteractPolicy)
                              http:(HttpMethodType)method
                          modelCls:(Class)modelClass;
 
-- (void)adjustAPIPolicy:(APIInteractPolicy)policy;
-
-- (void)configPageRespondParser:(NSString *)pageKey;
+//- (void)adjustAPIPolicy:(APIInteractPolicy)policy;
+//
+//- (void)configPageRespondParser:(NSString *)pageKey;
 @end
 
 @class BaseRequest;
