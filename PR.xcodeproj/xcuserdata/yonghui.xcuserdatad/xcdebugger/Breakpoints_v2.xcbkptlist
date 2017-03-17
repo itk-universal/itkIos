@@ -269,26 +269,10 @@
             timestampString = "511191311.865113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-cancel"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PR/Classes/Modules/BaseSupport/IGNetWork/IGHttpTask/IGHttpTask.m"
-            timestampString = "511191311.865113"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
             endingLineNumber = "152"
             landmarkName = "-disposeFailedResp:error:respond:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -304,7 +288,7 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "-runTask"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -324,17 +308,27 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PR/Classes/UI/ViewControllers/Home/View/Cell/HomeCouponCell.m"
-            timestampString = "511282508.232254"
+            filePath = "PR/Classes/UI/ViewControllers/Home/View/Cell/HomeThressProductCell.m"
+            timestampString = "511428657.690688"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-setObject:"
             landmarkType = "7">
          </BreakpointContent>
@@ -345,13 +339,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PR/Classes/UI/ViewControllers/Home/View/Cell/HomeProductScrollviewCell.m"
-            timestampString = "511284416.5464"
+            filePath = "PR/Classes/UI/ViewControllers/Home/View/Cell/HomeThressProductCell.m"
+            timestampString = "511428657.690688"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-setObject:"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-addProductView:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -361,14 +355,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PR/Classes/ThirdPart/SDWebImage/Source/UIImage+MultiFormat.m"
-            timestampString = "511340519.742652"
+            filePath = "PR/Classes/UI/ViewControllers/Home/View/Cell/HomeThressProductCell.m"
+            timestampString = "511428470.836079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "+sd_imageWithData:"
-            landmarkType = "7">
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "@implementation HomeThressProductCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

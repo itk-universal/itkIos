@@ -45,11 +45,13 @@
     [super layoutSubviews];
     CGFloat kLeftMarign = 15;
     CGFloat kPriceLabelH = [self.priceLabel sizeThatFits:CGSizeMake(MAXFLOAT,MAXFLOAT)].height;
-    self.priceLabel.frame = CGRectMake(kLeftMarign, self.height - kLeftMarign - kPriceLabelH, self.width - 2*kLeftMarign, kPriceLabelH);
+    CGFloat kBottomMargin = 5;
+    self.priceLabel.frame = CGRectMake(kLeftMarign, self.height - kBottomMargin - kPriceLabelH, self.width - 2*kLeftMarign, kPriceLabelH);
     CGFloat kTitleLabelH = [self.titleLabel sizeThatFits:CGSizeMake(self.priceLabel.width, MAXFLOAT)].height;
-    self.titleLabel.frame = CGRectMake(self.priceLabel.left, self.priceLabel.top - kLeftMarign - kTitleLabelH, self.priceLabel.width, kTitleLabelH);
-    CGFloat kProductImageH = self.titleLabel.top - 2* kLeftMarign;
-    self.productImage.frame = CGRectMake(kLeftMarign, kLeftMarign, self.priceLabel.width, kProductImageH);
+    self.titleLabel.frame = CGRectMake(self.priceLabel.left, self.priceLabel.top - kBottomMargin - kTitleLabelH, self.priceLabel.width, kTitleLabelH);
+    [self.titleLabel setBackgroundColor:[UIColor orangeColor]];
+    CGFloat kProductImageH = self.titleLabel.top - 2* kBottomMargin;
+    self.productImage.frame = CGRectMake(kLeftMarign, kBottomMargin, self.priceLabel.width, kProductImageH);
 }
 
 -(void)setInfo:(ProductInfo *)info

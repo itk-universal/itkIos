@@ -12,6 +12,7 @@
 #import "ProductInfo.h"
 
 #define kBaseTag 1000
+#define kProudctViewH (180*DDDisplayScale)
 @interface HomeThressProductCell()
 @property (strong,nonatomic) NSMutableArray *reusePool;
 @property (strong,nonatomic) UIView *containView;
@@ -24,7 +25,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _containView = [[UIView alloc]init];
         [_containView setBackgroundColor:[UIColor whiteColor]];
-        [self.containView addSubview:_containView];
+        [self.contentView addSubview:_containView];
     }
     return self;
 }
@@ -82,13 +83,31 @@
     [super layoutSubviews];
     CGFloat kMargin = 5;
     CGFloat kProductViewW = (self.width - 2*kMargin)/3.0;
-    CGFloat kProudctViewH = 100;
     for (ProductImageView2 *productView in self.containView.subviews) {
         NSInteger row = (productView.tag - kBaseTag)/3;
         NSInteger column = (productView.tag - kBaseTag)%3;
-        CGFloat productViewX = (column - 1)*kProductViewW + column*kMargin;
-        CGFloat productViewY =  (row - 1)*(kProudctViewH + kMargin);
+        CGFloat productViewX = column*kProductViewW + (column + 1)*kMargin;
+        CGFloat productViewY =  row*(kProudctViewH + kMargin);
         productView.frame = CGRectMake(productViewX, productViewY, kProductViewW, kProudctViewH);
+        if (productView.tag == kBaseTag) {
+            [productView setBackgroundColor:[UIColor magentaColor]];
+        }
     }
+}
+
+
++(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object
+{
+    CONDITION_CHECK_RETURN_VAULE([object isKindOfClass:[DynamicCardItem class]], 0);
+    DynamicCardItem *cardItem = (DynamicCardItem *)object;
+    NSArray *products = cardItem.data;
+    NSInteger row     = 0;
+    if ([products count]%3) {
+        row =  [products count]/3 + 1;
+    }else{
+        row = [products count]/3;
+    }
+    return kProudctViewH * row;
+    
 }
 @end
