@@ -10,6 +10,7 @@
 #import "DMExhibitItem.h"
 #import "UtilCodeTool.h"
 #import "DynamicDataTransformTool.h"
+#import "ProductInfo.h"
 
 @implementation DynamicCardItem
 FUNCTION_NSCODINGIMP_WITHCLAZZ([DynamicCardItem class])
@@ -89,7 +90,7 @@ static NSString * prefixKey = @"keyPrefix";
         {
             NSArray *array = [dict safeObjectForKey:@"shopproducts" hintClass:[NSArray class]];
             if (array) {
-                [self parseDataArray:array withItemClass:[DMExhibitItem class] forType:cardType];
+                [self parseDataArray:array withItemClass:[ProductInfo class] forType:cardType];
             }
             break;
         }
@@ -103,9 +104,9 @@ static NSString * prefixKey = @"keyPrefix";
         }
         case DYnamicCardType_ThressProducts:
         {
-            NSArray *array = [dict safeObjectForKey:@"kusuggest" hintClass:[NSArray class]];
+            NSArray *array = [dict safeObjectForKey:@"skupos3c" hintClass:[NSArray class]];
             if (array) {
-                [self parseDataArray:array withItemClass:[DMExhibitItem class] forType:cardType];
+                [self parseDataArray:array withItemClass:[ProductInfo class] forType:cardType];
             }
             break;
         }

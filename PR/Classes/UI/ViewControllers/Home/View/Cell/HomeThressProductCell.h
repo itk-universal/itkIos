@@ -8,6 +8,6 @@
 
 #import "WTTableViewCell.h"
 
-@interface HomeProductCell : WTTableViewCell
+@interface HomeThressProductCell : WTTableViewCell
 
 @end

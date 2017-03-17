@@ -8,7 +8,7 @@
 
 #import "CarouselItemView.h"
 #import "AutoImageView.h"
-#import "DMExhibitItem.h"
+#import "ProductInfo.h"
 
 @interface CarouselItemView()
 
@@ -70,8 +70,8 @@
 
 -(void)setObject:(id)object
 {
-    CONDITION_CHECK_RETURN([object isKindOfClass:[DMExhibitItem class]]);
-    DMExhibitItem *item = object;
+    CONDITION_CHECK_RETURN([object isKindOfClass:[ProductInfo class]]);
+    ProductInfo *item = object;
     if (item.title) {
         if (self.titleLabel == nil) {
             [self addTitleLabel];

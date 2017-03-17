@@ -66,27 +66,67 @@
                    },
                    {"key":"shopproducts",
                    "value":[{
-                            "action": "myyh://yhlife.com/show/native?name=prddetail&id=14063&merid=2",
-                            "id": "14063",
-                            "imgurl": "http://image.yonghuivip.com/product/14063/0.png?imageView2/0/w/242/h/242/format/webp/q/100",
-                            "priceTag": "3.00",
-                            "title": "椰树椰汁软包装245ml"
-                   },
-                            {
-                            "action": "myyh://yhlife.com/show/native?name=prddetail&id=14063&merid=2",
-                            "id": "14063",
-                            "imgurl": "http://image.yonghuivip.com/product/14063/0.png?imageView2/0/w/242/h/242/format/webp/q/100",
-                            "priceTag": "3.00",
-                            "title": "椰树椰汁软包装245ml"
+                            "action": "myyh://yhlife.com/show/native?name=prddetail&id=793427&merid=2",
+                            "id": "793427",
+                            "imgurl": "http://image.yonghuivip.com//image/1471227484528dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/200x200",
+                            "price": {
+                            "market": 3300,
                             },
-                            {
-                            "action": "myyh://yhlife.com/show/native?name=prddetail&id=14063&merid=2",
-                            "id": "14063",
-                            "imgurl": "http://image.yonghuivip.com/product/14063/0.png?imageView2/0/w/242/h/242/format/webp/q/100",
-                            "priceTag": "3.00",
-                            "title": "椰树椰汁软包装245ml"
+                            "title": "澳洲优选草饲牛眼肉180g"
+                           },
+                            {"action": "myyh://yhlife.com/show/native?name=prddetail&id=793427&merid=2",
+                            "id": "793427",
+                            "imgurl": "http://image.yonghuivip.com//image/1471227484528dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/200x200",
+                            "price": {
+                            "market": 3300,
+                            },
+                            "title": "澳洲优选草饲牛眼肉180g",
+                            },
+                            {"action": "myyh://yhlife.com/show/native?name=prddetail&id=793427&merid=2",
+                            "id": "793427",
+                            "imgurl": "http://image.yonghuivip.com//image/1471227484528dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/200x200",
+                            "price": {
+                            "market": 3300,
+                            },
+                            "title": "澳洲优选草饲牛眼肉180g",
                             }]
                    },
+                   {
+                    "key":"skupos3c",
+                   "value":[{"action": "myyh://yhlife.com/show/native?name=prddetail&id=793427&merid=2",
+                            "id": "793427",
+                            "imgurl": "http://image.yonghuivip.com//image/1471227484528dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/200x200",
+                            "price": {
+                            "market": 3300,
+                            },
+                            "title": "澳洲优选草饲牛眼肉180g",
+                            },
+                            {"action": "myyh://yhlife.com/show/native?name=prddetail&id=793427&merid=2",
+                            "id": "793427",
+                            "imgurl": "http://image.yonghuivip.com//image/1471227484528dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/200x200",
+                            "price": {
+                            "market": 3300,
+                            },
+                            "title": "澳洲优选草饲牛眼肉180g",
+                            },
+                            {"action": "myyh://yhlife.com/show/native?name=prddetail&id=793427&merid=2",
+                            "id": "793427",
+                            "imgurl": "http://image.yonghuivip.com//image/1471227484528dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/200x200",
+                            "price": {
+                            "market": 3300,
+                            },
+                            "title": "澳洲优选草饲牛眼肉180g",
+                            },
+                            {"action": "myyh://yhlife.com/show/native?name=prddetail&id=793427&merid=2",
+                            "id": "793427",
+                            "imgurl": "http://image.yonghuivip.com//image/1471227484528dfaaeed694eae97c85b434d102c0fe199eb9c461?imageMogr2/thumbnail/200x200",
+                            "price": {
+                            "market": 3300,
+                            },
+                            "title": "澳洲优选草饲牛眼肉180g",
+                            }]
+                   },
+                   }
                    {"key":"shopcoupon",
                    "value":{
                    "icon":"http://image.yonghuivip.com/hydlogo.png",

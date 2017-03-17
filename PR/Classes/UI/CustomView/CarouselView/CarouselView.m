@@ -8,8 +8,7 @@
 
 #import "CarouselView.h"
 #import "CarouselItemView.h"
-//#import "MemberCenterInfo.h"
-#import "DMExhibitItem.h"
+#import "ProductInfo.h"
 
 
 #define KTopMargin       10
@@ -134,7 +133,7 @@
     [self.scrollView setContentOffset:CGPointZero];
     NSInteger viewMaxNum = [self viewMaxNum];
     for (NSInteger i = 0;  i < viewMaxNum; i++) {
-        DMExhibitItem *model = [self.dataList safeObjectAtIndex:i hintClass:[DMExhibitItem class]];
+        ProductInfo *model = [self.dataList safeObjectAtIndex:i hintClass:[ProductInfo class]];
         if (model) {
             CarouselItemView *itemView = [self inUseViewWithTag:i + kBaseTag];
             if (itemView == nil) {
@@ -180,8 +179,8 @@
             CGFloat kItemViewX = kLeftMargin*(tag + 1) + kCarouselItemViewW *tag;
             itemView.frame = CGRectMake(kItemViewX, KTopMargin,kCarouselItemViewW , self.scrollView.height - 2*KTopMargin);
             [self.scrollView addSubview:itemView];
-            DMExhibitItem  *model = [self.dataList safeObjectAtIndex:tag
-                                                           hintClass:[DMExhibitItem  class]];
+            ProductInfo  *model = [self.dataList safeObjectAtIndex:tag
+                                                           hintClass:[ProductInfo  class]];
             [itemView setObject:model];
             [self.inUseViews addObject:itemView];
         }

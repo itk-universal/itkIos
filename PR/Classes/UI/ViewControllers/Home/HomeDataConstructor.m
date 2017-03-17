@@ -14,7 +14,7 @@
 #import "HomeIconViewCell.h"
 #import "NearbyShopViewCell.h"
 #import "DiscountPromptViewCell.h"
-#import "HomeProductCell.h"
+#import "HomeThressProductCell.h"
 #import "HomeCouponCell.h"
 #import "HomeProductScrollviewCell.h"
 #import "WTCellDataPipe.h"
@@ -78,7 +78,7 @@
     }else if (type == DYnamicCardType_SellerCoupon){
         return [HomeCouponCell class];
     }else if (type == DYnamicCardType_ThressProducts){
-        return [HomeProductCell class];
+        return [HomeThressProductCell class];
     }else if (type == DynamicCardType_CellGap){
         return [GapViewCell class];
     }
