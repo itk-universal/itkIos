@@ -42,7 +42,7 @@
 //价格
 @property (readonly,nonatomic)  PriceInfo *priceInfo;
 //商家id
-@property (readonly,nonatomic) NSString *sellerid;
+@property (readonly,nonatomic) NSString *shopid;
 //规格
 @property (readonly,nonatomic) NSString *spec;
 //title

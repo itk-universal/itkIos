@@ -35,7 +35,7 @@
         [_seleteBtn setImage:[UIImage imageNamed:@"icon_radio_normal"]forState:UIControlStateNormal];
         [_seleteBtn setImage:[UIImage imageNamed:@"icon_radio_selected"] forState:UIControlStateSelected];
         [_seleteBtn setImage: [UIImage imageNamed:@"icon_radio_disable"] forState:UIControlStateDisabled];
-        [_seleteBtn addTarget:self action:@selector(seleteBtnOnClicked) forControlEvents:UIControlEventTouchUpInside];
+        [_seleteBtn addTarget:self action:@selector(seleteBtnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:_seleteBtn];
         
         _shopIcon              = [[AutoImageView alloc]init];
@@ -106,6 +106,7 @@
 -(void)setObject:(id)object
 {
     CONDITION_CHECK_RETURN([object isKindOfClass:[ShopDescInfo class]]);
+    [super setObject:object];
     ShopDescInfo *info = object;
     self.shopNameLabel.text = info.title;
     [self.shopIcon setImgInfo:info.icon withPlaceholderImage:[UIImage imageNamed:@"icon_default"]];
@@ -113,12 +114,12 @@
 -(void)eidtBtnOnClicked:(UIButton *)sender
 {
     sender.selected = !sender.selected;
-     [self triggerSignal:ShopCardEditSignal withObj:nil];
-} 
+     [self triggerSignal:ShopCardEditSignal withObj:self.object];
+}
 
--(void)seleteBtnOnClicked
+-(void)seleteBtnOnClicked:(UIButton *)btn
 {
-    
+    btn.selected = !btn.selected;
 }
 
 -(void)tapShopName

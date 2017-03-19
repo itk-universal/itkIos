@@ -15,4 +15,6 @@ typedef NS_ENUM(NSInteger,CartProductType)
 };
 @interface CartProductInfo : ProductInfo
 @property (assign,nonatomic) CartProductType type;
+//是否在编辑模式下
+@property (assign,nonatomic) BOOL isEdit;
 @end

@@ -18,7 +18,6 @@
              NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:[productsTemp count]];
             for (NSDictionary *dict in productsTemp) {
                 CartProductInfo *product = [CartProductInfo modelFromDictionary:dict];
-                product.type             = CartProductTypeDefault;
                 [tempArray safeAddObject:product];
             }
             _products = [NSArray arrayWithArray:tempArray];

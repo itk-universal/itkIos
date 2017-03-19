@@ -40,7 +40,7 @@
         _num = [[dic safeObjectForKey:@"num" hintClass:[NSNumber class]]integerValue]/100;
         _priceInfo = [PriceInfo modelFromDictionary:[dic safeObjectForKey:@"price"]];
         _isSelect  = [[dic safeObjectForKey:@"selectstate"]boolValue];
-        _sellerid  = [dic safeObjectForKey:@"sellerid"];
+        _shopid    = [dic safeObjectForKey:@"shopid"];
         _spec      = [dic safeObjectForKey:@"spec"];
         _stocknum  = [[dic safeObjectForKey:@"stocknum"]integerValue]/100;
         _subtitle  = [dic safeObjectForKey:@"subtitle"];

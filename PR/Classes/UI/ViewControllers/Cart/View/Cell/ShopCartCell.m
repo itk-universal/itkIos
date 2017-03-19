@@ -194,6 +194,8 @@
     CartProductInfo *info = object;
     [self.detailView setProduct:info];
     [self.editingView setProduct:info];
+    self.detailView.hidden  = info.isEdit;
+    self.editingView.hidden = !info.isEdit;
     [self.goodImageView setImgInfo:info.imageInfo withPlaceholderImage:[UIImage imageNamed:@"icon_default"]];
 }
 +(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object

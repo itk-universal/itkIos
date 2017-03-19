@@ -10,6 +10,8 @@
 #import "CartDataConstructor.h"
 #import "ShopCartFooterView.h"
 #import "ShopCartInfo.h"
+#import "CartProductInfo.h"
+#import "ShopDescInfo.h"
 
 @interface CartViewController ()<WTNetWorkDataConstructorDelegate>
 
@@ -82,6 +84,16 @@
 {
     if ([signal is:ShopCardEditSignal]) {
         PRLOG(@"ShopCardEditSignal");
+        ShopDescInfo *shopinfo = signal.param;
+        CONDITION_CHECK_RETURN([shopinfo isKindOfClass:[ShopDescInfo class]]);
+        for (CartProductInfo *product in self.tableViewAdaptor.items) {
+            if ([product isKindOfClass:[CartProductInfo class]]) {
+                if ([product.shopid isEqualToString:shopinfo.cid]) {
+                    product.isEdit = !product.isEdit;
+                }
+            }
+        }
+        [self.tableView reloadData];
     }
 }
 @end
