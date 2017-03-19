@@ -40,11 +40,6 @@
     [self.prTabbarView setSelectedIndex:selectedIndex];
 }
 
-#pragma mark -- UITabBarControllerDelegate
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-    
-}
 
 #pragma mark - UITabBarDelegate
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item

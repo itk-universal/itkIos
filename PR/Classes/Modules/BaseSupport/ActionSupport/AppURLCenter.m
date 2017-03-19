@@ -9,7 +9,6 @@
 #import "AppURLCenter.h"
 #import "InternalSchemeHandler.h"
 #import "SceneMananger.h"
-#import "WTTabBarViewController.h"
 //#ifdef ISDebugOptionValid
 //#import "DebugConfigEntry.h"
 //#endif

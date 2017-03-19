@@ -21,7 +21,7 @@
                             [IGURLManager urlWithPath:Cart_URLPATH]
                                              andParams:nil];
     request.needPublicInfo = YES;
-    request.httpMethod     = kHttpMethodPost;
+    request.httpMethod     = kHttpMethodGet;
     return request;
 }
 

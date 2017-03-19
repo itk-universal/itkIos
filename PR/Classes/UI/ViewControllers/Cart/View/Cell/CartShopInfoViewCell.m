@@ -8,13 +8,18 @@
 
 #import "CartShopInfoViewCell.h"
 #import "CouponsSelectView.h"
+#import "ShopDescInfo.h"
+#import "AutoImageView.h"
+#import "OnePixelSepView.h"
+#import "NSObject+MSignal.h"
+#import "ShopCartInfo.h"
 
 @interface CartShopInfoViewCell()
 
 @property (strong,nonatomic) UIButton *seleteBtn;
-@property (strong,nonatomic) UILabel *shopIconLabel;
+@property (strong,nonatomic) AutoImageView *shopIcon;
 @property (strong,nonatomic) UILabel *shopNameLabel;
-@property (strong,nonatomic) UILabel *arrowLabel;
+@property (strong,nonatomic) UIImageView *arrowIcon;
 @property (strong,nonatomic) UIButton *eidtBtn;
 @property (strong,nonatomic) UIButton *couponBtn;
 @property (strong,nonatomic) CouponsSelectView *couponsView;
@@ -27,39 +32,39 @@
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _seleteBtn                  = [[UIButton alloc]init];
-        [_seleteBtn setBackgroundColor:[UIColor redColor]];
-        [_seleteBtn setTitle:@"未" forState:UIControlStateNormal];
-        [_seleteBtn setTitle:@"中" forState:UIControlStateSelected];
-        [_seleteBtn setTitle:@"非" forState:UIControlStateDisabled];
+        [_seleteBtn setImage:[UIImage imageNamed:@"icon_radio_normal"]forState:UIControlStateNormal];
+        [_seleteBtn setImage:[UIImage imageNamed:@"icon_radio_selected"] forState:UIControlStateSelected];
+        [_seleteBtn setImage: [UIImage imageNamed:@"icon_radio_disable"] forState:UIControlStateDisabled];
         [_seleteBtn addTarget:self action:@selector(seleteBtnOnClicked) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_seleteBtn];
+        [self.contentView addSubview:_seleteBtn];
         
-        _shopIconLabel              = [[UILabel alloc]init];
-        [_shopIconLabel setBackgroundColor:[UIColor orangeColor]];
-        [self addSubview:_shopIconLabel];
+        _shopIcon              = [[AutoImageView alloc]init];
+        [self.contentView addSubview:_shopIcon];
         
         _shopNameLabel              = [[UILabel alloc]init];
-        [_shopNameLabel setText:@"xxxxx"];
         [_shopNameLabel setTextColor:kColorNormal];
         [_shopNameLabel setFont:KFontNormal(14)];
-        [self addSubview:_shopNameLabel];
+        [self.contentView addSubview:_shopNameLabel];
         
-        _arrowLabel                 = [[UILabel alloc]init];
-        [_arrowLabel setBackgroundColor:[UIColor brownColor]];
-        [self addSubview:_arrowLabel];
+        _arrowIcon                 = [[UIImageView alloc]init];
+        [_arrowIcon setImage:[UIImage imageNamed:@"icon_arrow_right"]];
+        [self.contentView addSubview:_arrowIcon];
         
-        _eidtBtn                    = [UIButton buttonWithType:UIButtonTypeSystem];
+        _eidtBtn                    = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_eidtBtn.titleLabel setFont:KFontNormal(14)];
         [_eidtBtn setTitle:@"编辑" forState:UIControlStateNormal];
-        [_eidtBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [_eidtBtn setTitleColor:kColorGray forState:UIControlStateNormal];
         [_eidtBtn setTitle:@"完成" forState:UIControlStateSelected];
         [_eidtBtn addTarget:self action:@selector(eidtBtnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_eidtBtn];
+        [self.contentView addSubview:_eidtBtn];
         
         _couponBtn                  = [UIButton buttonWithType:UIButtonTypeSystem];
         [_couponBtn setTitle:@"领券" forState:UIControlStateNormal];
-        [_couponBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [_couponBtn setTitleColor:kColorGray forState:UIControlStateNormal];
         [_couponBtn addTarget:self action:@selector(couponeBtnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_couponBtn];
+        [self.contentView addSubview:_couponBtn];
+        
+        [self.contentView setPixelSepSet:PSRectEdgeBottom];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapShopName)];
         [self.shopNameLabel addGestureRecognizer:tap];
@@ -71,17 +76,17 @@
 {
     [super layoutSubviews];
     CGFloat seleteBtnW       = 35;
-    self.seleteBtn.frame     = CGRectMake(0, 0, seleteBtnW, self.height);
+    self.seleteBtn.frame     = CGRectMake(15, 0, seleteBtnW, self.height);
     
     CGFloat shopIconLabelW   = 15;
-    self.shopIconLabel.frame = CGRectMake(self.seleteBtn.right, (self.height - shopIconLabelW)/2.0, shopIconLabelW, shopIconLabelW);
+    self.shopIcon.frame = CGRectMake(self.seleteBtn.right, (self.height - shopIconLabelW)/2.0, shopIconLabelW, shopIconLabelW);
     
-    CGFloat shopNameLabelW   = [self.shopIconLabel sizeThatFits:CGSizeMake(MAXFLOAT, self.height)].width;
-    self.shopNameLabel.frame = CGRectMake(self.shopIconLabel.right + 5, 0, shopNameLabelW, self.height);
+    CGFloat shopNameLabelW   = [self.shopNameLabel sizeThatFits:CGSizeMake(MAXFLOAT, self.height)].width;
+    self.shopNameLabel.frame = CGRectMake(self.shopIcon.right + 5, 0, shopNameLabelW, self.height);
     
     CGFloat arrowLabelW      = 6;
     CGFloat arrowLabelH      = 11;
-    self.arrowLabel.frame    = CGRectMake(self.shopIconLabel.right + 5,(self.height - arrowLabelH)/2.0, arrowLabelW, arrowLabelH);
+    self.arrowIcon.frame    = CGRectMake(self.shopNameLabel.right + 5,(self.height - arrowLabelH)/2.0, arrowLabelW, arrowLabelH);
     
     CGFloat editBtnW         = 40;
     self.eidtBtn.frame       = CGRectMake(self.width - editBtnW, 0, editBtnW, self.height);
@@ -98,10 +103,19 @@
     [self.couponsView show];
 }
 
+-(void)setObject:(id)object
+{
+    CONDITION_CHECK_RETURN([object isKindOfClass:[ShopDescInfo class]]);
+    ShopDescInfo *info = object;
+    self.shopNameLabel.text = info.title;
+    [self.shopIcon setImgInfo:info.icon withPlaceholderImage:[UIImage imageNamed:@"icon_default"]];
+}
 -(void)eidtBtnOnClicked:(UIButton *)sender
 {
     sender.selected = !sender.selected;
-}
+     [self triggerSignal:ShopCardEditSignal withObj:nil];
+} 
+
 -(void)seleteBtnOnClicked
 {
     

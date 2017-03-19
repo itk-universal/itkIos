@@ -23,6 +23,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = kVCViewBGColor;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.navigationController.navigationBar setTranslucent:NO];
     if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)])
     {

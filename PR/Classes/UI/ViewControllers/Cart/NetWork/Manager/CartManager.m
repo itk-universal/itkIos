@@ -7,7 +7,25 @@
 //
 
 #import "CartManager.h"
+#import "CartAPIInteract.h"
 
+@interface CartManager()
+@property (strong,nonatomic) CartAPIInteract *cartAPI;
+
+@end
 @implementation CartManager
-
+-(BOOL)refreshCart
+{
+    self.cartAPI = [[CartAPIInteract alloc] init];
+     [self.cartAPI interactScuess:^(BaseAPIInteract *interact, id modelData){
+         if (self.delegate && [self.delegate respondsToSelector:@selector(requestSuccess:isCache:)]) {
+             [self.delegate requestSuccess:modelData isCache:NO];
+         }
+    } failed:^(BaseAPIInteract *interact, NSError *error, id modelData) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(requestFailed:)]) {
+            [self.delegate requestFailed:error];
+        }
+    }];
+    return YES;
+}
 @end

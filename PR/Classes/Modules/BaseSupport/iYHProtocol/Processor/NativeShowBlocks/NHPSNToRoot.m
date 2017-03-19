@@ -7,9 +7,9 @@
 //
 
 #import "NHPSNToRoot.h"
-#import "WTTabBarViewController.h"
 #import "PRControlCenter.h"
 #import "SceneMananger.h"
+#import "PRTabBarViewController.h"
 
 @implementation NHPSNToRoot
 
@@ -64,8 +64,9 @@
 - (BOOL)toTabbar:(NSInteger)index
 {
     UIViewController * tempVC = [[SceneMananger shareMananger] rootViewController];
-    if (tempVC && [tempVC isKindOfClass:[WTTabBarViewController class]]) {
-        WTTabBarViewController * tRootVC = (WTTabBarViewController *)tempVC;
+    if (tempVC && [tempVC isKindOfClass:[PRTabBarViewController
+                                         class]]) {
+        PRTabBarViewController * tRootVC = (PRTabBarViewController *)tempVC;
         tRootVC.selectedIndex = index;
         tRootVC.tabBar.hidden = NO;
         return YES;

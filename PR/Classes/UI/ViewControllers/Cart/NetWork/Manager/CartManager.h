@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol CartManagerDelegate <NSObject>
+@required
+- (void)requestSuccess:(id)modelData isCache:(BOOL)isCache;
+- (void)requestFailed:(id)error;
+@end
+
+
 @interface CartManager : NSObject
-//-(BOOL)refresh
+-(BOOL)refreshCart;
+@property (weak,nonatomic) id<CartManagerDelegate> delegate;
 @end

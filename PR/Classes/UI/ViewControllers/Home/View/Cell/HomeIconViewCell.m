@@ -15,15 +15,6 @@
 #define kBaseTag  1000
 
 @implementation HomeIconViewCell
-//-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-//{
-//    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-//        _iconArray = [NSMutableArray array];
-//        [self.contentView setBackgroundColor:[UIColor orangeColor]];
-//    }
-//    return self;
-//}
-
 -(void)layoutSubviews
 {
     [super layoutSubviews];

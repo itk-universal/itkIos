@@ -7,7 +7,7 @@
 //
 
 #import "CartShopUIModel.h"
-#import "ProductInfo.h"
+#import "CartProductInfo.h"
 
 @implementation CartShopUIModel
 -(instancetype)initWithDictionary:(NSDictionary *)dic
@@ -17,7 +17,8 @@
         if ([productsTemp count]) {
              NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:[productsTemp count]];
             for (NSDictionary *dict in productsTemp) {
-                ProductInfo *product = [ProductInfo modelFromDictionary:dict];
+                CartProductInfo *product = [CartProductInfo modelFromDictionary:dict];
+                product.type             = CartProductTypeDefault;
                 [tempArray safeAddObject:product];
             }
             _products = [NSArray arrayWithArray:tempArray];

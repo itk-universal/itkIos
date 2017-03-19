@@ -8,6 +8,7 @@
 
 #import "GoodNumController.h"
 #import "NoMenueTextField.h"
+#import "OnePixelSepView.h"
 
 #define kWidth  96
 #define kHeight 28
@@ -26,28 +27,34 @@
 -(instancetype)init
 {
     if (self = [super init]) {
+        
+        self.layer.cornerRadius = 2.0;
+        self.layer.borderColor  = UIColorFromRGB(0xdddddd).CGColor;
+        self.layer.borderWidth  = OnePoint;
+        self.layer.masksToBounds= YES;
+        
         _addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_addBtn setImage:[UIImage imageNamed:@"+"] forState:UIControlStateNormal];
-        [_addBtn setImage:[UIImage imageNamed:@"+hui"] forState:UIControlStateDisabled];
+        [_addBtn setImage:[UIImage imageNamed:@"icon_cartplus"] forState:UIControlStateNormal];
         [_addBtn setBackgroundColor:[UIColor clearColor]];
         [_addBtn addTarget:self action:@selector(addBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
         [_addBtn setContentMode:UIViewContentModeRight];
+        [_addBtn setPixelSepSet:PSRectEdgeLeft];
         [self addSubview:_addBtn];
         
         
         _minusBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_minusBtn setImage:[UIImage imageNamed:@"_"] forState:UIControlStateNormal];
-        [_minusBtn setImage:[UIImage imageNamed:@"_-not-optional"] forState:UIControlStateDisabled];
+        [_minusBtn setImage:[UIImage imageNamed:@"icon_cartminus"] forState:UIControlStateNormal];
         [_minusBtn setBackgroundColor:[UIColor clearColor]];
         [_minusBtn setContentMode:UIViewContentModeLeft];
         [_minusBtn addTarget:self action:@selector(minusBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
+        [_minusBtn setPixelSepSet:PSRectEdgeRight];
         [self addSubview:_minusBtn];
         
         _textfiled = [[NoMenueTextField alloc]init];
         [_textfiled setTextAlignment:NSTextAlignmentCenter];
         [_textfiled setBorderStyle:UITextBorderStyleNone];
         [_textfiled setFont:KFontNormal(16)];
-        [_textfiled setTextColor:UIColorFromRGB(0xfd7622)];
+        [_textfiled setTextColor:kColorTheme];
         [_textfiled setBackgroundColor:[UIColor clearColor]];
         _textfiled.delegate = self;
         [self addSubview:_textfiled];
@@ -61,18 +68,17 @@
     CGFloat margin         = 10;
     CGFloat tempBtnW       = 28;
     CGFloat btnW           = tempBtnW + margin;
-    CGFloat btnH           = kHeight + 10;
-    self.minusBtn.frame    = CGRectMake(-margin, 0, btnW, btnH);
-    self.minusBtn.centerY  = kHeight/2.0;
-    self.textfiled.frame   = CGRectMake(self.minusBtn.right, 11.5,kWidth-2*tempBtnW, kHeight);
-    self.textfiled.centerY = kHeight/2.0;
-    self.addBtn.frame      = CGRectMake(self.textfiled.right,0, btnW,kHeight + 10);
-    self.addBtn.centerY    = kHeight/2.0;
+    self.minusBtn.frame    = CGRectMake(0, 0, btnW, self.height);
+    self.textfiled.frame   = CGRectMake(self.minusBtn.right, 0,kWidth-2*tempBtnW, self.height);
+
+    self.addBtn.frame      = CGRectMake(self.textfiled.right,0, btnW,self.height);
 }
 
 -(void)setProduct:(ProductInfo *)product
 {
     CONDITION_CHECK_RETURN([product isKindOfClass:[ProductInfo class]]);
+    
+    self.textfiled.text  = [NSString stringWithFormat:@"%zd",product.num];
     
 }
 #pragma mark 按钮事件

@@ -8,6 +8,7 @@
 
 #import "SectionHeaderView.h"
 #import "CouponsSelectView.h"
+#import "ShopDescInfo.h"
 
 @interface SectionHeaderView()
 
@@ -27,9 +28,9 @@
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
         _seleteBtn                  = [[UIButton alloc]init];
         [_seleteBtn setBackgroundColor:[UIColor redColor]];
-        [_seleteBtn setTitle:@"未" forState:UIControlStateNormal];
-        [_seleteBtn setTitle:@"中" forState:UIControlStateSelected];
-        [_seleteBtn setTitle:@"非" forState:UIControlStateDisabled];
+        [_seleteBtn setImage:[UIImage imageNamed:@"icon_radio_normal"]forState:UIControlStateNormal];
+        [_seleteBtn setImage:[UIImage imageNamed:@"icon_radio_selected"] forState:UIControlStateSelected];
+        [_seleteBtn setImage: [UIImage imageNamed:@"icon_radio_disable"] forState:UIControlStateDisabled];
         [_seleteBtn addTarget:self action:@selector(seleteBtnOnClicked) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_seleteBtn];
 
@@ -62,7 +63,6 @@
 
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapShopName)];
         [self.shopNameLabel addGestureRecognizer:tap];
-
     }
     return self;
 }

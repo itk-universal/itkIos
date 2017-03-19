@@ -10,12 +10,12 @@
 
 typedef NSString *MSignalType;
 
-#undef  msignal
-#define msignal ( name ) \
+#undef	msignal
+#define msignal( name ) \
 FOUNDATION_EXTERN MSignalType name;
 
-#undef  def_msignal
-#define def_msignal ( name ) \
+#undef	def_msignal
+#define def_msignal( name ) \
 MSignalType name = @#name;
 
 typedef NS_ENUM(NSInteger,SignalState){
