@@ -54,10 +54,10 @@ static UIView *hudView  = nil;
         NSMutableArray *tempArray = [NSMutableArray array];
         for (NSInteger i = 0;  i < 5; i ++) {
             CouponModel *coupon = [[CouponModel alloc]init];
-            coupon.title = [NSString stringWithFormat:@"优惠券%zd",i];
-            coupon.cid   = [NSString stringWithFormat:@"%zd",i];
-            coupon.dateString = @"有效期2017-04-29 - 2017-12-29";
-            coupon.desc = @"优惠券描述";
+//            coupon.title = [NSString stringWithFormat:@"优惠券%zd",i];
+//            coupon.cid   = [NSString stringWithFormat:@"%zd",i];
+//            coupon.dateString = @"有效期2017-04-29 - 2017-12-29";
+//            coupon.desc = @"优惠券描述";
             [tempArray addObject:coupon];
         }
         _couponsList = tempArray;

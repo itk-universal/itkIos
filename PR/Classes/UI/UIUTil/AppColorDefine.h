@@ -35,7 +35,7 @@ alpha:0.5]
 
 #define kColorReferenceTawnyColor       kColorTheme
 #define kColorMall                      UIColorFromRGB(0xff5400)
-#define kColorHYD                       kColorReferenceTawnyColor
+#define kColorOrange                    kColorReferenceTawnyColor
 #define kColorBRAVO                     UIColorFromRGB(0x4e6012)
 #define kColorPrice                     UIColorFromRGB(0xff4600)
 #define kColorCSX                       UIColorFromRGB(0X0e8b2f)

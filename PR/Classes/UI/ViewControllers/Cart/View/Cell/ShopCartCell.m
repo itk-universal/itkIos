@@ -52,8 +52,8 @@
     CGFloat deleteBtnW       = 50;
     self.deleteBtn.frame     = CGRectMake(self.width - deleteBtnW, 0, deleteBtnW, self.height);
     CGFloat leftMargin       = 15;
-    CGFloat numControllerW   = self.width - 2*leftMargin - deleteBtnW;
-    self.numController.frame = CGRectMake(leftMargin, 10, numControllerW, 35);
+    CGFloat numControllerW   = kWidth;
+    self.numController.frame = CGRectMake(leftMargin, 10, numControllerW, kHeight);
     self.priceLabel.frame    = CGRectMake(leftMargin, 0, numControllerW, 21);
     self.priceLabel.bottom   = self.height - 10;
 }

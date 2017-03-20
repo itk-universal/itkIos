@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ProductInfo.h"
 
+#define kWidth  156
+#define kHeight 38
+
 @class GoodNumController;
 
 @protocol GoodNumControllerDelegate <NSObject>

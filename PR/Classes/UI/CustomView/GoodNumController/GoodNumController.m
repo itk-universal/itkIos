@@ -10,8 +10,6 @@
 #import "NoMenueTextField.h"
 #import "OnePixelSepView.h"
 
-#define kWidth  96
-#define kHeight 28
 
 @interface GoodNumController()<UITextFieldDelegate>
 
@@ -65,11 +63,9 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    CGFloat margin         = 10;
-    CGFloat tempBtnW       = 28;
-    CGFloat btnW           = tempBtnW + margin;
+    CGFloat btnW           = 42;
     self.minusBtn.frame    = CGRectMake(0, 0, btnW, self.height);
-    self.textfiled.frame   = CGRectMake(self.minusBtn.right, 0,kWidth-2*tempBtnW, self.height);
+    self.textfiled.frame   = CGRectMake(self.minusBtn.right, 0,self.width-2*btnW, self.height);
 
     self.addBtn.frame      = CGRectMake(self.textfiled.right,0, btnW,self.height);
 }

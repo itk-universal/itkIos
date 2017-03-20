@@ -10,8 +10,11 @@
 #define URLPathDefine_h
 
 // 平台首页
-#define   DynamicData_URLPATH                   @"/api/v1/home"
+#define   DynamicData_URLPATH                     @"/api/v1/home"
 
 //购物车同步
-#define Cart_URLPATH                            @"/api/cart/place"
+#define   Cart_URLPATH                            @"/api/cart/place"
+
+//购物车获取店铺优惠券
+#define  Cart_GetCoupons_URLPATH                  @"/api/cart/coupons"
 #endif /* URLPathDefine_h */
