@@ -8,6 +8,7 @@
 
 #import "ChooseCouponCell.h"
 #import "ThemeButton.h"
+#import "CouponModel.h"
 
 @interface ChooseCouponCell()
 
@@ -32,11 +33,9 @@
         [_subTitleLabel setTextAlignment:NSTextAlignmentLeft];
         [_subTitleLabel setFont:KFontNormal(12)];
         [_subTitleLabel setTextColor:kColorNormal];
-        [_subTitleLabel setText:@"订单满xxx元使用（不含运费）"];
         [self.contentView addSubview:_subTitleLabel];
         
         _dateLabel = [[UILabel alloc]init];
-        [_dateLabel setText:@"使用期限：2017.03.23-2017.09.30"];
         [_dateLabel setTextColor:kColorGray];
         [_dateLabel setFont:KFontNormal(10)];
         [_dateLabel setTextAlignment:NSTextAlignmentLeft];
@@ -69,7 +68,11 @@
 
 -(void)setObject:(id)object
 {
-    
+    CONDITION_CHECK_RETURN([object isKindOfClass:[CouponModel class]]);
+    CouponModel *info = object;
+    self.titleLabel.attributedText = [info titleAttributedString];
+    self.subTitleLabel.text        = info.desc;
+    self.dateLabel.text            = [info dateString];
 }
 
 +(CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object

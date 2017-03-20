@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TableViewHeaderView : UIView
-
+-(void)setShopName:(NSString *)shopName;
 @end

@@ -22,7 +22,7 @@
             _icon = [[ImageInfo alloc]initWithImageURL:iconStr];
         }
         _cid = [dic safeObjectForKey:@"id"];
-        _sellername = [dic safeObjectForKey:@"shopname"];
+        _shopname = [dic safeObjectForKey:@"shopname"];
         _title      = [dic safeObjectForKey:@"title"];
     }
     return self;

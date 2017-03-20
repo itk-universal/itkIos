@@ -195,6 +195,11 @@
 		B4D74CF11E28E2120063EAC5 /* WTPersistenceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D74CF01E28E2120063EAC5 /* WTPersistenceCenter.m */; };
 		B4D74CF51E28E2450063EAC5 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D74CF41E28E2450063EAC5 /* FileManager.m */; };
 		B4D8495F1E7FD9680083D3BA /* CartCoupons.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D8495E1E7FD9680083D3BA /* CartCoupons.m */; };
+		B4D849621E7FFEDA0083D3BA /* CartCouponManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D849611E7FFEDA0083D3BA /* CartCouponManager.m */; };
+		B4D849661E7FFFC30083D3BA /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D849651E7FFFC30083D3BA /* BaseManager.m */; };
+		B4D8497A1E800E490083D3BA /* ChooseCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D849751E800E490083D3BA /* ChooseCouponCell.m */; };
+		B4D8497B1E800E490083D3BA /* CouponsSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D849771E800E490083D3BA /* CouponsSelectView.m */; };
+		B4D8497C1E800E490083D3BA /* TableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D849791E800E490083D3BA /* TableViewHeaderView.m */; };
 		B4E731851E5AD04D0088F85E /* UserCenterDataConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E731841E5AD04D0088F85E /* UserCenterDataConstructor.m */; };
 		B4E731881E5AD5970088F85E /* HeadPortraitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E731871E5AD5970088F85E /* HeadPortraitCell.m */; };
 		B4E7318B1E5AD7280088F85E /* UserCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7318A1E5AD7280088F85E /* UserCenterModel.m */; };
@@ -238,9 +243,6 @@
 		B4F2B0101E63DA1E00468E01 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F2B00E1E63DA1E00468E01 /* libsqlite3.tbd */; };
 		B4F2B0191E63FDD100468E01 /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B0181E63FDD100468E01 /* DataBaseManager.m */; };
 		B4F2B01F1E641DF700468E01 /* CartShopDataBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B01E1E641DF700468E01 /* CartShopDataBaseModel.m */; };
-		B4F2B0251E65192B00468E01 /* ChooseCouponCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B0241E65192B00468E01 /* ChooseCouponCell.m */; };
-		B4F2B0281E6519A900468E01 /* TableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B0271E6519A900468E01 /* TableViewHeaderView.m */; };
-		B4F2B02B1E651D2D00468E01 /* CouponsSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B02A1E651D2D00468E01 /* CouponsSelectView.m */; };
 		B4F2B02F1E654DD000468E01 /* NoMenueTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B02E1E654DD000468E01 /* NoMenueTextField.m */; };
 		B4F2B0321E654E9C00468E01 /* GoodNumController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F2B0311E654E9C00468E01 /* GoodNumController.m */; };
 		B4F588071E4B16DA003226FF /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F588061E4B16DA003226FF /* UserManager.m */; };
@@ -674,6 +676,16 @@
 		B4D74CF41E28E2450063EAC5 /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
 		B4D8495D1E7FD9680083D3BA /* CartCoupons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCoupons.h; sourceTree = "<group>"; };
 		B4D8495E1E7FD9680083D3BA /* CartCoupons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartCoupons.m; sourceTree = "<group>"; };
+		B4D849601E7FFEDA0083D3BA /* CartCouponManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCouponManager.h; sourceTree = "<group>"; };
+		B4D849611E7FFEDA0083D3BA /* CartCouponManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartCouponManager.m; sourceTree = "<group>"; };
+		B4D849641E7FFFC30083D3BA /* BaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseManager.h; sourceTree = "<group>"; };
+		B4D849651E7FFFC30083D3BA /* BaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseManager.m; sourceTree = "<group>"; };
+		B4D849741E800E490083D3BA /* ChooseCouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseCouponCell.h; sourceTree = "<group>"; };
+		B4D849751E800E490083D3BA /* ChooseCouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCouponCell.m; sourceTree = "<group>"; };
+		B4D849761E800E490083D3BA /* CouponsSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponsSelectView.h; sourceTree = "<group>"; };
+		B4D849771E800E490083D3BA /* CouponsSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponsSelectView.m; sourceTree = "<group>"; };
+		B4D849781E800E490083D3BA /* TableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeaderView.h; sourceTree = "<group>"; };
+		B4D849791E800E490083D3BA /* TableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeaderView.m; sourceTree = "<group>"; };
 		B4E731831E5AD04D0088F85E /* UserCenterDataConstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterDataConstructor.h; sourceTree = "<group>"; };
 		B4E731841E5AD04D0088F85E /* UserCenterDataConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterDataConstructor.m; sourceTree = "<group>"; };
 		B4E731861E5AD5970088F85E /* HeadPortraitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadPortraitCell.h; sourceTree = "<group>"; };
@@ -760,12 +772,6 @@
 		B4F2B0181E63FDD100468E01 /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
 		B4F2B01D1E641DF700468E01 /* CartShopDataBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartShopDataBaseModel.h; sourceTree = "<group>"; };
 		B4F2B01E1E641DF700468E01 /* CartShopDataBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartShopDataBaseModel.m; sourceTree = "<group>"; };
-		B4F2B0231E65192B00468E01 /* ChooseCouponCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseCouponCell.h; sourceTree = "<group>"; };
-		B4F2B0241E65192B00468E01 /* ChooseCouponCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCouponCell.m; sourceTree = "<group>"; };
-		B4F2B0261E6519A900468E01 /* TableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeaderView.h; sourceTree = "<group>"; };
-		B4F2B0271E6519A900468E01 /* TableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeaderView.m; sourceTree = "<group>"; };
-		B4F2B0291E651D2D00468E01 /* CouponsSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponsSelectView.h; sourceTree = "<group>"; };
-		B4F2B02A1E651D2D00468E01 /* CouponsSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponsSelectView.m; sourceTree = "<group>"; };
 		B4F2B02D1E654DD000468E01 /* NoMenueTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoMenueTextField.h; sourceTree = "<group>"; };
 		B4F2B02E1E654DD000468E01 /* NoMenueTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoMenueTextField.m; sourceTree = "<group>"; };
 		B4F2B0301E654E9C00468E01 /* GoodNumController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodNumController.h; sourceTree = "<group>"; };
@@ -1217,6 +1223,7 @@
 		B4377EC61E7FB74E0052E81F /* CartCoupon */ = {
 			isa = PBXGroup;
 			children = (
+				B4D849671E800E100083D3BA /* CartCouponView */,
 				B4377ECA1E7FB8620052E81F /* NetWork */,
 				B4377EC71E7FB7B80052E81F /* CartCouponViewControllerManager.h */,
 				B4377EC81E7FB7B80052E81F /* CartCouponViewControllerManager.m */,
@@ -1246,6 +1253,8 @@
 		B4377ECC1E7FB8620052E81F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				B4D849601E7FFEDA0083D3BA /* CartCouponManager.h */,
+				B4D849611E7FFEDA0083D3BA /* CartCouponManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1404,7 +1413,6 @@
 				B4009B951E6C41F700BA3973 /* UtilCodeTool */,
 				B4EB70181E685E8E00B2CA89 /* MutiTitleHeaderView */,
 				B4F2B02C1E654DBB00468E01 /* NoMenueTextField */,
-				B4F2B0201E65192B00468E01 /* Coupon */,
 				B4925C8C1E60424300E84762 /* WTNetworkErrorView */,
 				B4E7319E1E5B3DCA0088F85E /* GoodNumController */,
 				B4E7318F1E5AF4790088F85E /* SeparateCell */,
@@ -1669,6 +1677,7 @@
 		B4A712421E1FD3D000368849 /* BaseSupport */ = {
 			isa = PBXGroup;
 			children = (
+				B4D849631E7FFFA70083D3BA /* BaseAPIManager */,
 				B4A4704C1E75741500397BFB /* CacheCenter */,
 				B4925C901E60428B00E84762 /* MSignal */,
 				B4925C191E5EEC6400E84762 /* Base64 */,
@@ -2132,6 +2141,28 @@
 			path = FileManager;
 			sourceTree = "<group>";
 		};
+		B4D849631E7FFFA70083D3BA /* BaseAPIManager */ = {
+			isa = PBXGroup;
+			children = (
+				B4D849641E7FFFC30083D3BA /* BaseManager.h */,
+				B4D849651E7FFFC30083D3BA /* BaseManager.m */,
+			);
+			path = BaseAPIManager;
+			sourceTree = "<group>";
+		};
+		B4D849671E800E100083D3BA /* CartCouponView */ = {
+			isa = PBXGroup;
+			children = (
+				B4D849741E800E490083D3BA /* ChooseCouponCell.h */,
+				B4D849751E800E490083D3BA /* ChooseCouponCell.m */,
+				B4D849761E800E490083D3BA /* CouponsSelectView.h */,
+				B4D849771E800E490083D3BA /* CouponsSelectView.m */,
+				B4D849781E800E490083D3BA /* TableViewHeaderView.h */,
+				B4D849791E800E490083D3BA /* TableViewHeaderView.m */,
+			);
+			path = CartCouponView;
+			sourceTree = "<group>";
+		};
 		B4E7318F1E5AF4790088F85E /* SeparateCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2405,35 +2436,6 @@
 			path = "DataBaseManager ";
 			sourceTree = "<group>";
 		};
-		B4F2B0201E65192B00468E01 /* Coupon */ = {
-			isa = PBXGroup;
-			children = (
-				B4F2B0211E65192B00468E01 /* View */,
-				B4F2B0291E651D2D00468E01 /* CouponsSelectView.h */,
-				B4F2B02A1E651D2D00468E01 /* CouponsSelectView.m */,
-			);
-			path = Coupon;
-			sourceTree = "<group>";
-		};
-		B4F2B0211E65192B00468E01 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B4F2B0221E65192B00468E01 /* Cell */,
-				B4F2B0261E6519A900468E01 /* TableViewHeaderView.h */,
-				B4F2B0271E6519A900468E01 /* TableViewHeaderView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B4F2B0221E65192B00468E01 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				B4F2B0231E65192B00468E01 /* ChooseCouponCell.h */,
-				B4F2B0241E65192B00468E01 /* ChooseCouponCell.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		B4F2B02C1E654DBB00468E01 /* NoMenueTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -2641,7 +2643,6 @@
 				B4A712951E1FD6B700368849 /* PRTabBarViewController.m in Sources */,
 				B4EB70281E68646900B2CA89 /* ProductViewCell.m in Sources */,
 				B4F2AFFC1E63D54300468E01 /* MJRefreshFooter.m in Sources */,
-				B4F2B0251E65192B00468E01 /* ChooseCouponCell.m in Sources */,
 				B45A1A181E239BA100D50F16 /* PRTabbarView.m in Sources */,
 				B466E7301E7A75E60073760B /* ExhibitImageTextView.m in Sources */,
 				B40A8FC41E6BF1E600C598D8 /* OrderStatusFlowViewCell.m in Sources */,
@@ -2664,12 +2665,14 @@
 				B42E3C6D1E55807B007B7A55 /* IGURLManager.m in Sources */,
 				B42E3C781E55874F007B7A55 /* DebugManager.m in Sources */,
 				B4377EC31E7FB19A0052E81F /* DynamicDataTransformTool.m in Sources */,
+				B4D8497C1E800E490083D3BA /* TableViewHeaderView.m in Sources */,
 				B4D74CF51E28E2450063EAC5 /* FileManager.m in Sources */,
 				B42E3C751E55870F007B7A55 /* DebugConfigManager.m in Sources */,
 				B43E360D1E50501700697AC6 /* PRMBWantedOffice.m in Sources */,
 				B4D74CF11E28E2120063EAC5 /* WTPersistenceCenter.m in Sources */,
 				B42E3CE01E55D701007B7A55 /* UIImage+WebP.m in Sources */,
 				B458540E1E5A8B1F00A6F8D2 /* ItemListModel.m in Sources */,
+				B4D849661E7FFFC30083D3BA /* BaseManager.m in Sources */,
 				B42E3CDB1E55D701007B7A55 /* SDWebImageManager.m in Sources */,
 				B4C93BB01E6DA76D00E17E6D /* HomeCouponCell.m in Sources */,
 				B4F2AFF91E63D54300468E01 /* MJRefreshAutoFooter.m in Sources */,
@@ -2703,6 +2706,7 @@
 				B40A8FB01E6BBC5800C598D8 /* ShopInfoViewCell.m in Sources */,
 				B43E36621E53145700697AC6 /* NHPShowNative.m in Sources */,
 				B47074B21E6C587600ADC9E8 /* NearbyShopViewCell.m in Sources */,
+				B4D8497A1E800E490083D3BA /* ChooseCouponCell.m in Sources */,
 				B4377EC41E7FB19A0052E81F /* DynamicUIModel.m in Sources */,
 				B47074AF1E6C579900ADC9E8 /* NSObject+NSCoding.m in Sources */,
 				B4B296621E794194009E77B7 /* ProductInfo.m in Sources */,
@@ -2773,6 +2777,7 @@
 				B4377EC21E7FB19A0052E81F /* DMExhibitItem.m in Sources */,
 				B4925C211E5EEEE900E84762 /* BaseRespond.m in Sources */,
 				B42E3D101E586138007B7A55 /* ItemView.m in Sources */,
+				B4D8497B1E800E490083D3BA /* CouponsSelectView.m in Sources */,
 				B4F9E79C1E79870C001B9C37 /* AbstractDotView.m in Sources */,
 				B43E36611E53145700697AC6 /* NHProcessorUserLogin.m in Sources */,
 				B4925C271E5F05CA00E84762 /* IGHttpTask.m in Sources */,
@@ -2789,6 +2794,7 @@
 				B42E3C7C1E5588BC007B7A55 /* APIRespondAuth.m in Sources */,
 				B42E3CDC1E55D701007B7A55 /* SDWebImagePrefetcher.m in Sources */,
 				B43E361A1E51DF8D00697AC6 /* NHProcessorBase.m in Sources */,
+				B4D849621E7FFEDA0083D3BA /* CartCouponManager.m in Sources */,
 				B4925C1D1E5EEC7000E84762 /* GTMBase64.m in Sources */,
 				B401699A1E7BE5050044C6CE /* NSObject+BSCategory.m in Sources */,
 				B4B296721E794A99009E77B7 /* CartAPIInteract.m in Sources */,
@@ -2797,11 +2803,9 @@
 				B4F2B00A1E63D54300468E01 /* UIScrollView+MJExtension.m in Sources */,
 				B43E36481E53141B00697AC6 /* NHPSNCaOPage.m in Sources */,
 				B4F2B01F1E641DF700468E01 /* CartShopDataBaseModel.m in Sources */,
-				B4F2B0281E6519A900468E01 /* TableViewHeaderView.m in Sources */,
 				B42E3CD41E55D701007B7A55 /* MKAnnotationView+WebCache.m in Sources */,
 				B4B2966C1E79454C009E77B7 /* CartUIModel.m in Sources */,
 				B4F9E79D1E79870C001B9C37 /* AnimatedDotView.m in Sources */,
-				B4F2B02B1E651D2D00468E01 /* CouponsSelectView.m in Sources */,
 				B42E3C8A1E55A5BB007B7A55 /* PRCAppConfig.m in Sources */,
 				B42E3CDA1E55D701007B7A55 /* SDWebImageDownloaderOperation.m in Sources */,
 				B4D8495F1E7FD9680083D3BA /* CartCoupons.m in Sources */,

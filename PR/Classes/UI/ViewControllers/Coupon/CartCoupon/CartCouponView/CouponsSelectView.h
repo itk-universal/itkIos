@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CartCoupons.h"
 
 @interface CouponsSelectView : UIView
 +(instancetype)defaultCouponsSelectView;
--(void)setCouponsList:(NSArray *)couponsList;
+@property (strong,nonatomic) CartCoupons *cartCoupons;
 -(void)show;
 
 @end

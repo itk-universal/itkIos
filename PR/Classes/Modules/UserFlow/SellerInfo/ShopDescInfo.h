@@ -15,7 +15,7 @@
 @property (readonly,nonatomic) NSString *title;
 @property (readonly,nonatomic) ImageInfo *icon;
 //itkxxx
-@property (readonly,nonatomic) NSString *sellername;
+@property (readonly,nonatomic) NSString *shopname;
 @property (readonly,nonatomic) NSString *cid;
 @property (readonly,nonatomic) NSString *cityname;
 @property (readonly,nonatomic) Action   *action;

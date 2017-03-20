@@ -50,17 +50,6 @@ static UIView *hudView  = nil;
         _closeBtn.frame = CGRectMake(0, 0, 0, 60);
         [_closeBtn addTarget:self action:@selector(closeBtnOnClicked) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_closeBtn];
-        
-        NSMutableArray *tempArray = [NSMutableArray array];
-        for (NSInteger i = 0;  i < 5; i ++) {
-            CouponModel *coupon = [[CouponModel alloc]init];
-//            coupon.title = [NSString stringWithFormat:@"优惠券%zd",i];
-//            coupon.cid   = [NSString stringWithFormat:@"%zd",i];
-//            coupon.dateString = @"有效期2017-04-29 - 2017-12-29";
-//            coupon.desc = @"优惠券描述";
-            [tempArray addObject:coupon];
-        }
-        _couponsList = tempArray;
     }
     return self;
 }
@@ -76,7 +65,8 @@ static UIView *hudView  = nil;
 
 -(void)setCouponsList:(NSArray *)couponsList
 {
-    
+    CONDITION_CHECK_RETURN(couponsList && [couponsList count]);
+    _couponsList = couponsList;
 }
 
 -(void)closeBtnOnClicked
@@ -126,7 +116,12 @@ static UIView *hudView  = nil;
     }];
 }
 
-
+-(void)setCartCoupons:(CartCoupons *)cartCoupons
+{
+    CONDITION_CHECK_RETURN([cartCoupons isKindOfClass:[CartCoupons class]]);
+    self.couponsList = cartCoupons.coupons;
+    [self.headerView setShopName:cartCoupons.shopInfo.shopname];
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -146,6 +141,7 @@ static UIView *hudView  = nil;
     if (cell == nil) {
         cell = [[ChooseCouponCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifierID];
     }
+    [cell setObject:[self.couponsList safeObjectAtIndex:indexPath.row]];
     return cell;
     
 }

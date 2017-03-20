@@ -16,7 +16,9 @@
 @implementation CartManager
 -(BOOL)refreshCart
 {
-    self.cartAPI = [[CartAPIInteract alloc] init];
+    if (self.cartAPI == nil) {
+        self.cartAPI = [[CartAPIInteract alloc] init];
+    }
      [self.cartAPI interactScuess:^(BaseAPIInteract *interact, id modelData){
          if (self.delegate && [self.delegate respondsToSelector:@selector(requestSuccess:isCache:)]) {
              [self.delegate requestSuccess:modelData isCache:NO];

@@ -7,12 +7,12 @@
 //
 
 #import "CartShopInfoViewCell.h"
-#import "CouponsSelectView.h"
 #import "ShopDescInfo.h"
 #import "AutoImageView.h"
 #import "OnePixelSepView.h"
 #import "NSObject+MSignal.h"
 #import "ShopCartInfo.h"
+#import "CartCouponViewControllerManager.h"
 
 @interface CartShopInfoViewCell()
 
@@ -22,7 +22,8 @@
 @property (strong,nonatomic) UIImageView *arrowIcon;
 @property (strong,nonatomic) UIButton *eidtBtn;
 @property (strong,nonatomic) UIButton *couponBtn;
-@property (strong,nonatomic) CouponsSelectView *couponsView;
+@property (strong,nonatomic)  CartCouponViewControllerManager *manager;
+
 
 @end
 
@@ -96,11 +97,10 @@
 
 -(void)couponeBtnOnClicked:(UIButton *)sender
 {
-    if(self.couponsView == nil){
-        self.couponsView = [CouponsSelectView defaultCouponsSelectView];
+    if (self.manager == nil) {
+        self.manager = [[CartCouponViewControllerManager alloc]init];
     }
-    [self.couponsView setCouponsList:nil];
-    [self.couponsView show];
+    [self.manager getCartCouponsWithShopId:nil];
 }
 
 -(void)setObject:(id)object

@@ -44,4 +44,8 @@
     self.promptLabel.frame = CGRectMake(0, self.shopNameLabel.bottom, self.width, kLabelH);
 
 }
+-(void)setShopName:(NSString *)shopName
+{
+    self.shopNameLabel.text = shopName?:@"";
+}
 @end
