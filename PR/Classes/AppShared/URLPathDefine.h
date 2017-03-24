@@ -17,4 +17,7 @@
 
 //购物车获取店铺优惠券
 #define  Cart_GetCoupons_URLPATH                  @"/api/cart/coupons"
+
+//个人中心
+#define  MemberInfo_URLPATH                       @"/api/member/info"
 #endif /* URLPathDefine_h */

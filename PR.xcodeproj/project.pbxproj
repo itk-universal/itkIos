@@ -108,7 +108,6 @@
 		B45854021E58849600A6F8D2 /* WTNetWorkDataConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B45854011E58849600A6F8D2 /* WTNetWorkDataConstructor.m */; };
 		B45854051E588A1F00A6F8D2 /* WTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45854041E588A1F00A6F8D2 /* WTTableViewController.m */; };
 		B458540A1E588CED00A6F8D2 /* ItemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B45854091E588CED00A6F8D2 /* ItemViewCell.m */; };
-		B458540E1E5A8B1F00A6F8D2 /* ItemListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B458540D1E5A8B1F00A6F8D2 /* ItemListModel.m */; };
 		B45A1A181E239BA100D50F16 /* PRTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B45A1A171E239BA100D50F16 /* PRTabbarView.m */; };
 		B45A1A1C1E239C0900D50F16 /* PRLoadingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B45A1A1B1E239C0900D50F16 /* PRLoadingAnimation.m */; };
 		B45A1A1F1E239C3800D50F16 /* FruitJumLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B45A1A1E1E239C3800D50F16 /* FruitJumLoadingView.m */; };
@@ -202,7 +201,6 @@
 		B4D8497C1E800E490083D3BA /* TableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D849791E800E490083D3BA /* TableViewHeaderView.m */; };
 		B4E731851E5AD04D0088F85E /* UserCenterDataConstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E731841E5AD04D0088F85E /* UserCenterDataConstructor.m */; };
 		B4E731881E5AD5970088F85E /* HeadPortraitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E731871E5AD5970088F85E /* HeadPortraitCell.m */; };
-		B4E7318B1E5AD7280088F85E /* UserCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7318A1E5AD7280088F85E /* UserCenterModel.m */; };
 		B4E7318E1E5AE1C60088F85E /* AssetsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7318D1E5AE1C60088F85E /* AssetsCell.m */; };
 		B4E731921E5AF4890088F85E /* SeparateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E731911E5AF4890088F85E /* SeparateCell.m */; };
 		B4E731951E5AF4FA0088F85E /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E731941E5AF4FA0088F85E /* OrderCell.m */; };
@@ -254,6 +252,10 @@
 		B4F9E79F1E79870C001B9C37 /* YHPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F9E7961E79870C001B9C37 /* YHPageControl.m */; };
 		B4F9E7A01E79870C001B9C37 /* CycleScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F9E7991E79870C001B9C37 /* CycleScrollCell.m */; };
 		B4F9E7A11E79870C001B9C37 /* FPCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F9E79B1E79870C001B9C37 /* FPCycleScrollView.m */; };
+		B4FB3F491E812C1900B45FA7 /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = B4FB3F481E812C1900B45FA7 /* info.json */; };
+		B4FB3F501E812F2000B45FA7 /* ItemListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FB3F4D1E812F2000B45FA7 /* ItemListModel.m */; };
+		B4FB3F511E812F2000B45FA7 /* UserCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FB3F4F1E812F2000B45FA7 /* UserCenterModel.m */; };
+		B4FB3F561E81323400B45FA7 /* UserCenterAPIInteract.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FB3F551E81323400B45FA7 /* UserCenterAPIInteract.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -487,8 +489,6 @@
 		B45854041E588A1F00A6F8D2 /* WTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTableViewController.m; sourceTree = "<group>"; };
 		B45854081E588CED00A6F8D2 /* ItemViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewCell.h; sourceTree = "<group>"; };
 		B45854091E588CED00A6F8D2 /* ItemViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewCell.m; sourceTree = "<group>"; };
-		B458540C1E5A8B1F00A6F8D2 /* ItemListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemListModel.h; sourceTree = "<group>"; };
-		B458540D1E5A8B1F00A6F8D2 /* ItemListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListModel.m; sourceTree = "<group>"; };
 		B45A1A161E239BA100D50F16 /* PRTabbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTabbarView.h; sourceTree = "<group>"; };
 		B45A1A171E239BA100D50F16 /* PRTabbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTabbarView.m; sourceTree = "<group>"; };
 		B45A1A1A1E239C0900D50F16 /* PRLoadingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRLoadingAnimation.h; sourceTree = "<group>"; };
@@ -690,8 +690,6 @@
 		B4E731841E5AD04D0088F85E /* UserCenterDataConstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterDataConstructor.m; sourceTree = "<group>"; };
 		B4E731861E5AD5970088F85E /* HeadPortraitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadPortraitCell.h; sourceTree = "<group>"; };
 		B4E731871E5AD5970088F85E /* HeadPortraitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadPortraitCell.m; sourceTree = "<group>"; };
-		B4E731891E5AD7280088F85E /* UserCenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterModel.h; sourceTree = "<group>"; };
-		B4E7318A1E5AD7280088F85E /* UserCenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterModel.m; sourceTree = "<group>"; };
 		B4E7318C1E5AE1C60088F85E /* AssetsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsCell.h; sourceTree = "<group>"; };
 		B4E7318D1E5AE1C60088F85E /* AssetsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetsCell.m; sourceTree = "<group>"; };
 		B4E731901E5AF4890088F85E /* SeparateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeparateCell.h; sourceTree = "<group>"; };
@@ -794,6 +792,13 @@
 		B4F9E7991E79870C001B9C37 /* CycleScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollCell.m; sourceTree = "<group>"; };
 		B4F9E79A1E79870C001B9C37 /* FPCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPCycleScrollView.h; sourceTree = "<group>"; };
 		B4F9E79B1E79870C001B9C37 /* FPCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPCycleScrollView.m; sourceTree = "<group>"; };
+		B4FB3F481E812C1900B45FA7 /* info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info.json; sourceTree = "<group>"; };
+		B4FB3F4C1E812F2000B45FA7 /* ItemListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemListModel.h; sourceTree = "<group>"; };
+		B4FB3F4D1E812F2000B45FA7 /* ItemListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListModel.m; sourceTree = "<group>"; };
+		B4FB3F4E1E812F2000B45FA7 /* UserCenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterModel.h; sourceTree = "<group>"; };
+		B4FB3F4F1E812F2000B45FA7 /* UserCenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterModel.m; sourceTree = "<group>"; };
+		B4FB3F541E81323400B45FA7 /* UserCenterAPIInteract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterAPIInteract.h; sourceTree = "<group>"; };
+		B4FB3F551E81323400B45FA7 /* UserCenterAPIInteract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterAPIInteract.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1011,6 +1016,7 @@
 				B4009B8D1E6C220000BA3973 /* list.json */,
 				B49D3A4E1E6DAA6A003E00C7 /* home.json */,
 				B4377EB01E7F78A40052E81F /* coupons.json */,
+				B4FB3F481E812C1900B45FA7 /* info.json */,
 			);
 			path = ThirdPart;
 			sourceTree = "<group>";
@@ -1390,17 +1396,6 @@
 				B4E731941E5AF4FA0088F85E /* OrderCell.m */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		B458540B1E5A8AF000A6F8D2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B458540C1E5A8B1F00A6F8D2 /* ItemListModel.h */,
-				B458540D1E5A8B1F00A6F8D2 /* ItemListModel.m */,
-				B4E731891E5AD7280088F85E /* UserCenterModel.h */,
-				B4E7318A1E5AD7280088F85E /* UserCenterModel.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B45A1A141E239BA100D50F16 /* CustomView */ = {
@@ -1928,6 +1923,7 @@
 		B4A7127D1E1FD3D000368849 /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
+				B4FB3F4A1E812E7B00B45FA7 /* NetWork */,
 				B45854061E588CCB00A6F8D2 /* View */,
 				B42E3D0A1E585B84007B7A55 /* Config */,
 				B4A7127E1E1FD3D000368849 /* UserCenterViewController.h */,
@@ -2448,7 +2444,6 @@
 		B4F588041E4B16DA003226FF /* UserManager */ = {
 			isa = PBXGroup;
 			children = (
-				B458540B1E5A8AF000A6F8D2 /* Model */,
 				B4F588081E4B1BA9003226FF /* UserInfo */,
 				B4F588051E4B16DA003226FF /* UserManager.h */,
 				B4F588061E4B16DA003226FF /* UserManager.m */,
@@ -2500,6 +2495,43 @@
 				B4F9E79B1E79870C001B9C37 /* FPCycleScrollView.m */,
 			);
 			path = CycleScrollView;
+			sourceTree = "<group>";
+		};
+		B4FB3F4A1E812E7B00B45FA7 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB3F521E812F6800B45FA7 /* APIInteractors */,
+				B4FB3F531E812F6800B45FA7 /* Manager */,
+				B4FB3F4B1E812F2000B45FA7 /* Model */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		B4FB3F4B1E812F2000B45FA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB3F4C1E812F2000B45FA7 /* ItemListModel.h */,
+				B4FB3F4D1E812F2000B45FA7 /* ItemListModel.m */,
+				B4FB3F4E1E812F2000B45FA7 /* UserCenterModel.h */,
+				B4FB3F4F1E812F2000B45FA7 /* UserCenterModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4FB3F521E812F6800B45FA7 /* APIInteractors */ = {
+			isa = PBXGroup;
+			children = (
+				B4FB3F541E81323400B45FA7 /* UserCenterAPIInteract.h */,
+				B4FB3F551E81323400B45FA7 /* UserCenterAPIInteract.m */,
+			);
+			path = APIInteractors;
+			sourceTree = "<group>";
+		};
+		B4FB3F531E812F6800B45FA7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2614,6 +2646,7 @@
 				B4A712181E1FD38700368849 /* Assets.xcassets in Resources */,
 				B43E362D1E5309E800697AC6 /* ViewMap.plist in Resources */,
 				B49D3A4F1E6DAA6A003E00C7 /* home.json in Resources */,
+				B4FB3F491E812C1900B45FA7 /* info.json in Resources */,
 				B4009B8E1E6C220000BA3973 /* list.json in Resources */,
 				B4377EB11E7F78A40052E81F /* coupons.json in Resources */,
 			);
@@ -2671,7 +2704,6 @@
 				B43E360D1E50501700697AC6 /* PRMBWantedOffice.m in Sources */,
 				B4D74CF11E28E2120063EAC5 /* WTPersistenceCenter.m in Sources */,
 				B42E3CE01E55D701007B7A55 /* UIImage+WebP.m in Sources */,
-				B458540E1E5A8B1F00A6F8D2 /* ItemListModel.m in Sources */,
 				B4D849661E7FFFC30083D3BA /* BaseManager.m in Sources */,
 				B42E3CDB1E55D701007B7A55 /* SDWebImageManager.m in Sources */,
 				B4C93BB01E6DA76D00E17E6D /* HomeCouponCell.m in Sources */,
@@ -2734,7 +2766,6 @@
 				B4E7319D1E5B3D770088F85E /* ShopCartCell.m in Sources */,
 				B4E7318E1E5AE1C60088F85E /* AssetsCell.m in Sources */,
 				B4A712911E1FD3D000368849 /* UserCenterViewController.m in Sources */,
-				B4E7318B1E5AD7280088F85E /* UserCenterModel.m in Sources */,
 				B4EBEE111E78354D00B9DCD8 /* GapViewCell.m in Sources */,
 				B4BA7D041E72794000711B44 /* CarouselItemView.m in Sources */,
 				B43E364E1E53141B00697AC6 /* NSPSNEnvChecker.m in Sources */,
@@ -2804,6 +2835,7 @@
 				B43E36481E53141B00697AC6 /* NHPSNCaOPage.m in Sources */,
 				B4F2B01F1E641DF700468E01 /* CartShopDataBaseModel.m in Sources */,
 				B42E3CD41E55D701007B7A55 /* MKAnnotationView+WebCache.m in Sources */,
+				B4FB3F561E81323400B45FA7 /* UserCenterAPIInteract.m in Sources */,
 				B4B2966C1E79454C009E77B7 /* CartUIModel.m in Sources */,
 				B4F9E79D1E79870C001B9C37 /* AnimatedDotView.m in Sources */,
 				B42E3C8A1E55A5BB007B7A55 /* PRCAppConfig.m in Sources */,
@@ -2840,6 +2872,7 @@
 				B4377ED31E7FB9090052E81F /* CartCouponAPIInteract.m in Sources */,
 				B40A8FA11E6BA6D200C598D8 /* ShopDiscountView.m in Sources */,
 				B4D6D1C01E5C485D00C73572 /* Action.m in Sources */,
+				B4FB3F511E812F2000B45FA7 /* UserCenterModel.m in Sources */,
 				B4EB702B1E68697B00B2CA89 /* OrderListSectionHeaderView.m in Sources */,
 				B45A1A271E24D43C00D50F16 /* BaseRequest.m in Sources */,
 				B43E360A1E50486800697AC6 /* NSString+Category.m in Sources */,
@@ -2864,6 +2897,7 @@
 				B42E3CDF1E55D701007B7A55 /* UIImage+MultiFormat.m in Sources */,
 				B4A7120D1E1FD38700368849 /* main.m in Sources */,
 				B4F2B02F1E654DD000468E01 /* NoMenueTextField.m in Sources */,
+				B4FB3F501E812F2000B45FA7 /* ItemListModel.m in Sources */,
 				B43E36631E53145700697AC6 /* NHPShowWeb.m in Sources */,
 				B4F2B0031E63D54300468E01 /* MJRefreshBackStateFooter.m in Sources */,
 				B4F9E7A01E79870C001B9C37 /* CycleScrollCell.m in Sources */,
